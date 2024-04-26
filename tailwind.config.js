@@ -9,7 +9,7 @@ export default {
     extend: {
       backdropFilter: {
         'none': 'none',
-        'blur': 'blur(20px)',
+        'blur': 'blur(15px)',
       },
     },
   },
