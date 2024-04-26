@@ -7,7 +7,10 @@ export default {
   theme: {
 
     extend: {
-
+      backdropFilter: {
+        'none': 'none',
+        'blur': 'blur(20px)',
+      },
     },
   },
   plugins: [],
