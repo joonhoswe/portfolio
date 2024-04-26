@@ -1,8 +1,11 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
 import me from '../assets/me.png';
 
 const Home = () => {
   return (
+    <>
+    <Navbar/>
     <div className="bg-gray-900 text-white flex justify-center items-center w-full height-100vh overflow-hidden relative p-4">
       <div className="absolute inset-0 flex justify-between items-center p-4">
       <div className="z-10 ml-36">
@@ -20,6 +23,7 @@ const Home = () => {
       </div>
       <img src={me} alt="Profile" className="w-3/5 h-full z-0" />
     </div>
+    </>
   );
 };
 
