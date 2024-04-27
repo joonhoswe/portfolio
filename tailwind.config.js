@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./index.html",
@@ -7,6 +8,9 @@ export default {
   theme: {
 
     extend: {
+      // fontFamily: {
+      //     custom: ["Quicksand", "sans-serif"]
+      // },
       backdropFilter: {
         'none': 'none',
         'blur': 'blur(15px)',

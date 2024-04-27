@@ -16,28 +16,29 @@ const Home = () => {
               strings = {[
                   "A Student",
                   "An Inventor",
-                  "An Amatuer Chef ",
+                  "An Avid Chef ",
               ]}
               typeSpeed = {50}
               backSpeed = {50}
               loop
           />
           </h2>
-          <button className="bg-blue-600 text-white rounded-full px-6 py-2 mt-4">Learn More</button>
+          
         </div>
 
-        <div className="z-10 flex flex-col space-y-5 mr-28">
+        <div className="z-10 flex flex-col space-y-5 mr-24">
           <div>
             <h1 className="text-3xl font-bold"> About me </h1>
             <hr class="h-0.5 bg-gray-200 border-0 mb-3"></hr>
-            <p className="text-s text-gray-300"> I'm a student interested in the intersection of <br></br> tech and law, planning to pursue patent law! </p>
+            <p className="text-s text-gray-300"> I'm a student at Emory University <br></br>majoring in CS, Data Science, and Pre-Law. </p>
+            <button className="text-white font-bold underline mt-2">Learn More </button>
           </div>
           
           <div>
-            <h1 className="text-3xl font-bold">Education</h1>
+            <h1 className="text-3xl font-bold">Projects</h1>
             <hr class="h-0.5 bg-gray-200 border-0 mb-3"></hr>
-            <p className="text-m text-gray-300"> Emory University </p>
-            <p className="text-m text-gray-300"> Computer Science + Philosophy, Politics, and Law </p>
+            <p className="text-m text-gray-300"> I love making projects with purpose. </p>
+            <p className="text-m text-gray-300"> Check out my recent projects! </p>
           </div>
           
         </div>
