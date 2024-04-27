@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className='bg-gray-900 w-full max-h-screen'>
     <Navbar/>
-    <div className=" text-white flex justify-center items-center overflow-hidden relative">
+    <div className="text-white flex justify-center items-center overflow-hidden relative">
       <div className="absolute inset-0 flex justify-between items-center">
       <div className="z-10 ml-36 space-y-4">
           <h2 className="text-5xl font-bold">Hi, I'm Jonathan,</h2>
@@ -27,16 +27,17 @@ const Home = () => {
         </div>
 
         <div className="z-10 flex flex-col space-y-5 mr-24">
+          {/* <div className = 'pt-8 h-72 w-72 rounded-full bg-green-400'> */}
           <div>
-            <h1 className="text-3xl font-bold"> About me </h1>
-            <hr class="h-0.5 bg-gray-200 border-0 mb-3"></hr>
+            <h1 className="text-3xl font-bold">About</h1>
+            <hr className="h-0.5 bg-gray-200 border-0 mb-3"></hr>
             <p className="text-s text-gray-300"> I'm a student at Emory University <br></br>majoring in CS, Data Science, and Pre-Law. </p>
             <button className="text-white font-bold underline mt-2">Learn More </button>
           </div>
           
           <div>
             <h1 className="text-3xl font-bold">Projects</h1>
-            <hr class="h-0.5 bg-gray-200 border-0 mb-3"></hr>
+            <hr className="h-0.5 bg-gray-200 border-0 mb-3"></hr>
             <p className="text-m text-gray-300"> I love making projects with purpose. </p>
             <p className="text-m text-gray-300"> Check out my recent projects! </p>
           </div>
