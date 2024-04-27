@@ -6,8 +6,8 @@ import Navbar from './components/navbar'
 
 const App = () => {
   return (
-   <div>
-    {/* <Navbar/> */}
+   <div className='bg-gray-900'>
+    <Navbar/>
     <Home/>
     <About/>
     {/* <Projects/> */}

@@ -1,13 +1,10 @@
 import React from 'react';
-import Navbar from '../components/navbar';
 import {ReactTyped} from 'react-typed';
 import me from '../assets/me2.png';
 
 const Home = () => {
   return (
-    <div className='bg-gray-900 w-full max-h-screen'>
-    <Navbar/>
-    <div className="text-white flex justify-center items-center overflow-hidden relative">
+    <div className="text-white flex justify-center items-center overflow-hidden relative w-full max-h-screen">
       <div className="absolute inset-0 flex justify-between items-center">
       <div className="z-10 ml-36 space-y-4">
           <h2 className="text-5xl font-bold">Hi, I'm Jonathan,</h2>
@@ -46,7 +43,6 @@ const Home = () => {
         
       </div>
       <img src={me} alt="Profile" className="w-3/5 h-full z-0 pt-12" />
-    </div>
     </div>
   );
 };
