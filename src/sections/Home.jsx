@@ -1,6 +1,6 @@
 import React from 'react';
 import {ReactTyped} from 'react-typed';
-import me from '../assets/me2.png';
+import me from '../assets/me.png';
 
 const Home = () => {
   return (
@@ -24,19 +24,25 @@ const Home = () => {
         </div>
 
         <div className="z-10 flex flex-col space-y-5 mr-24">
-          {/* <div className = 'pt-8 h-72 w-72 rounded-full bg-green-400'> */}
           <div>
+            <h1 className="text-l font-bold mb-3">ABOUT ME</h1>
+            {/* <hr className="h-0.5 bg-gray-200 border-0 mb-3"></hr> */}
+            <p className="text-s text-gray-300"> I'm a student at Emory University studying<br></br> CS, Data Science, and Pre-Law. </p>
+            <button className="text-white font-bold underline mt-4"> Learn More </button>
+          </div>
+          {/* <div className = 'pt-8 h-48 w-80 rounded-lg bg-transparent outline outline-2 outline-white'>
             <h1 className="text-3xl font-bold">About</h1>
             <hr className="h-0.5 bg-gray-200 border-0 mb-3"></hr>
             <p className="text-s text-gray-300"> I'm a student at Emory University <br></br>majoring in CS, Data Science, and Pre-Law. </p>
             <button className="text-white font-bold underline mt-2">Learn More </button>
-          </div>
-          
+          </div> */}
+
+          <hr className="h-0.5 bg-gray-200 border-0"></hr>
+
           <div>
-            <h1 className="text-3xl font-bold">Projects</h1>
-            <hr className="h-0.5 bg-gray-200 border-0 mb-3"></hr>
-            <p className="text-m text-gray-300"> I love making projects with purpose. </p>
-            <p className="text-m text-gray-300"> Check out my recent projects! </p>
+          <h1 className="text-l font-bold mb-3">PROJECTS</h1>
+            <p className="text-m text-gray-300"> I love finding everyday inconveniences to <br></br> design and build solutions for. </p>
+            <button className="text-white font-bold underline mt-4"> See Portfolio </button>
           </div>
           
         </div>

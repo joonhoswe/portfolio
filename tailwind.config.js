@@ -15,6 +15,9 @@ export default {
         'none': 'none',
         'blur': 'blur(15px)',
       },
+      height: {
+        '128': '32rem',
+      }
     },
   },
   plugins: [],

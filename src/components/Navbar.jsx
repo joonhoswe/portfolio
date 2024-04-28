@@ -13,7 +13,7 @@ const Navbar = () => {
           <div> ABOUT </div>
           <div> WORK </div>
           <div> PROJECTS </div>
-          <div> SKILLS </div>
+          <div> CONTACT </div>
       </div>
       <div className='mr-4 flex items-center justify-center space-x-3'>
         <a 
@@ -21,7 +21,7 @@ const Navbar = () => {
           href={resume}
           target="_blank" 
           rel="noopener noreferrer">
-            RESUMÉ
+            RÉSUMÉ
         </a>
         <a href="https://linkedin.com/in/joonho-oh" target="_blank" rel="noopener noreferrer">
             <img src={linkedin} alt="linkedin" className="hover:scale-110 transition duration-300 ease-in-out w-6 h-6"/>
