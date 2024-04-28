@@ -1,10 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import inventionConvention from '../assets/invention_convention.jpg';
-import instaHome from '../assets/insta_home.png';
-import instaSearch from '../assets/insta_search.png';
-import instaPlus from '../assets/insta_plus.png';
-import instaReels from '../assets/insta_reels.png';
-import instaProfile from '../assets/insta_profile.png';
+import me from '../assets/me.png';
+import inventionConvention from '../assets/iphone_images/invention_convention.jpg';
+import instaHome from '../assets/iphone_images/insta_home.png';
+import instaSearch from '../assets/iphone_images/insta_search.png';
+import instaPlus from '../assets/iphone_images/insta_plus.png';
+import instaReels from '../assets/iphone_images/insta_reels.png';
+import instaProfile from '../assets/iphone_images/insta_profile.png';
+import insta from '../assets/iphone_images/insta.png';
+import instaDM from '../assets/iphone_images/insta_dm.png';
+import instaHeart from '../assets/iphone_images/insta_heart.png';
+import instaDots from '../assets/iphone_images/insta_dots.png';
+import iphoneIcons from '../assets/iphone_images/iphone_icons.png';
 
 const About = () => {
 
@@ -31,14 +37,31 @@ const About = () => {
       {/* Instagram Area */}
       <div className='w-1/2 flex items-center justify-center'>
           {/* iPhone Container */}
-          <div className='flex flex-col items-center bg-white h-128 w-60 rounded-3xl outline outline-yellow-300 outline-4 shadow-lg'>
-              {/* Dynamic Island */}
-              <div className='w-full mt-2 mb-2 flex flex-row justify-between text-black'>
-                  <p className='pl-4'> {date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} </p>
-                  <div className='bg-black h-5 w-20 rounded-3xl' />
-                  <p className='pr-4'> {date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' })} </p>
+          <div className='flex flex-col items-center bg-white h-128 w-60 rounded-3xl outline outline-black outline-8 shadow-lg'>
+              {/* Time + Dynamic Island + Date */}
+              <div className='w-full mt-2 mb-2 flex flex-row justify-between text-black px-3'>
+                  <p className=''> {date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} </p>
+                  <div className='bg-black h-5 w-16 rounded-3xl' />
+                  <img src={iphoneIcons} alt='iPhone icons' className='h-6 w-16' />
               </div>
               
+              {/* Instagram Logo + Icons */}
+              <div className='px-2 flex flex-row justify-between'>
+                  <img src = {insta} alt = 'instagram logo' className='h-6/7 w-1/3'/>
+                  <div className='flex flex-row space-x-2'>
+                      <img src={instaHeart} alt='Instagram heart icon' className='h-4 w-4' />
+                      <img src={instaDM} alt='Instagram dm icon' className='h-4 w-4' />
+                  </div>
+              </div>
+
+              {/* Instagram Username + 3 dots */}
+              <div className='w-full mt-2 mb-2 flex flex-row justify-between items-center text-black px-2'>
+                  <div className='flex flex-row space-x-1 items-center'>
+                      <img src={me} alt='me as profile pic' className='h-5 w-5 rounded-full outline outline-2 outline-black' />
+                      <p className='text-xs'> joonho_oh </p>
+                  </div>
+                  <img src={instaDots} alt='instagram dots' className='h-3 w-3 pt-1' />
+              </div>
 
               {/* Image container */}
               <div className='w-full flex justify-center'>
