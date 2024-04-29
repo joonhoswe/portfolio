@@ -5,7 +5,7 @@ import linkedin from '../assets/linkedin.jpg'
 import resume from '../assets/Jonathan_Oh_Resume.pdf'
 import download from '../assets/download.png';
 
-const Navbar = ({ HomeRef, AboutRef }) => {
+const Navbar = ({ HomeRef, AboutRef, ContactRef }) => {
 
   const navbarRef = useRef(null); // Used to measure the navbar height dynamically
 
@@ -40,7 +40,7 @@ const Navbar = ({ HomeRef, AboutRef }) => {
           <button onClick = {() => scrollToSection(AboutRef)} className='hover:text-sky-500'> about </button>
           <button onClick = {() => scrollToSection(AboutRef)} className='hover:text-sky-500'> work </button>
           <button onClick = {() => scrollToSection(AboutRef)} className='hover:text-sky-500'> projects </button>
-          <button onClick = {() => scrollToSection(AboutRef)} className='hover:text-sky-500'> contact </button>
+          <button onClick = {() => scrollToSection(ContactRef)} className='hover:text-sky-500'> contact </button>
       </div>
       <div className='mr-4 flex items-center justify-center space-x-3'>
         <a 

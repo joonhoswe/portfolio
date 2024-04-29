@@ -30,7 +30,7 @@ const About = forwardRef((props, ref) => {
   return (
     <div ref = {ref} className='bg-gray-900 text-white w-full h-screen flex items-center justify-center'>
       <div className="flex flex-col space-y-6 font-bold text-3xl w-1/2 ml-24">
-          <div>Mission</div>
+          <div>Story</div>
           <div>Garden-Kart</div>
           <div>Cooking</div>
           <div>Pole Vault</div>
@@ -40,11 +40,11 @@ const About = forwardRef((props, ref) => {
       {/* Instagram Area */}
       <div className='w-1/2 flex items-center justify-center'>
           {/* iPhone Container */}
-          <div className='flex flex-col items-center bg-white h-128 w-60 rounded-3xl outline outline-gray-800 outline-8 shadow-2xl shadow-cyan-400'>
+          <div className='flex flex-col items-center bg-white h-128 w-60 rounded-3xl outline outline-gray-400 outline-8 shadow-2xl shadow-cyan-400'>
               {/* Time + Dynamic Island + Date */}
-              <div className='w-full mt-2 mb-2 flex flex-row justify-between text-black px-1'>
-                  <p className='pl-1'> {date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} </p>
-                  <div className='bg-black h-5 w-16 rounded-3xl' />
+              <div className='w-full mt-2 mb-2 flex flex-row justify-between items-center text-black px-1'>
+                  <p className='pl-2 text-xs font-bold'> {date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} </p>
+                  <div className='bg-black h-5 w-16 rounded-3xl mb-1' />
                   <img src={iphoneIcons} alt='iPhone icons' className='h-6 w-16' />
               </div>
               
