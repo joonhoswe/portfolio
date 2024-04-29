@@ -28,7 +28,7 @@ const About = forwardRef((props, ref) => {
   });
 
   return (
-    <div ref = {ref} className='bg-gray-700 text-white w-full h-screen flex items-center justify-center'>
+    <div ref = {ref} className='bg-gray-900 text-white w-full h-screen flex items-center justify-center'>
       <div className="flex flex-col space-y-6 font-bold text-3xl w-1/2 ml-24">
           <div>Mission</div>
           <div>Garden-Kart</div>
@@ -40,10 +40,10 @@ const About = forwardRef((props, ref) => {
       {/* Instagram Area */}
       <div className='w-1/2 flex items-center justify-center'>
           {/* iPhone Container */}
-          <div className='flex flex-col items-center bg-white h-128 w-60 rounded-3xl outline outline-black outline-8 shadow-lg'>
+          <div className='flex flex-col items-center bg-white h-128 w-60 rounded-3xl outline outline-gray-800 outline-8 shadow-2xl shadow-cyan-400'>
               {/* Time + Dynamic Island + Date */}
-              <div className='w-full mt-2 mb-2 flex flex-row justify-between text-black px-3'>
-                  <p className=''> {date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} </p>
+              <div className='w-full mt-2 mb-2 flex flex-row justify-between text-black px-1'>
+                  <p className='pl-1'> {date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} </p>
                   <div className='bg-black h-5 w-16 rounded-3xl' />
                   <img src={iphoneIcons} alt='iPhone icons' className='h-6 w-16' />
               </div>
@@ -72,8 +72,8 @@ const About = forwardRef((props, ref) => {
               </div>
 
               {/* Post Icons */}
-              <div className='px-1 flex flex-row justify-between items-center w-full mt-2'>
-                  <div className='flex flex-row space-x-1 items-center'>
+              <div className='px-2 flex flex-row justify-between items-center w-full mt-2'>
+                  <div className='flex flex-row space-x-2 items-center'>
                       <img src={instaHeart} alt='Instagram heart icon' className='h-4 w-4' />
                       <img src={instaComment} alt='Instagram comment icon' className='h-4 w-4' />
                       <img src={instaDM} alt='Instagram dm icon' className='h-4 w-4' />
@@ -81,13 +81,19 @@ const About = forwardRef((props, ref) => {
                   <img src = {instaSave} alt = 'instagram save icon' className='h-4 w-4'/>
               </div>
 
+              <div className='px-2 justify-start flex flex-col w-full mt-2 text-black text-xs'> 
+                  <p><span className='font-bold'>joonho_oh</span> cool stuff </p>
+                  <p className='text-gray-700'>View all 101 comments</p>
+                  <p className='text-gray-700'>June 8, 2014</p>
+              </div>
+
               {/* Bottom Icons */}
               <div className='mt-auto w-full p-2 flex justify-around rounded-b-2xl'>
-                  <img src={instaHome} alt='Instagram home icon' className='h-6 w-6' />
-                  <img src={instaSearch} alt='Instagram search icon' className='h-6 w-6' />
-                  <img src={instaPlus} alt='Instagram plus icon' className='h-6 w-6' />
-                  <img src={instaReels} alt='Instagram reels icon' className='h-6 w-6' />
-                  <img src={instaProfile} alt='Instagram profile icon' className='h-6 w-6' />
+                  <img src={instaHome} alt='Instagram home icon' className='h-5 w-5' />
+                  <img src={instaSearch} alt='Instagram search icon' className='h-5 w-5' />
+                  <img src={instaPlus} alt='Instagram plus icon' className='h-5 w-5' />
+                  <img src={instaReels} alt='Instagram reels icon' className='h-5 w-5' />
+                  <img src={instaProfile} alt='Instagram profile icon' className='h-5 w-5' />
               </div>
 
               {/* Home Swipe Bar */}

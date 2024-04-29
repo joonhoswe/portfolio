@@ -18,9 +18,9 @@ const Home = forwardRef((props, ref) => {
           <h2 className="text-5xl font-bold">
           <ReactTyped
               strings = {[
+                  "A Developer",
+                  "An Avid Chef",
                   "A Student",
-                  "An Inventor",
-                  "An Avid Chef ",
               ]}
               typeSpeed = {50}
               backSpeed = {50}
@@ -33,7 +33,7 @@ const Home = forwardRef((props, ref) => {
         <div className="z-10 flex flex-col space-y-5 mr-24">
           <div>
             <h1 className="text-l font-bold mb-3">ABOUT ME</h1>
-            <p className="text-s text-gray-300"> I'm a student at Emory University studying<br></br> CS, Data Science, and Pre-Law. </p>
+            <p className="text-s text-gray-300"> I'm a student at <span className="text-white">Emory University</span> studying<br></br> <span className="text-white">CS, Data Science,</span> and <span className='text-white'>Pre-Law.</span></p>
             <button className="text-white font-bold underline mt-4"> Learn More </button>
           </div>
           {/* <div className = 'pt-8 h-48 w-80 rounded-lg bg-transparent outline outline-2 outline-white'>
@@ -47,7 +47,7 @@ const Home = forwardRef((props, ref) => {
 
           <div>
           <h1 className="text-l font-bold mb-3">PROJECTS</h1>
-            <p className="text-m text-gray-300"> I love finding everyday inconveniences to <br></br> design and build solutions for. </p>
+            <p className="text-m text-gray-300"> Check out my recent projects! </p>
             <button className="text-white font-bold underline mt-4"> See Portfolio </button>
           </div>
           
