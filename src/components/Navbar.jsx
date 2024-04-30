@@ -36,11 +36,31 @@ const Navbar = ({ HomeRef, AboutRef, ContactRef }) => {
     <div ref = {navbarRef} className="flex items-center justify-between w-full h-14 sticky top-0 z-50 text-white bg-gray-800 bg-opacity-60 backdrop-filter backdrop-blur-lg">
       <img className = 'ml-4 h-1/3 w-1/8' src={name} alt = 'jonathan'/>
       <div className="flex items-center justify-center space-x-6 ml-24">
-          <button onClick = {() => scrollToSection(HomeRef)} className='hover:text-sky-500'> home </button>
+          {/* <button onClick = {() => scrollToSection(HomeRef)} className='hover:text-sky-500'> home </button>
           <button onClick = {() => scrollToSection(AboutRef)} className='hover:text-sky-500'> about </button>
           <button onClick = {() => scrollToSection(AboutRef)} className='hover:text-sky-500'> work </button>
           <button onClick = {() => scrollToSection(AboutRef)} className='hover:text-sky-500'> projects </button>
-          <button onClick = {() => scrollToSection(ContactRef)} className='hover:text-sky-500'> contact </button>
+          <button onClick = {() => scrollToSection(ContactRef)} className='hover:text-sky-500'> contact </button> */}
+          <button onClick={() => scrollToSection(HomeRef)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
+            home
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
+          </button>
+          <button onClick={() => scrollToSection(AboutRef)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
+            about
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
+          </button>
+          <button onClick={() => scrollToSection(AboutRef)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
+            work
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
+          </button>
+          <button onClick={() => scrollToSection(AboutRef)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
+            projects
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
+          </button>
+          <button onClick={() => scrollToSection(ContactRef)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
+            contact
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
+          </button>
       </div>
       <div className='mr-4 flex items-center justify-center space-x-3'>
         <a 

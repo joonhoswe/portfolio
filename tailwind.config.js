@@ -17,6 +17,9 @@ export default {
       },
       height: {
         '128': '32rem',
+      },
+      outlineWidth: {
+        '6': '6px',
       }
     },
   },

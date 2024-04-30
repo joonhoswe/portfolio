@@ -8,9 +8,9 @@ const Home = forwardRef((props, ref) => {
     <div ref = {ref} className="text-white flex justify-center items-center overflow-hidden relative w-full max-h-screen" 
       style={{ 
       backgroundImage: `url(${background})`,
-      backgroundSize: 'cover', // ensures that the background covers the entire div
-      backgroundRepeat: 'no-repeat', // makes sure the image doesn't repeat
-      backgroundPosition: 'center' // centers the background image
+      backgroundSize: 'cover', 
+      backgroundRepeat: 'no-repeat', 
+      backgroundPosition: 'center' 
     }}>
       <div className="absolute inset-0 flex justify-between items-center">
       <div className="z-10 ml-36 space-y-4">
@@ -18,9 +18,9 @@ const Home = forwardRef((props, ref) => {
           <h2 className="text-5xl font-bold">
           <ReactTyped
               strings = {[
+                  "A Student",
                   "A Developer",
                   "An Avid Chef",
-                  "A Student",
               ]}
               typeSpeed = {50}
               backSpeed = {50}

@@ -94,7 +94,7 @@ const Contact = forwardRef((props, ref) => {
 
                     {/* submit button */}
                     <div className="flex justify-center mt-4">
-                        <input type="submit" value="Send" className="hover:scale-110 w-32 bg-green-350 text-black py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-green-450 outline outline-green-450 outline-3" />
+                        <input type="submit" value="Send" className="hover:bg-white hover:text-gray-800 hover:cursor-pointer w-32 text-white py-2 px-4 rounded-lg transition duration-300 ease-in-out outline outline-3 " />
                     </div>
                 </form>
             </div>
