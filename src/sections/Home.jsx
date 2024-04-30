@@ -5,7 +5,7 @@ import background from '../assets/background.jpg';
 
 const Home = forwardRef((props, ref) => {
   return (
-    <div ref = {ref} className="text-white flex justify-center items-center overflow-hidden relative w-full max-h-screen" 
+    <div ref = {ref} className="text-white flex justify-center items-center overflow-hidden relative w-full min-h-screen" 
       style={{ 
       backgroundImage: `url(${background})`,
       backgroundSize: 'cover', 

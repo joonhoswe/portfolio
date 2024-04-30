@@ -1,6 +1,9 @@
 import React from 'react';
 import { useState, useRef, forwardRef } from 'react';
 import emailjs from '@emailjs/browser';
+import phone from '../assets/contact_images/phone.png';
+import mail from '../assets/contact_images/mail.png';
+import address from '../assets/contact_images/address.png';
 
 const Contact = forwardRef((props, ref) => {
     const [userEmail, setUserEmail] = useState("");
@@ -37,67 +40,91 @@ const Contact = forwardRef((props, ref) => {
     };
 
     return (
-        <div ref = {ref} className="bg-gray-900 text-white w-full h-screen flex flex-col items-center justify-center">
-            <div className="flex flex-col justify-center items-center pb-10">
-                <h2 className="pb-6"> Contact Us </h2>
-            </div>
+        <div ref = {ref} className="bg-gray-900 text-white w-full h-screen flex items-center justify-center">
+            {/* Big rectangle to contain both connect with me + contact form */}
+            <div className="bg-gray-800 flex flex-row items-center w-3/4 h-3/4 px-5 shadow-2xl shadow-cyan-400 rounded-2xl ">
 
-            <div className="bg-gray-800 flex flex-col items-center pt-4 pb-10 w-full sm:w-fit px-5 shadow-lg h-fit">
-                <form ref={form} onSubmit={sendEmail}>
-
-                    {/* name input field */}
-                    <p className=""> Name </p>
-                    <label>
-                        <input name="user_name" type="name" value={userName} onChange={(e) => setUserName(e.target.value)} className="bg-gray-200 w-full rounded-lg pl-1" />
-                        <h4 className="pt-1 text-xs">
-                            {
-                                userName === "" && formSubmitted ?
-                                    <p className="text-red-500"> Please enter a name. </p>
-                                    :
-                                    <p className="text-transparent"> text placeholder </p>
-                            }
-                        </h4>
-                    </label>
-
-                    {/* email input field */}
-                    <p className=""> Email Address </p>
-                    <label>
-                        <input name="user_email" type="email" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} className="bg-gray-200 w-full rounded-lg pl-1" />
-                        <h4 className="pt-1 text-xs">
-                            {
-                                userEmail === "" && formSubmitted ?
-                                    <p className="text-red-500"> Please enter an email. </p>
-                                    :
-                                    <p className="text-transparent"> text placeholder </p>
-                            }
-                        </h4>
-                    </label>
-
-                    {/* message input field */}
-                    <p className=""> What can we do to help? </p>
-                    <label>
-                        <textarea
-                            name="message"
-                            value={userMessage}
-                            onChange={(e) => setUserMessage(e.target.value)}
-                            className="bg-gray-200 h-48 w-full sm:w-96 rounded-lg pl-1"
-                        />
-                        <h4 className="pt-1 text-xs">
-                            {
-                                userMessage === "" && formSubmitted ?
-                                    <p className="text-red-500"> Please enter a message. </p>
-                                    :
-                                    <p className="text-transparent"> text placeholder </p>
-                            }
-                        </h4>
-                    </label>
-
-                    {/* submit button */}
-                    <div className="flex justify-center mt-4">
-                        <input type="submit" value="Send" className="hover:bg-white hover:text-gray-800 hover:cursor-pointer w-32 text-white py-2 px-4 rounded-lg transition duration-300 ease-in-out outline outline-3 " />
+                {/* left portion containing "connect with me" */}
+                <div className="flex flex-col items-start mt-20 pl-8 w-2/5 h-full">
+                    {/* <p className='font-bold text-4xl'> connect with <span className='text-cyan-400'> me</span></p> */}
+                    <p className='font-bold text-4xl'> Contact Me </p>
+                    <div className='flex flex-col space-y-4 text-s mt-12'>
+                        <div className='flex flex-row items-center space-x-2'>
+                            <img src = {phone} alt = 'phone icon' className='h-4 w-4 '/>
+                            <p> +1 (614) 949-4702 </p>
+                        </div>
+                        <div className='flex flex-row items-center space-x-2'>
+                            <img src = {mail} alt = 'mail icon' className='h-4 w-4 '/>
+                            <p>joonhoswe@gmail.com </p>
+                        </div>
+                        <div className='flex flex-row items-center space-x-2'>
+                            <img src = {address} alt = 'address icon' className='h-4 w-4 '/>
+                            <p> Atlanta, GA, United States</p>
+                        </div>
                     </div>
-                </form>
+                </div>
+
+                {/* right portion containing "get in touch" */}
+                <div className="flex flex-col items-center mt-20 w-3/5 px-5 h-full">                  
+                    <form ref={form} onSubmit={sendEmail}>
+
+                        {/* <p className='font-bold text-4xl mb-12'>get in <span className='text-cyan-400'>touch</span></p> */}
+                        <p className='font-bold text-4xl mb-12'> Let's Connect! </p>
+                        {/* name input field */}
+                        <p className="mb-1"> Name </p>
+                        <label className=''>
+                            <input name="user_name" type="name" value={userName} onChange={(e) => setUserName(e.target.value)} className="bg-gray-900 w-full rounded-lg pl-1" />
+                            <h4 className="pt-1 text-xs">
+                                {
+                                    userName === "" && formSubmitted ?
+                                        <p className="text-red-500"> Please enter a name. </p>
+                                        :
+                                        <p className="text-transparent"> text placeholder </p>
+                                }
+                            </h4>
+                        </label>
+
+                        {/* email input field */}
+                        <p className="mb-1"> Email Address </p>
+                        <label>
+                            <input name="user_email" type="email" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} className="bg-gray-900 w-full rounded-lg pl-1" />
+                            <h4 className="pt-1 text-xs">
+                                {
+                                    userEmail === "" && formSubmitted ?
+                                        <p className="text-red-500"> Please enter an email. </p>
+                                        :
+                                        <p className="text-transparent"> text placeholder </p>
+                                }
+                            </h4>
+                        </label>
+
+                        {/* message input field */}
+                        <p className="mb-1"> Message </p>
+                        <label>
+                            <textarea
+                                name="message"
+                                value={userMessage}
+                                onChange={(e) => setUserMessage(e.target.value)}
+                                className="bg-gray-900 h-48 w-full sm:w-96 rounded-lg pl-1"
+                            />
+                            <h4 className="pt-1 text-xs">
+                                {
+                                    userMessage === "" && formSubmitted ?
+                                        <p className="text-red-500"> Please enter a message. </p>
+                                        :
+                                        <p className="text-transparent"> text placeholder </p>
+                                }
+                            </h4>
+                        </label>
+
+                        {/* submit button */}
+                        <div className="flex justify-center mt-4">
+                            <input type="submit" value="Send" className="hover:bg-white hover:text-gray-800 hover:cursor-pointer w-32 text-white py-2 px-4 rounded-lg transition duration-300 ease-in-out outline outline-3 " />
+                        </div>
+                    </form>
+                </div>
             </div>
+            
         </div>
     );
 });
