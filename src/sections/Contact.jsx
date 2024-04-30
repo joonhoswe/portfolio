@@ -42,12 +42,12 @@ const Contact = forwardRef((props, ref) => {
     return (
         <div ref = {ref} className="bg-gray-900 text-white w-full h-screen flex items-center justify-center">
             {/* Big rectangle to contain both connect with me + contact form */}
-            <div className="bg-gray-800 flex flex-row items-center w-3/4 h-3/4 px-5 shadow-2xl shadow-cyan-400 rounded-2xl ">
+            <div className="bg-gray-800 flex flex-row items-center w-2/3 h-2/3 shadow-2xl shadow-cyan-400 rounded-2xl ">
 
                 {/* left portion containing "connect with me" */}
-                <div className="flex flex-col items-start mt-20 pl-8 w-2/5 h-full">
+                <div className="flex flex-col items-start pl-8 pt-8 w-2/5 h-full shadow-r-lg shadow-black rounded-l-2xl">
                     {/* <p className='font-bold text-4xl'> connect with <span className='text-cyan-400'> me</span></p> */}
-                    <p className='font-bold text-4xl'> Contact Me </p>
+                    <p className='font-bold text-3xl'> Contact Me </p>
                     <div className='flex flex-col space-y-4 text-s mt-12'>
                         <div className='flex flex-row items-center space-x-2'>
                             <img src = {phone} alt = 'phone icon' className='h-4 w-4 '/>
@@ -65,11 +65,11 @@ const Contact = forwardRef((props, ref) => {
                 </div>
 
                 {/* right portion containing "get in touch" */}
-                <div className="flex flex-col items-center mt-20 w-3/5 px-5 h-full">                  
+                <div className="flex flex-col items-center pt-8 w-3/5 px-5 h-full">                  
                     <form ref={form} onSubmit={sendEmail}>
 
                         {/* <p className='font-bold text-4xl mb-12'>get in <span className='text-cyan-400'>touch</span></p> */}
-                        <p className='font-bold text-4xl mb-12'> Let's Connect! </p>
+                        <p className='font-bold text-3xl mb-12'> Let's Connect! </p>
                         {/* name input field */}
                         <p className="mb-1"> Name </p>
                         <label className=''>
@@ -105,7 +105,7 @@ const Contact = forwardRef((props, ref) => {
                                 name="message"
                                 value={userMessage}
                                 onChange={(e) => setUserMessage(e.target.value)}
-                                className="bg-gray-900 h-48 w-full sm:w-96 rounded-lg pl-1"
+                                className="bg-gray-900 h-32 w-full sm:w-96 rounded-lg pl-1"
                             />
                             <h4 className="pt-1 text-xs">
                                 {

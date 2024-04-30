@@ -20,6 +20,9 @@ export default {
       },
       outlineWidth: {
         '6': '6px',
+      },
+      boxShadow: {
+        'r-lg': '5px 0 50px -12px rgba(0, 0, 0, 0.25)',
       }
     },
   },
