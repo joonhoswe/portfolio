@@ -40,7 +40,7 @@ const About = forwardRef((props, ref) => {
       {/* Instagram Area */}
       <div className='w-1/2 flex items-center justify-center'>
           {/* iPhone Container */}
-          <div className='flex flex-col items-center bg-white h-128 w-60 rounded-3xl outline outline-gray-400 outline-6 shadow-2xl shadow-cyan-400'>
+          <div className='flex flex-col items-center bg-white h-128 w-60 rounded-3xl outline outline-gray-400 outline-6 shadow-all-lg shadow-cyan-400'>
               {/* Time + Dynamic Island + Date */}
               <div className='w-full mt-2 mb-2 flex flex-row justify-between items-center text-black px-1'>
                   <p className='pl-2 text-xs font-bold'> {date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} </p>

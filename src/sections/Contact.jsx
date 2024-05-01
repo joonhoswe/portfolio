@@ -1,9 +1,10 @@
 import React from 'react';
-import { useState, useRef, forwardRef } from 'react';
+import { useState, useEffect, useRef, forwardRef } from 'react';
 import emailjs from '@emailjs/browser';
 import phone from '../assets/contact_images/phone.png';
 import mail from '../assets/contact_images/mail.png';
 import address from '../assets/contact_images/address.png';
+import clock from '../assets/contact_images/clock.png';
 
 const Contact = forwardRef((props, ref) => {
     const [userEmail, setUserEmail] = useState("");
@@ -39,10 +40,20 @@ const Contact = forwardRef((props, ref) => {
             );
     };
 
+    var [date,setDate] = useState(new Date());
+    
+    useEffect(() => {
+        var timer = setInterval(()=>setDate(new Date()), 1000 )
+        return function cleanup() {
+            clearInterval(timer)
+        }
+    
+    });
+
     return (
         <div ref = {ref} className="bg-gray-900 text-white w-full h-screen flex items-center justify-center">
             {/* Big rectangle to contain both connect with me + contact form */}
-            <div className="bg-gray-800 flex flex-row items-center w-2/3 h-2/3 shadow-2xl shadow-cyan-400 rounded-2xl ">
+            <div className="bg-gray-800 flex flex-row items-center w-2/3 h-2/3 shadow-all-lg shadow-cyan-400 rounded-2xl ">
 
                 {/* left portion containing "connect with me" */}
                 <div className="flex flex-col items-start pl-8 pt-8 w-2/5 h-full shadow-r-lg shadow-black rounded-l-2xl">
@@ -60,6 +71,11 @@ const Contact = forwardRef((props, ref) => {
                         <div className='flex flex-row items-center space-x-2'>
                             <img src = {address} alt = 'address icon' className='h-4 w-4 '/>
                             <p> Atlanta, GA, United States</p>
+                        </div>
+                        <div className='flex flex-row items-center space-x-2'>
+                            <img src = {clock} alt = 'clock icon' className='h-4 w-4 '/>
+                            <p> {date.toLocaleDateString('en-US', { timeZone: 'America/New_York'})}</p>
+                            <p> {date.toLocaleTimeString('en-US', { timeZone: 'America/New_York'})}</p>
                         </div>
                     </div>
                 </div>

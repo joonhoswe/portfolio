@@ -23,6 +23,7 @@ export default {
       },
       boxShadow: {
         'r-lg': '5px 0 50px -12px rgba(0, 0, 0, 0.25)',
+        'all-lg': '0 0 50px -4px rgb(0 0 0 / 0.25)',
       }
     },
   },
