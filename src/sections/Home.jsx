@@ -4,6 +4,23 @@ import me from '../assets/me.png';
 import background from '../assets/background.jpg';
 
 const Home = forwardRef((props, ref) => {
+
+  const { AboutRef } = props;
+
+  const scrollToSection = (elementRef) => {
+
+    // Get the top position relative to the viewport
+    const sectionTop = elementRef.current.getBoundingClientRect().top;
+
+    // Calculate scroll position
+    let scrollPosition = window.scrollY + sectionTop;
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: 'smooth'
+    });
+  }
+
   return (
     <div ref = {ref} className="text-white flex justify-center items-center overflow-hidden relative w-full min-h-screen" 
       style={{ 
@@ -34,7 +51,7 @@ const Home = forwardRef((props, ref) => {
           <div>
             <h1 className="text-l font-bold mb-3">ABOUT ME</h1>
             <p className="text-s text-gray-300"> I'm a student at <span className="text-white">Emory University</span> studying<br></br> <span className="text-white">CS, Data Science,</span> and <span className='text-white'>Pre-Law.</span></p>
-            <button className="text-white font-bold underline mt-4"> Learn More </button>
+            <button onClick = {() => scrollToSection(AboutRef)}className="text-white font-bold underline mt-4"> Learn More </button>
           </div>
           {/* <div className = 'pt-8 h-48 w-80 rounded-lg bg-transparent outline outline-2 outline-white'>
             <h1 className="text-3xl font-bold">About</h1>

@@ -29,7 +29,7 @@ const About = forwardRef((props, ref) => {
 
   return (
     <div ref = {ref} className='bg-gray-900 text-white w-full h-screen flex items-center justify-center'>
-      <div className="flex flex-col space-y-6 font-bold text-3xl w-1/2 ml-24">
+      <div className="flex flex-col space-y-6 font-bold text-3xl w-1/2 pl-12">
           <div>Story</div>
           <div>Garden-Kart</div>
           <div>Cooking</div>
@@ -37,7 +37,14 @@ const About = forwardRef((props, ref) => {
           <div>Viola</div>
       </div>
 
-      {/* Instagram Area */}
+      {/* Blurb Area */}
+      <div className='items-center justify-center'>
+            <div className='w-96 h-72 bg-gray-800 rounded-2xl outline outline-2 outline-white'>
+
+            </div>
+      </div>
+
+      {/* iPhone Area */}
       <div className='w-1/2 flex items-center justify-center'>
           {/* iPhone Container */}
           <div className='flex flex-col items-center bg-white h-128 w-60 rounded-3xl outline outline-gray-400 outline-6 shadow-all-lg shadow-cyan-400'>

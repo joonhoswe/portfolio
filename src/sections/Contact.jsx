@@ -55,7 +55,7 @@ const Contact = forwardRef((props, ref) => {
     return (
         <div ref = {ref} className="bg-gray-900 text-white w-full h-screen flex items-center justify-center">
             {/* Big rectangle to contain both connect with me + contact form */}
-            <div className="bg-gray-800 flex flex-row items-center w-3/5 h-3/5 shadow-all-lg shadow-cyan-400 rounded-2xl ">
+            <div className="bg-gray-800 flex flex-row items-center w-3/5 h-3/5 outline outline-2 outline-white shadow-all-lg shadow-cyan-400 rounded-2xl ">
 
                 {/* left portion containing "connect with me" */}
                 <div className="flex flex-col items-start pl-8 pt-10 w-2/5 h-full shadow-r-lg shadow-black rounded-l-2xl">
@@ -92,13 +92,13 @@ const Contact = forwardRef((props, ref) => {
                         {/* name input field */}
                         <p className="mb-1"> Name </p>
                         <label className='block mb-4'>
-                            <input name="user_name" type="name" value={userName} onChange={(e) => setUserName(e.target.value)} className="bg-gray-900  w-full rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none" />
+                            <input name="user_name" type="name" value={userName} onChange={(e) => setUserName(e.target.value)} className="bg-gray-900  w-full rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1" />
                         </label>
 
                         {/* email input field */}
                         <p className="mb-1"> Email Address </p>
                         <label className='block mb-4'>
-                            <input name="user_email" type="email" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} className="bg-gray-900 w-full rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none" />
+                            <input name="user_email" type="email" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} className="bg-gray-900 w-full rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1" />
                         </label>
 
                         {/* message input field */}
@@ -108,7 +108,7 @@ const Contact = forwardRef((props, ref) => {
                                 name="message"
                                 value={userMessage}
                                 onChange={(e) => setUserMessage(e.target.value)}
-                                className="bg-gray-900 h-28 w-full lg:w-80 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none"
+                                className="bg-gray-900 h-28 w-full lg:w-80 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1 resize-none"
                             />
                         </label>
 
