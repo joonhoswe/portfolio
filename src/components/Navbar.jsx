@@ -9,6 +9,14 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ContactRef }) => {
 
   const navbarRef = useRef(null); // Used to measure the navbar height dynamically
 
+  const navLinks = [
+    { title: "home", ref: HomeRef },
+    { title: "about", ref: AboutRef },
+    { title: "work", ref: WorkRef },
+    { title: "projects", ref: AboutRef }, 
+    { title: "contact", ref: ContactRef }
+  ];
+
   const scrollToSection = (elementRef) => {
     if (!elementRef.current || !navbarRef.current) return;
 
@@ -35,36 +43,15 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ContactRef }) => {
   return (
     <div ref = {navbarRef} className="flex items-center justify-between w-full h-14 sticky top-0 z-50 text-white bg-gray-800 bg-opacity-60 backdrop-filter backdrop-blur-lg">
       <img className = 'ml-4 h-1/3 w-1/8' src={name} alt = 'jonathan'/>
+
+      {/* desktop navbar */}
       <div className="flex items-center justify-center space-x-6 ml-24">
-          {/* Home */}
-          <button onClick={() => scrollToSection(HomeRef)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
-            home
+        {navLinks.map((link) => (
+          <button key={link.title} onClick={() => scrollToSection(link.ref)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
+            {link.title}
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
           </button>
-
-          {/* About */}
-          <button onClick={() => scrollToSection(AboutRef)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
-            about
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
-          </button>
-
-          {/* Work */}
-          <button onClick={() => scrollToSection(WorkRef)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
-            work
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
-          </button>
-
-          {/* Projects */}
-          <button onClick={() => scrollToSection(AboutRef)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
-            projects
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
-          </button>
-
-          {/* Contact */}
-          <button onClick={() => scrollToSection(ContactRef)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
-            contact
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
-          </button>
+        ))}
       </div>
       <div className='mr-4 flex items-center justify-center space-x-3'>
         <a 
