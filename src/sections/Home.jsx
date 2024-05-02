@@ -47,19 +47,19 @@ const Home = forwardRef((props, ref) => {
           
         </div>
 
-        <div className="z-10 pb-20 flex flex-col space-y-5 text-xs -mr-24 sm:-mr-8 md:mr-2 lg:mr-24 sm:text-xs md:text-sm lg:text-sm">
-          <div className='w-1/2 sm:w-3/4 md:w-5/6 lg:w-full'>
-            <h1 className="font-bold mb-3">ABOUT ME</h1>
+        <div className="z-10 pt-12 flex flex-col space-y-2 text-xs -mr-24 sm:-mr-8 md:mr-2 lg:mr-24 sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-20">
+          <div className='w-1/2 space-y-2 sm:w-3/4 md:w-5/6 lg:w-full'>
+            <h1 className="font-bold">ABOUT ME</h1>
             <p className="text-gray-300"> I'm a student at <span className="text-white">Emory University</span> <br></br> studying <span className="text-white">CS, Data Science,</span> and <span className='text-white'>Pre-Law.</span></p>
-            <button onClick = {() => scrollToSection(AboutRef)}className="text-white font-bold underline mt-4"> Learn More </button>
+            <button onClick = {() => scrollToSection(AboutRef)}className="text-white font-bold underline"> Learn More </button>
           </div>
 
           <hr className="h-0.5 bg-gray-200 border-0 w-1/2 sm:w-3/4 md:w-5/6 lg:w-full"></hr>
 
-          <div className='w-1/2 sm:w-3/4 md:w-5/6 lg:w-full'>
-          <h1 className="font-bold mb-3">PROJECTS</h1>
+          <div className='w-1/2 space-y-2 sm:w-3/4 md:w-5/6 lg:w-full'>
+          <h1 className="font-bold">PROJECTS</h1>
             <p className="text-gray-300"> Check out my recent projects! </p>
-            <button className="text-white font-bold underline mt-4"> See Portfolio </button>
+            <button className="text-white font-bold underline"> See Portfolio </button>
           </div>
           
         </div>
