@@ -108,7 +108,7 @@ const Contact = forwardRef((props, ref) => {
                                 name="message"
                                 value={userMessage}
                                 onChange={(e) => setUserMessage(e.target.value)}
-                                className="bg-gray-900 h-28 w-full lg:w-80 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1 resize-none"
+                                className="bg-gray-900 h-20 w-full lg:w-80 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1 resize-none"
                             />
                         </label>
 
