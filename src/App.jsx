@@ -17,8 +17,8 @@ const App = () => {
 
   return (
    <div className='bg-gray-900'>
-    <Navbar HomeRef = {HomeRef} AboutRef = {AboutRef} WorkRef = {WorkRef} ContactRef = {ContactRef}/>
-    <Home ref = {HomeRef} AboutRef = {AboutRef}/>
+    <Navbar HomeRef = {HomeRef} AboutRef = {AboutRef} WorkRef = {WorkRef} ProjectsRef = {ProjectsRef} ContactRef = {ContactRef}/>
+    <Home ref = {HomeRef} AboutRef = {AboutRef} ProjectsRef = {ProjectsRef} />
     <About ref = {AboutRef}/>
     <Work ref = {WorkRef}/>
     {/* <Projects/> */}

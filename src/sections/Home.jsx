@@ -2,10 +2,11 @@ import React, { forwardRef } from 'react';
 import {ReactTyped} from 'react-typed';
 import me from '../assets/me.png';
 import background from '../assets/background.jpg';
+import { motion } from "framer-motion";
 
 const Home = forwardRef((props, ref) => {
 
-  const { AboutRef } = props;
+  const { AboutRef, ProjectsRef } = props;
 
   const scrollToSection = (elementRef) => {
 
@@ -30,7 +31,7 @@ const Home = forwardRef((props, ref) => {
       backgroundPosition: 'center' 
     }}>
       <div className="absolute inset-0 flex justify-between items-center">
-      <div className="z-10 md: ml-24 lg:ml-32 space-y-4">
+      <div className="z-5 md: ml-24 lg:ml-32 space-y-4">
           <h2 className="md:text-3xl lg:text-5xl font-bold">Hi, I'm Jonathan,</h2>
           <h2 className="md:text-3xl lg:text-5xl font-bold">
           <ReactTyped
@@ -47,7 +48,7 @@ const Home = forwardRef((props, ref) => {
           
         </div>
 
-        <div className="z-10 pt-12 flex flex-col space-y-2 text-xs -mr-24 sm:-mr-8 md:mr-2 lg:mr-24 sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-20">
+        <div className="z-5 pt-12 flex flex-col space-y-2 text-xs -mr-24 sm:-mr-8 md:mr-2 lg:mr-24 sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-20">
           <div className='w-1/2 space-y-2 sm:w-3/4 md:w-5/6 lg:w-full'>
             <h1 className="font-bold">ABOUT ME</h1>
             <p className="text-gray-300"> I'm a student at <span className="text-white">Emory University</span> <br></br> studying <span className="text-white">CS, Data Science,</span> and <span className='text-white'>Pre-Law.</span></p>
@@ -57,9 +58,9 @@ const Home = forwardRef((props, ref) => {
           <hr className="h-0.5 bg-gray-200 border-0 w-1/2 sm:w-3/4 md:w-5/6 lg:w-full"></hr>
 
           <div className='w-1/2 space-y-2 sm:w-3/4 md:w-5/6 lg:w-full'>
-          <h1 className="font-bold">PROJECTS</h1>
+            <h1 className="font-bold">PROJECTS</h1>
             <p className="text-gray-300"> Check out my recent projects! </p>
-            <button className="text-white font-bold underline"> See Portfolio </button>
+            <button onClick = {() => scrollToSection(ProjectsRef)}className="text-white font-bold underline"> See Portfolio </button>
           </div>
           
         </div>
