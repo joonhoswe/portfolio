@@ -44,7 +44,7 @@ const App = () => {
 
             <About ref = {AboutRef}/>
 
-            <Work ref = {WorkRef}/>
+            {/* <Work ref = {WorkRef}/> */}
 
             <Projects ref = {ProjectsRef}/>
 
