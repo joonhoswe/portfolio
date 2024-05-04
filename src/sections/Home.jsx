@@ -31,7 +31,7 @@ const Home = forwardRef((props, ref) => {
       backgroundPosition: 'center' 
     }}>
       <div className="absolute inset-0 flex justify-between items-center">
-      <div className="z-5 md: ml-24 lg:ml-32 space-y-4">
+      <div className="z-5 ml-12 md:ml-24 lg:ml-32 space-y-4">
           <h2 className="md:text-3xl lg:text-5xl font-bold">Hi, I'm Jonathan,</h2>
           <h2 className="md:text-3xl lg:text-5xl font-bold">
           <ReactTyped

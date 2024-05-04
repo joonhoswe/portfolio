@@ -24,6 +24,7 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
   ];
 
   const scrollToSection = (elementRef) => {
+    console.log("calledd");
     if (!elementRef.current || !navbarRef.current) return;
 
     const navbarHeight = navbarRef.current.offsetHeight;
@@ -80,7 +81,7 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
               exit="closed"
               variants={sidebarVariants}
               transition={{ duration: 0.4 }}
-              className="z-20 pt-12 pb-28 absolute top-full right-0 h-screen w-1/3 bg-gray-800 flex flex-col justify-between rounded-lg"
+              className="z-20 pt-12 pb-28 absolute top-full right-0 h-screen w-1/3 bg-gray-800 flex flex-col justify-between"
             >
               {/* Website Section Links */}
               <div className='flex flex-col space-y-6'>
@@ -88,7 +89,7 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
                   <button
                     key={link.title}
                     onClick={() => scrollToSection(link.ref)}
-                    className="group text-lg text-white hover:text-sky-500 transition duration-300 relative overflow-hidden"
+                    className="group text-lg text-white hover:text-sky-500 transition duration-300"
                   >
                     {link.title}
                   </button>
@@ -104,11 +105,11 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
                 </a>
                 <a href="https://linkedin.com/in/joonho-oh" target="_blank" rel="noopener noreferrer" className='flex flex-row space-x-2'>
                   <img src={linkedin} alt="linkedin" className="hover:scale-110 transition duration-300 ease-in-out w-6 h-6"/>
-                  <p> Linkedin</p>
+                  <p className=' hover:text-sky-500 transition duration-300'> Linkedin</p>
                 </a>
                 <a href="https://github.com/joonhoswe" target="_blank" rel="noopener noreferrer" className='flex flex-row space-x-2'>
                   <img src={github} alt="github" className="hover:scale-110 transition duration-300 ease-in-out w-6 h-6"/>
-                  <p> Github </p>
+                  <p className=' hover:text-sky-500 transition duration-300'> Github </p>
                 </a>
               </div>
 

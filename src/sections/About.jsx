@@ -17,25 +17,49 @@ import iphoneIcons from '../assets/iphone_images/iphone_icons.png';
 
 const About = forwardRef((props, ref) => {
 
-  var [date, setDate] = useState(new Date());
+    var [date, setDate] = useState(new Date());
+    const [activeButton, setActiveButton] = useState('Bio');
 
-  useEffect (() => {
-      var timer = setInterval(() => setDate(new Date()), 1000);
+    const aboutButtons = [
+        "Bio", "Table Tennis", "Go-Karting", "Viola", "Olympic Lifting"
+    ];
 
-      return function cleanup() {
-          clearInterval(timer)
-      }
-  });
+    const handleClick = (title) => {
+        setActiveButton(title);
+    };
+
+
+    // const preloadImages = (srcArray) => {
+    //     srcArray.forEach((src) => {
+    //       const img = new Image();
+    //       img.src = src;
+    //     });
+    //   };
+
+
+    useEffect (() => {
+        // preloadImages([inventionConvention, instaHome, instaSearch, instaPlus, instaReels, instaProfile, insta, instaDM, instaComment, instaMessenger, instaSave, instaHeart, instaDots, iphoneIcons]);
+        var timer = setInterval(() => setDate(new Date()), 1000);
+
+        return function cleanup() {
+            clearInterval(timer)
+        }
+    });
 
   return (
     <div ref = {ref} className='bg-gray-900 text-white w-full h-screen flex items-center justify-center'>
-      <div className="flex flex-col space-y-6 font-bold text-3xl w-1/2 pl-12">
-          <div>Story</div>
-          <div>Garden-Kart</div>
-          <div>Cooking</div>
-          <div>Pole Vault</div>
-          <div>Viola</div>
-      </div>
+     <div className="flex flex-col space-y-6 items-start text-2xl w-1/2 pl-12">
+        {aboutButtons.map((title) => (
+            <button
+                key={title}
+                onClick={() => handleClick(title)}
+                className={`group relative overflow-hidden h-16 flex items-center justify-center transition-transform duration-300 ease-in-out transform ${activeButton === title ? 'scale-125 text-white' : 'scale-100 text-gray-400'}`}
+            >
+                {title}
+            </button>
+        ))}
+    </div>
+
 
       {/* Blurb Area */}
       <div className='items-center justify-center'>

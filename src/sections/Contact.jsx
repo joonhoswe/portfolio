@@ -10,12 +10,10 @@ const Contact = forwardRef((props, ref) => {
     const [userEmail, setUserEmail] = useState("");
     const [userName, setUserName] = useState("");
     const [userMessage, setUserMessage] = useState("");
-    const [formSubmitted, setFormSubmitted] = useState(false);
     const form = useRef();
 
     const sendEmail = (e) => {
 
-        setFormSubmitted(true);
         e.preventDefault();
 
         if (!userName || !userEmail || !userMessage) {
@@ -31,7 +29,6 @@ const Contact = forwardRef((props, ref) => {
                     setUserEmail("");
                     setUserName("");
                     setUserMessage("");
-                    setFormSubmitted(false);
                     alert("Message sent!")
                 },
                 (error) => {
