@@ -15,6 +15,7 @@ import instaSave from '../assets/iphone_images/insta_save.png';
 import instaHeart from '../assets/iphone_images/insta_heart.png';
 import instaDots from '../assets/iphone_images/insta_dots.png';
 import iphoneIcons from '../assets/iphone_images/iphone_icons.png';
+import { act } from 'react';
 
 const About = forwardRef((props, ref) => {
 
@@ -23,11 +24,11 @@ const About = forwardRef((props, ref) => {
 
     const aboutButtons = [
         {name: "Bio", 
-        blurb: "I've always been a builder from a young age. After winning the 2014 Invention Convention and seeing a copy of my product on the market a year later, I became determined to fight for the ethical development of new technologies, through software engineering and patent law.", 
+        blurb: "I've always been an inventor from a young age. After winning the 2014 Invention Convention and seeing a copy of my product on the market a year later, I became determined to fight for the ethical development of new technologies, through software engineering and patent law.", 
         image: inventionConvention},
 
         {name: "Go-Karting", 
-        blurb: "", 
+        blurb: "As a kid, I always hated paying $50 for a few laps around the track at go-kart places. Luckily, my parents had an old garden wagon sitting in the garage. Learning new skills such as welding and metal cutting, I made a fully functional go-kart!", 
         image: goKart},
 
         {name: "Table Tennis", 
@@ -50,7 +51,7 @@ const About = forwardRef((props, ref) => {
 
   return (
     <div ref = {ref} className='bg-gray-900 text-white w-full h-screen flex items-center justify-center'>
-     <div className="flex flex-col space-y-6 items-start text-2xl w-1/2 pl-12">
+     {/* <div className="flex flex-col space-y-6 items-start text-2xl w-1/2 pl-12">
         {aboutButtons.map((title) => (
             <button
                 key={title.name}
@@ -60,17 +61,38 @@ const About = forwardRef((props, ref) => {
                 {title.name}
             </button>
         ))}
-    </div>
+    </div> */}
 
 
       {/* Blurb Area */}
-      <div className='items-center justify-center'>
+      {/* <div className='items-center justify-center'>
             <div className='w-96 h-72 bg-gray-800 rounded-2xl outline outline-2 outline-white p-2'>
             {
                 aboutButtons.find(button => button.name === activeButton).blurb
             }
             </div>
-      </div>
+      </div> */}
+
+        <div className="w-2/5 flex flex-col gap-4 pl-12">
+            {aboutButtons.map((button, index) => (
+                <div key={index} className="bg-gray-700 rounded-xl shadow-md overflow-hidden">
+                    <div 
+                        className="cursor-pointer p-4 text-white text-xl font-bold flex justify-between items-center" 
+                        onClick={() => setActiveButton(button.name)}
+                    >
+                        {button.name}
+                        <span className="text-lg">{activeButton === button.name ? '-' : '+'}</span>
+                    </div>
+                    <div
+                        className={`transition-all duration-300 ease-in-out ${activeButton === button.name ? 'max-h-96 py-4' : 'max-h-0 py-0'} overflow-hidden`}
+                    >
+                        <div className="text-white bg-gray-600 px-4">
+                            <p>{button.blurb}</p>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
 
       {/* iPhone Area */}
       <div className='w-1/2 flex items-center justify-center'>
