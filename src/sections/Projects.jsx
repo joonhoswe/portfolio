@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, forwardRef } from 'react';
 import Iframe from 'react-iframe';
 import mac from '../assets/mac_images/wallpaper.png';
 import apple from '../assets/mac_images/apple.png';
+import SWEdle from '../assets/mac_images/SWEdle.png';
 import { motion } from 'framer-motion';
 
 const Projects = forwardRef((props, ref) => {
@@ -11,6 +12,9 @@ const Projects = forwardRef((props, ref) => {
 
     const menuBarLeft = [currentlyOpen, "File", "Edit", "View", "Go", "Window", "Help"];
     const menuBarRight = [];
+    const dock = [
+        {name: "SWEdle", image: SWEdle},
+    ];
 
     var [date, setDate] = useState(new Date());
 
@@ -44,7 +48,7 @@ const Projects = forwardRef((props, ref) => {
             </motion.div> */}
 
             {/* macbook screen container */}
-            <div className='relative flex flex-row items-center w-1/2 h-3/5 outline outline-2 outline-white shadow-all-lg shadow-cyan-400 rounded-2xl'
+            <div className='relative flex justify-center items-center w-1/2 h-3/5 outline outline-2 outline-white shadow-all-lg shadow-cyan-400 rounded-2xl'
             style={{ 
                 backgroundImage: `url(${mac})`,
                 backgroundSize: 'contain', 
@@ -57,7 +61,7 @@ const Projects = forwardRef((props, ref) => {
                 <div className='z-0 w-4 h-full bg-black absolute right-0 rounded-r-2xl'/>
                 <div className='z-0 w-full h-4 bg-black absolute bottom-0 rounded-b-2xl'/>
 
-                
+                {/* inside of mac screen */}
                 <div className='absolute top-4 flex flex-row justify-between items-center w-full px-5 '>
                     {/* menu bar left side */}
                     <div className='flex flex-row space-x-2 items-center'>
@@ -88,11 +92,26 @@ const Projects = forwardRef((props, ref) => {
 
                 <Iframe 
                 // need to fix swedle resizing before using here
-                    url = 'https://swedle.netlify.app'
-                    className='h-full w-full py-10 px-4 items-center justify-center'
+                    url = {currentlyOpen === 'SWEdle' ? 'https://swedle.netlify.app' : currentlyOpen === 'Angel Trading Co.' ? 'https://angel-trading-company.com' : ''}
+                    className='h-full w-full pb-16 pt-8 px-4 items-center justify-center'
                 />
+
+                {/* dock with projects */}
                 
+                <div className='flex flex-row items-center justify-center space-x-3 absolute bottom-2 left-1/6 w-5/6 h-12 bg-slate-400 bg-opacity-30 rounded-2xl'>
+                {dock.map((app) => (
+                    <img 
+                        src={app.image} 
+                        alt={`${app.name} icon`} 
+                        onClick={() => setCurrentlyOpen(app.name)}
+                        key={app.name} // Correct key usage
+                        className='h-8 w-8 hover:cursor-pointer' 
+                    />
+                ))}
+                </div>
+
             </div>
+
         </div>
     );
 });
