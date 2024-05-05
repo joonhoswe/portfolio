@@ -1,6 +1,7 @@
 import React, {useEffect, useState, forwardRef} from 'react';
 import me from '../assets/me.png';
 import inventionConvention from '../assets/iphone_images/invention_convention.jpg';
+import goKart from '../assets/iphone_images/gokart.png';
 import instaHome from '../assets/iphone_images/insta_home.png';
 import instaSearch from '../assets/iphone_images/insta_search.png';
 import instaPlus from '../assets/iphone_images/insta_plus.png';
@@ -21,21 +22,22 @@ const About = forwardRef((props, ref) => {
     const [activeButton, setActiveButton] = useState('Bio');
 
     const aboutButtons = [
-        "Bio", "Table Tennis", "Go-Karting", "Viola", "Olympic Lifting"
+        {name: "Bio", 
+        blurb: "I've always been a builder from a young age. After winning the 2014 Invention Convention and seeing a copy of my product on the market a year later, I became determined to fight for the ethical development of new technologies, through software engineering and patent law.", 
+        image: inventionConvention},
+
+        {name: "Go-Karting", 
+        blurb: "", 
+        image: goKart},
+
+        {name: "Table Tennis", 
+        blurb: "", 
+        image: ""},
+
+        {name: "Viola", 
+        blurb: "", 
+        image: ""},
     ];
-
-    const handleClick = (title) => {
-        setActiveButton(title);
-    };
-
-
-    // const preloadImages = (srcArray) => {
-    //     srcArray.forEach((src) => {
-    //       const img = new Image();
-    //       img.src = src;
-    //     });
-    //   };
-
 
     useEffect (() => {
         // preloadImages([inventionConvention, instaHome, instaSearch, instaPlus, instaReels, instaProfile, insta, instaDM, instaComment, instaMessenger, instaSave, instaHeart, instaDots, iphoneIcons]);
@@ -51,11 +53,11 @@ const About = forwardRef((props, ref) => {
      <div className="flex flex-col space-y-6 items-start text-2xl w-1/2 pl-12">
         {aboutButtons.map((title) => (
             <button
-                key={title}
-                onClick={() => handleClick(title)}
-                className={`group relative overflow-hidden h-16 flex items-center justify-center transition-transform duration-300 ease-in-out transform ${activeButton === title ? 'scale-125 text-white' : 'scale-100 text-gray-400'}`}
+                key={title.name}
+                onClick={() => setActiveButton(title.name)}
+                className={`group relative overflow-hidden h-16 flex items-center justify-center transition-transform duration-300 ease-in-out transform ${activeButton === title.name ? 'scale-125 text-white' : 'scale-100 text-gray-400'}`}
             >
-                {title}
+                {title.name}
             </button>
         ))}
     </div>
@@ -63,8 +65,10 @@ const About = forwardRef((props, ref) => {
 
       {/* Blurb Area */}
       <div className='items-center justify-center'>
-            <div className='w-96 h-72 bg-gray-800 rounded-2xl outline outline-2 outline-white'>
-
+            <div className='w-96 h-72 bg-gray-800 rounded-2xl outline outline-2 outline-white p-2'>
+            {
+                aboutButtons.find(button => button.name === activeButton).blurb
+            }
             </div>
       </div>
 
@@ -99,7 +103,7 @@ const About = forwardRef((props, ref) => {
 
               {/* Image container */}
               <div className='w-full flex justify-center '>
-                  <img src={inventionConvention} alt='invention convention' className='max-h-64 w-full object-cover' />
+                  <img src={aboutButtons.find(button => button.name === activeButton).image} alt={aboutButtons.find(button => button.name === activeButton).name} className='max-h-64 w-full object-cover' />
               </div>
 
               {/* Post Icons */}

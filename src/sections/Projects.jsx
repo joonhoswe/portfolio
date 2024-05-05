@@ -3,7 +3,9 @@ import { useState, useEffect, useRef, forwardRef } from 'react';
 import Iframe from 'react-iframe';
 import mac from '../assets/mac_images/wallpaper.png';
 import apple from '../assets/mac_images/apple.png';
+import finder from '../assets/mac_images/finder.png';
 import SWEdle from '../assets/mac_images/SWEdle.png';
+import ATC from '../assets/mac_images/smiski404.webp';
 import { motion } from 'framer-motion';
 
 const Projects = forwardRef((props, ref) => {
@@ -13,7 +15,9 @@ const Projects = forwardRef((props, ref) => {
     const menuBarLeft = [currentlyOpen, "File", "Edit", "View", "Go", "Window", "Help"];
     const menuBarRight = [];
     const dock = [
+        {name: "Finder", image: finder},
         {name: "SWEdle", image: SWEdle},
+        {name: "Angel Trading Co.", image: ATC},
     ];
 
     var [date, setDate] = useState(new Date());
@@ -61,6 +65,25 @@ const Projects = forwardRef((props, ref) => {
                 <div className='z-0 w-4 h-full bg-black absolute right-0 rounded-r-2xl'/>
                 <div className='z-0 w-full h-4 bg-black absolute bottom-0 rounded-b-2xl'/>
 
+                {/* top of browser bar */}
+                <div className={`absolute top-8 w-full px-4 ${currentlyOpen !== 'Finder' ? 'visible' : 'invisible'}`}>
+                    <div className='flex h-6 items-center bg-gray-500 rounded-t-lg px-2'>
+                        {/* 3 buttons at top of browser */}
+                        <div className='flex flex-row space-x-1'>
+                            <button onClick={() => setCurrentlyOpen('Finder')}className='bg-red-500 rounded-full h-2 w-2'></button>
+                            <div className='bg-yellow-500 rounded-full h-2 w-2' />
+                            <div className='bg-green-500 rounded-full h-2 w-2' />
+                        </div>
+
+                        {/* search bar with url */}
+
+                        {/* expand into new tab button */}
+                        
+                    </div>
+                </div>
+
+                
+
                 {/* inside of mac screen */}
                 <div className='absolute top-4 flex flex-row justify-between items-center w-full px-5 '>
                     {/* menu bar left side */}
@@ -90,11 +113,15 @@ const Projects = forwardRef((props, ref) => {
                     </div> 
                 </div>
 
-                <Iframe 
-                // need to fix swedle resizing before using here
-                    url = {currentlyOpen === 'SWEdle' ? 'https://swedle.netlify.app' : currentlyOpen === 'Angel Trading Co.' ? 'https://angel-trading-company.com' : ''}
-                    className='h-full w-full pb-16 pt-8 px-4 items-center justify-center'
-                />
+                <div className='absolute top-14 bottom-16 w-full px-4 overflow-y-auto'>
+                    <Iframe
+                        url={currentlyOpen === 'SWEdle' ? 'https://swedle.netlify.app' : currentlyOpen === 'Angel Trading Co.' ? 'https://angel-trading-company.com' : ''}
+                        className='w-full h-full'
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media"
+                        allowFullScreen
+                    />
+                </div>
 
                 {/* dock with projects */}
                 
@@ -104,7 +131,7 @@ const Projects = forwardRef((props, ref) => {
                         src={app.image} 
                         alt={`${app.name} icon`} 
                         onClick={() => setCurrentlyOpen(app.name)}
-                        key={app.name} // Correct key usage
+                        key={app.name} 
                         className='h-8 w-8 hover:cursor-pointer' 
                     />
                 ))}
