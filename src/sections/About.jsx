@@ -55,7 +55,6 @@ const About = forwardRef((props, ref) => {
     ];
 
     useEffect (() => {
-        // preloadImages([inventionConvention, instaHome, instaSearch, instaPlus, instaReels, instaProfile, insta, instaDM, instaComment, instaMessenger, instaSave, instaHeart, instaDots, iphoneIcons]);
         var timer = setInterval(() => setDate(new Date()), 1000);
 
         return function cleanup() {
