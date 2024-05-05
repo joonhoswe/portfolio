@@ -1,7 +1,10 @@
 import React, {useEffect, useState, forwardRef} from 'react';
+import { Accordion, AccordionItem } from '../components/accordion';
 import me from '../assets/me.png';
 import inventionConvention from '../assets/iphone_images/invention_convention.jpg';
 import goKart from '../assets/iphone_images/gokart.png';
+import tableTennis from '../assets/iphone_images/table_tennis.png';
+import viola from '../assets/iphone_images/viola.png';
 import instaHome from '../assets/iphone_images/insta_home.png';
 import instaSearch from '../assets/iphone_images/insta_search.png';
 import instaPlus from '../assets/iphone_images/insta_plus.png';
@@ -15,7 +18,6 @@ import instaSave from '../assets/iphone_images/insta_save.png';
 import instaHeart from '../assets/iphone_images/insta_heart.png';
 import instaDots from '../assets/iphone_images/insta_dots.png';
 import iphoneIcons from '../assets/iphone_images/iphone_icons.png';
-import { act } from 'react';
 
 const About = forwardRef((props, ref) => {
 
@@ -25,19 +27,31 @@ const About = forwardRef((props, ref) => {
     const aboutButtons = [
         {name: "Bio", 
         blurb: "I've always been an inventor from a young age. After winning the 2014 Invention Convention and seeing a copy of my product on the market a year later, I became determined to fight for the ethical development of new technologies, through software engineering and patent law.", 
-        image: inventionConvention},
+        image: inventionConvention,
+        caption: "Wash Your iPad",
+        comments: "104",
+        date: "June 8, 2014"},
 
         {name: "Go-Karting", 
-        blurb: "As a kid, I always hated paying $50 for a few laps around the track at go-kart places. Luckily, my parents had an old garden wagon sitting in the garage. Learning new skills such as welding and metal cutting, I made a fully functional go-kart!", 
-        image: goKart},
+        blurb: "As a kid, I always hated paying $50 for a few laps around the track at go-kart places. Luckily, my parents had an old garden wagon in the garage. Through this project, I experienced the true reward of engineering; combining a problem with skills to build a solution from scratch. ", 
+        image: goKart,
+        caption: "vroom vroom",
+        comments: "42",
+        date: "April 12, 2022"},
 
         {name: "Table Tennis", 
-        blurb: "", 
-        image: ""},
+        blurb: "I've been playing table tennis for 10 years since I was 9. At age 14, I was a sponsored athlete and ranked #6 in Ohio!", 
+        image: tableTennis,
+        caption: "is it ping pong or table tennis?",
+        comments: "91",
+        date: "November 2, 2018"},
 
         {name: "Viola", 
-        blurb: "", 
-        image: ""},
+        blurb: "Music has been one of my greatest passions since 1st grade. I particularly love the structured rules of music, but also the room for creativity and expression within each line-just like in coding.", 
+        image: viola,
+        caption: "Meditation from Thais",
+        comments: "200",
+        date: "May 17, 2023"},
     ];
 
     useEffect (() => {
@@ -51,48 +65,17 @@ const About = forwardRef((props, ref) => {
 
   return (
     <div ref = {ref} className='bg-gray-900 text-white w-full h-screen flex items-center justify-center'>
-     {/* <div className="flex flex-col space-y-6 items-start text-2xl w-1/2 pl-12">
-        {aboutButtons.map((title) => (
-            <button
-                key={title.name}
-                onClick={() => setActiveButton(title.name)}
-                className={`group relative overflow-hidden h-16 flex items-center justify-center transition-transform duration-300 ease-in-out transform ${activeButton === title.name ? 'scale-125 text-white' : 'scale-100 text-gray-400'}`}
-            >
-                {title.name}
-            </button>
-        ))}
-    </div> */}
 
-
-      {/* Blurb Area */}
-      {/* <div className='items-center justify-center'>
-            <div className='w-96 h-72 bg-gray-800 rounded-2xl outline outline-2 outline-white p-2'>
-            {
-                aboutButtons.find(button => button.name === activeButton).blurb
-            }
-            </div>
-      </div> */}
-
-        <div className="w-2/5 flex flex-col gap-4 pl-12">
+        {/* Accordion for blurbs and hobbies */}
+        <Accordion className="w-2/5 rounded-xl flex flex-col gap-4" onSetActiveButton={setActiveButton} value={aboutButtons[0].name}>
             {aboutButtons.map((button, index) => (
-                <div key={index} className="bg-gray-700 rounded-xl shadow-md overflow-hidden">
-                    <div 
-                        className="cursor-pointer p-4 text-white text-xl font-bold flex justify-between items-center" 
-                        onClick={() => setActiveButton(button.name)}
-                    >
-                        {button.name}
-                        <span className="text-lg">{activeButton === button.name ? '-' : '+'}</span>
+                <AccordionItem key={index} value={button.name} trigger={button.name} className='rounded-xl outline outline-2 outline-white'>
+                    <div className="text-white bg-gray-600 rounded-2xl p-4">
+                        <p>{button.blurb}</p>
                     </div>
-                    <div
-                        className={`transition-all duration-300 ease-in-out ${activeButton === button.name ? 'max-h-96 py-4' : 'max-h-0 py-0'} overflow-hidden`}
-                    >
-                        <div className="text-white bg-gray-600 px-4">
-                            <p>{button.blurb}</p>
-                        </div>
-                    </div>
-                </div>
+                </AccordionItem>
             ))}
-        </div>
+        </Accordion>
 
       {/* iPhone Area */}
       <div className='w-1/2 flex items-center justify-center'>
@@ -138,10 +121,14 @@ const About = forwardRef((props, ref) => {
                   <img src = {instaSave} alt = 'instagram save icon' className='h-4 w-4'/>
               </div>
 
+            {/* username below the post, comments, and date */}
               <div className='px-2 justify-start flex flex-col w-full mt-2 text-black text-xs'> 
-                  <p><span className='font-bold'>joonho_oh</span> cool stuff </p>
+                  {/* <p><span className='font-bold'>joonho_oh</span> cool stuff </p>
                   <p className='text-gray-700'>View all 101 comments</p>
-                  <p className='text-gray-700'>June 8, 2014</p>
+                  <p className='text-gray-700'>June 8, 2014</p> */}
+                <p><span className='font-bold'>joonho_oh</span> {aboutButtons.find(post => post.name === activeButton).caption} </p>
+                <p className='text-gray-700'>View all {aboutButtons.find(post => post.name === activeButton).comments} comments</p>
+                <p className='text-gray-700'>{aboutButtons.find(post => post.name === activeButton).date}</p>
               </div>
 
               {/* Bottom Icons */}
