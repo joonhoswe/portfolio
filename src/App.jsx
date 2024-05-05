@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from './sections/Home'
-import About from './sections/About'
-import Navbar from './components/navbar.jsx'
-import Work from './sections/Work'
+import Home from './sections/Home';
+import About from './sections/About';
+import Navbar from './components/navbar';
+import Work from './sections/Work';
 import Projects from './sections/Projects';
-import Contact from './sections/Contact'
+import Contact from './sections/Contact';
 import { useRef } from 'react';
 
 const App = () => {
