@@ -18,6 +18,9 @@ export default {
       height: {
         '128': '32rem',
       },
+      width: {
+        '5/8': '62.5%',
+      },
       outlineWidth: {
         '6': '6px',
       },

@@ -6,6 +6,7 @@ import apple from '../assets/mac_images/apple.png';
 import finder from '../assets/mac_images/finder.png';
 import SWEdle from '../assets/mac_images/SWEdle.png';
 import ATC from '../assets/mac_images/smiski404.webp';
+import macbookBase from '../assets/mac_images/macbook_base.png';
 import { motion } from 'framer-motion';
 
 const Projects = forwardRef((props, ref) => {
@@ -31,28 +32,10 @@ const Projects = forwardRef((props, ref) => {
     });
 
     return (
-        <div ref = {ref} className="bg-gray-900 text-white w-full h-screen flex items-center justify-center">
-            {/* Big rectangle to contain both connect with me + contact form */}
-            {/* <motion.div 
-                className="flex flex-row items-center w-3/5 h-3/5 outline outline-2 outline-white shadow-all-lg shadow-cyan-400 rounded-2xl"
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false, amount: 0.4 }}  // Increased sensitivity, animation can trigger multiple times
-                transform={{
-                  duration: 0.8,
-                  delay: 0.1,  // Reduced delay
-                  ease: [0, 0.71, 0.2, 1.01]
-                }}
-                style={{ 
-                    backgroundImage: `url(${mac})`,
-                    backgroundSize: 'cover', 
-                    backgroundRepeat: 'no-repeat', 
-                    backgroundPosition: 'center' 
-                }}>
-            </motion.div> */}
+        <div ref = {ref} className="bg-gray-900 text-white w-full h-screen flex flex-col items-center justify-center">
 
             {/* macbook screen container */}
-            <div className='relative flex justify-center items-center w-1/2 h-3/5 outline outline-2 outline-white shadow-all-lg shadow-cyan-400 rounded-2xl'
+            <div className='relative flex justify-center items-center w-1/2 h-3/5 outline outline-2 outline-white rounded-2xl'
             style={{ 
                 backgroundImage: `url(${mac})`,
                 backgroundSize: 'contain', 
@@ -82,8 +65,6 @@ const Projects = forwardRef((props, ref) => {
                     </div>
                 </div>
 
-                
-
                 {/* inside of mac screen */}
                 <div className='absolute top-4 flex flex-row justify-between items-center w-full px-5 '>
                     {/* menu bar left side */}
@@ -112,7 +93,8 @@ const Projects = forwardRef((props, ref) => {
                     <p className='text-xs '> {date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} </p>
                     </div> 
                 </div>
-
+                
+                {/* projects within macbook screen */}
                 <div className='absolute top-14 bottom-16 w-full px-4 overflow-y-auto'>
                     <Iframe
                         url={currentlyOpen === 'SWEdle' ? 'https://swedle.netlify.app' : currentlyOpen === 'Angel Trading Co.' ? 'https://angel-trading-company.com' : ''}
@@ -124,7 +106,7 @@ const Projects = forwardRef((props, ref) => {
                 </div>
 
                 {/* dock with projects */} 
-                <div className='flex flex-row items-center justify-center space-x-3 absolute bottom-2 left-1/6 w-5/6 h-12 bg-slate-400 bg-opacity-30 rounded-2xl'>
+                <div className='flex flex-row items-center justify-center space-x-3 absolute bottom-2 left-1/6 w-2/3 h-12 bg-slate-400 bg-opacity-30 rounded-2xl'>
                     {/* iterate over array of applications */}
                     {dock.map((app) => (
                         <div key={app.name} className='flex flex-col items-center justify-center space-y-0.5'>
@@ -139,8 +121,8 @@ const Projects = forwardRef((props, ref) => {
                         </div>
                     ))}
                 </div>
-
             </div>
+            <img src = {macbookBase} alt = 'macbook chasis' className='w-2/3' />
 
         </div>
     );

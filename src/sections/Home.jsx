@@ -50,19 +50,19 @@ const Home = forwardRef((props, ref) => {
         </div>
         
         {/* right side of me image */}
-        <div className="z-50 pt-12 flex flex-col space-y-2 text-xs -mr-24 sm:-mr-8 md:mr-2 lg:mr-20 sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-40">
-          <div className='w-1/2 space-y-2 sm:w-3/4 md:w-5/6 lg:w-full'>
+        <div className="z-50 pt-12 flex flex-col space-y-2 text-xs -mr-72 sm:-mr-60 md:-mr-52 lg:-mr-40 sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-48">
+          <div className='w-1/4 space-y-2 sm:w-1/3 md:w-1/2'>
             <h1 className="font-bold">ABOUT ME</h1>
-            <p className="text-gray-300"> I'm a student at <span className="text-white">Emory University</span> <br></br> studying <span className="text-white">CS, Data Science,</span> and <span className='text-white'>Pre-Law.</span></p>
-            <button onClick = {() => scrollToSection(AboutRef)} className="text-white font-bold underline"> Learn More </button>
+            <p className="text-gray-300 max-w-full"> I'm a student at <span className="text-white">Emory University</span> studying <span className="text-white">CS, Data Science,</span> and <span className='text-white'>Pre-Law.</span></p>
+            <button onClick = {() => scrollToSection(AboutRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> Learn More </button>
           </div>
 
-          <hr className="h-0.5 bg-gray-200 border-0 w-1/2 sm:w-3/4 md:w-5/6 lg:w-full" />
+          <hr className="h-0.5 bg-gray-200 border-0 w-1/4 sm:w-1/3 md:w-1/2" />
 
-          <div className='w-1/2 space-y-2 sm:w-3/4 md:w-5/6 lg:w-full'>
+          <div className='w-1/4 space-y-2 sm:w-1/3 md:w-1/2'>
             <h1 className="font-bold">PROJECTS</h1>
-            <p className="text-gray-300"> Check out my recent projects! </p>
-            <button onClick = {() => scrollToSection(ProjectsRef)} className="text-white font-bold underline"> See Portfolio </button>
+            <p className="text-gray-300"> Check out my recent projects directly <br/>through a macbook mockup I made! </p>
+            <button onClick = {() => scrollToSection(ProjectsRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> See Portfolio </button>
           </div>
         </div>
         
