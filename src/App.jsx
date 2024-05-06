@@ -40,7 +40,7 @@ const App = () => {
         </div>
     </div>  */}
             <Navbar HomeRef = {HomeRef} AboutRef = {AboutRef} WorkRef = {WorkRef} ProjectsRef = {ProjectsRef} ContactRef = {ContactRef}/>
-            <Home ref = {HomeRef} AboutRef = {AboutRef} ProjectsRef = {ProjectsRef} />
+            <Home ref = {HomeRef} AboutRef = {AboutRef} ProjectsRef = {ProjectsRef}/>
 
             <About ref = {AboutRef}/>
 
