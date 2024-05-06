@@ -68,7 +68,7 @@ const Contact = forwardRef((props, ref) => {
                         </div>
                         <div className='flex flex-row items-center space-x-2'>
                             <img src = {address} alt = 'address icon' className='h-4 w-4 '/>
-                            <p> Atlanta, GA, United States</p>
+                            <p> Atlanta, GA </p>
                         </div>
                         <div className='flex flex-row items-center space-x-2'>
                             <img src = {clock} alt = 'clock icon' className='h-4 w-4 '/>

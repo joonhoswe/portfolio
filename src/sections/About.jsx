@@ -26,7 +26,7 @@ const About = forwardRef((props, ref) => {
 
     const aboutButtons = [
         {name: "Bio", 
-        blurb: "I've always been an inventor from a young age. After winning the 2014 Invention Convention and seeing a copy of my product on the market a year later, I became determined to fight for the ethical development of new technologies, through software engineering and patent law.", 
+        blurb: "I've always felt a calling towards finding new problems to build solutions for. Pictured to the right is me winning the 2014 Invention Convention with my invention which uses UV light and Lego Robotics to santize smart devices!", 
         image: inventionConvention,
         caption: "Wash Your iPad",
         comments: "104",
