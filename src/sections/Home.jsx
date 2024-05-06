@@ -61,7 +61,7 @@ const Home = forwardRef((props, ref) => {
 
           <div className='w-1/4 space-y-2 sm:w-1/3 md:w-1/2'>
             <h1 className="font-bold">PROJECTS</h1>
-            <p className="text-gray-300"> Check out my recent projects directly <br/>through a macbook mockup I made! </p>
+            <p className="text-gray-300"> Check out my recent projects directly through a macbook mockup I made! </p>
             <button onClick = {() => scrollToSection(ProjectsRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> See Portfolio </button>
           </div>
         </div>

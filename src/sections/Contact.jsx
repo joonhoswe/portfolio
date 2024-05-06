@@ -51,10 +51,10 @@ const Contact = forwardRef((props, ref) => {
     return (
         <div ref = {ref} className="bg-gray-900 text-white w-full h-screen flex items-center justify-center">
             {/* Big rectangle to contain both connect with me + contact form */}
-            <div className="bg-gray-800 flex flex-row items-center w-1/2 h-3/5 outline outline-2 outline-white shadow-all-lg shadow-cyan-400 rounded-2xl ">
+            <div className="bg-gray-800 flex flex-row items-center w-1/2 h-3/5 outline outline-2 outline-white shadow-all-lg shadow-cyan-400 rounded-2xl overflow-hidden">
 
                 {/* left portion containing "connect with me" */}
-                <div className="hidden lg:flex flex-col items-start pl-8 pt-10 w-2/5 h-full shadow-r-lg shadow-black rounded-l-2xl">
+                <div className="hidden lg:flex flex-col items-start pl-8 pt-10 w-2/5 h-full shadow-r-lg shadow-black rounded-l-2xl overflow-auto">
                     {/* <p className='font-bold text-4xl'> connect with <span className='text-cyan-400'> me</span></p> */}
                     <p className='font-bold text-3xl'> Contact Me </p>
                     <div className='flex flex-col space-y-4 text-s mt-12'>
@@ -79,7 +79,7 @@ const Contact = forwardRef((props, ref) => {
                 </div>
 
                 {/* right portion containing "get in touch" */}
-                <div className="flex flex-col items-center pt-10 w-full lg:w-3/5 min-h-full">                  
+                <div className="flex flex-col items-center pt-10 w-full lg:w-3/5 h-full overflow-auto">                  
                     <form ref={form} onSubmit={sendEmail}>
                         <p className='font-bold text-3xl mb-8'> Let's Connect! </p>
 
