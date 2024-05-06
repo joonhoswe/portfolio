@@ -123,18 +123,21 @@ const Projects = forwardRef((props, ref) => {
                     />
                 </div>
 
-                {/* dock with projects */}
-                
+                {/* dock with projects */} 
                 <div className='flex flex-row items-center justify-center space-x-3 absolute bottom-2 left-1/6 w-5/6 h-12 bg-slate-400 bg-opacity-30 rounded-2xl'>
-                {dock.map((app) => (
-                    <img 
-                        src={app.image} 
-                        alt={`${app.name} icon`} 
-                        onClick={() => setCurrentlyOpen(app.name)}
-                        key={app.name} 
-                        className='h-8 w-8 hover:cursor-pointer' 
-                    />
-                ))}
+                    {/* iterate over array of applications */}
+                    {dock.map((app) => (
+                        <div key={app.name} className='flex flex-col items-center justify-center space-y-0.5'>
+                            <img 
+                                src={app.image} 
+                                alt={`${app.name} icon`} 
+                                onClick={() => setCurrentlyOpen(app.name)}
+                                className='h-8 w-8 hover:cursor-pointer' 
+                            />
+                            {/* active application dot */}
+                            <div className={`rounded-full h-1 w-1 bg-slate-400 ${currentlyOpen === app.name ? "visible" : "invisible"}`}/>
+                        </div>
+                    ))}
                 </div>
 
             </div>
