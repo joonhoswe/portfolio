@@ -48,12 +48,17 @@ const Projects = forwardRef((props, ref) => {
                 <div className='z-0 w-4 h-full bg-black absolute right-0 rounded-r-2xl'/>
                 <div className='z-0 w-full h-4 bg-black absolute bottom-0 rounded-b-2xl'/>
 
+                {/* sticky note */}
+                <div className='z-0 w-32 h-32 bg-yellow-200 absolute top-12 left-8 p-4'>
+                    <p className='text-black text-sm'> Try clicking on an app to get started! <br/> Press the red circle to close! </p>
+                </div>
+
                 {/* top of browser bar */}
                 <div className={`absolute top-8 w-full px-4 ${currentlyOpen !== 'Finder' ? 'visible' : 'invisible'}`}>
                     <div className='flex h-6 items-center bg-gray-500 rounded-t-lg px-2'>
                         {/* 3 buttons at top of browser */}
                         <div className='flex flex-row space-x-1'>
-                            <button onClick={() => setCurrentlyOpen('Finder')}className='bg-red-500 rounded-full h-2 w-2'></button>
+                            <button onClick={() => setCurrentlyOpen('Finder')} className='bg-red-500 rounded-full h-2 w-2' />
                             <div className='bg-yellow-500 rounded-full h-2 w-2' />
                             <div className='bg-green-500 rounded-full h-2 w-2' />
                         </div>
@@ -67,9 +72,11 @@ const Projects = forwardRef((props, ref) => {
 
                 {/* inside of mac screen */}
                 <div className='absolute top-4 flex flex-row justify-between items-center w-full px-5 '>
+
                     {/* menu bar left side */}
                     <div className='flex flex-row space-x-2 items-center'>
                         <img src={apple} alt = 'apple logo' className='h-3 w-3 mb-px'/>
+                        {/* display currently open app on top left menu bar */}
                         {menuBarLeft.map((button) => (
                             <p 
                             key = {button}
@@ -79,6 +86,7 @@ const Projects = forwardRef((props, ref) => {
                             </p>
                         ))}
                     </div>
+
                     {/* menu bar right side */}
                     <div className='flex flex-row space-x-2 items-center'>
                     {menuBarRight.map((button) => (

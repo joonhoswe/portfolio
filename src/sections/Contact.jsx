@@ -56,7 +56,7 @@ const Contact = forwardRef((props, ref) => {
                 {/* left portion containing "connect with me" */}
                 <div className="hidden lg:flex flex-col items-start pl-8 pt-10 w-2/5 h-full shadow-r-lg shadow-black rounded-l-2xl overflow-auto">
                     {/* <p className='font-bold text-4xl'> connect with <span className='text-cyan-400'> me</span></p> */}
-                    <p className='font-bold text-3xl'> Contact Me </p>
+                    <p className='font-bold text-3xl'> Let's Connect! </p>
                     <div className='flex flex-col space-y-4 text-s mt-12'>
                         <div className='flex flex-row items-center space-x-2'>
                             <img src = {phone} alt = 'phone icon' className='h-4 w-4 '/>
@@ -81,7 +81,7 @@ const Contact = forwardRef((props, ref) => {
                 {/* right portion containing "get in touch" */}
                 <div className="flex flex-col items-center pt-10 w-full lg:w-3/5 h-full overflow-auto">                  
                     <form ref={form} onSubmit={sendEmail}>
-                        <p className='font-bold text-3xl mb-8'> Let's Connect! </p>
+                        <p className='font-bold text-3xl mb-8'> Contact Me </p>
 
                         <div className='flex flex-col space-y-2'>
                             {/* name input field */}
