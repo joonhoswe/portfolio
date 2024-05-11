@@ -17,40 +17,14 @@ const App = () => {
 
   return (
    <div className='bg-gray-900'>
-    {/* <div className='h-[calc(100vh-56px)] overflow-y-scroll snap-y snap-mandatory'>
         <Navbar HomeRef = {HomeRef} AboutRef = {AboutRef} WorkRef = {WorkRef} ProjectsRef = {ProjectsRef} ContactRef = {ContactRef}/>
-        <div className='snap-always snap-center'>
-            <Home ref = {HomeRef} AboutRef = {AboutRef} ProjectsRef = {ProjectsRef} />
-        </div>
+        <Home ref = {HomeRef} AboutRef = {AboutRef} ProjectsRef = {ProjectsRef}/>
+        <About ref = {AboutRef}/>
 
-        <div className='snap-always snap-center'>
-            <About ref = {AboutRef}/>
-        </div>
+        {/* <Work ref = {WorkRef}/> */}
 
-        <div className='snap-always snap-center'>
-            <Work ref = {WorkRef}/>
-        </div>
-
-        <div className='snap-always snap-center'>
-            <Projects ref = {ProjectsRef}/>
-        </div>
-
-        <div className='snap-always snap-center'>
-            <Contact ref = {ContactRef}/>
-        </div>
-    </div>  */}
-            <Navbar HomeRef = {HomeRef} AboutRef = {AboutRef} WorkRef = {WorkRef} ProjectsRef = {ProjectsRef} ContactRef = {ContactRef}/>
-            <Home ref = {HomeRef} AboutRef = {AboutRef} ProjectsRef = {ProjectsRef}/>
-
-            <About ref = {AboutRef}/>
-
-            {/* <Work ref = {WorkRef}/> */}
-
-            <Projects ref = {ProjectsRef}/>
-
-
-            <Contact ref = {ContactRef}/>
-
+        <Projects ref = {ProjectsRef}/>
+        <Contact ref = {ContactRef}/>
   </div>
   );
 };

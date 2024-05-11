@@ -7,7 +7,6 @@ import finder from '../assets/mac_images/finder.png';
 import SWEdle from '../assets/mac_images/SWEdle.png';
 import ATC from '../assets/mac_images/smiski404.webp';
 import macbookBase from '../assets/mac_images/macbook_base.png';
-import { motion } from 'framer-motion';
 
 const Projects = forwardRef((props, ref) => {
 

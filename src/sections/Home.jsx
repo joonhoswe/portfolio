@@ -2,7 +2,6 @@ import React, { forwardRef } from 'react';
 import {ReactTyped} from 'react-typed';
 import me from '../assets/me.png';
 import background from '../assets/background.jpg';
-import { motion } from "framer-motion";
 
 const Home = forwardRef((props, ref) => {
 
