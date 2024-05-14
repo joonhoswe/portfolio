@@ -49,7 +49,7 @@ const Home = forwardRef((props, ref) => {
         </div>
         
         {/* right side of me image */}
-        <div className="z-50 pt-12 flex flex-col space-y-2 text-xs -mr-72 sm:-mr-60 md:-mr-52 lg:-mr-40 sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-48">
+        <div className="z-10 pt-12 flex flex-col space-y-2 text-xs -mr-72 sm:-mr-60 md:-mr-52 lg:-mr-40 sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-48">
           <div className='w-1/4 space-y-2 sm:w-1/3 md:w-1/2'>
             <h1 className="font-bold">ABOUT ME</h1>
             <p className="text-gray-300 max-w-full"> I'm a student at <span className="text-white">Emory University</span> studying <span className="text-white">CS, Data Science,</span> and <span className='text-white'>Pre-Law.</span></p>
