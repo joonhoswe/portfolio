@@ -34,7 +34,7 @@ const Projects = forwardRef((props, ref) => {
         <div ref = {ref} className="bg-gray-900 text-white w-full h-screen flex flex-col items-center justify-center">
 
             {/* macbook screen container */}
-            <div className='relative flex justify-center items-center w-3/5 h-3/4 outline outline-2 outline-white rounded-2xl'
+            <div className='relative hidden lg:flex justify-center items-center w-3/5 h-3/4 outline outline-2 outline-white rounded-2xl'
             style={{ 
                 backgroundImage: `url(${mac})`,
                 backgroundSize: 'cover', 
@@ -130,7 +130,9 @@ const Projects = forwardRef((props, ref) => {
                 </div>
             </div>
             {/* image for macbook chasis */}
-            <img src = {macbookBase} alt = 'macbook chasis' className='w-4/5' />
+            <img src = {macbookBase} alt = 'macbook chasis' className='w-4/5 hidden lg:flex' />
+
+            <p className='flex lg:hidden text-2xl'> Try viewing on a computer! </p>
 
         </div>
     );
