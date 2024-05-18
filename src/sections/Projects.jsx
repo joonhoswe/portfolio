@@ -132,7 +132,7 @@ const Projects = forwardRef((props, ref) => {
             {/* image for macbook chasis */}
             <img src = {macbookBase} alt = 'macbook chasis' className='w-4/5 hidden lg:flex' />
 
-            <p className='flex lg:hidden text-2xl'> Try viewing on a computer! </p>
+            <p className='flex lg:hidden text-2xl'> View on a computer to see projects! </p>
 
         </div>
     );
