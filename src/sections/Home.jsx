@@ -49,16 +49,16 @@ const Home = forwardRef((props, ref) => {
         </div>
         
         {/* right side of me image */}
-        <div className="z-10 pt-12 flex flex-col space-y-2 text-xs -mr-72 sm:-mr-60 md:-mr-52 lg:-mr-40 sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-48">
-          <div className='w-1/4 space-y-2 sm:w-1/3 md:w-1/2'>
+        <div className="z-10 pt-12 flex flex-col space-y-2 text-xs sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-48 w-1/4 mr-4 sm:mr-6 md:mr-8 lg:mr-12">
+          <div className=''>
             <h1 className="font-bold">ABOUT ME</h1>
-            <p className="text-gray-300 max-w-full"> I'm a student at <span className="text-white">Emory University</span> studying <span className="text-white">CS, Data Science,</span> and <span className='text-white'>Pre-Law.</span></p>
+            <p className="text-gray-300 w-full"> I'm a student at <span className="text-white"> Carnegie Mellon University</span> studying <span className="text-white"> Computer Science </span> and <br/> <span className="text-white"> Political Science, Security, and Technology </span></p>
             <button onClick = {() => scrollToSection(AboutRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> Learn More </button>
           </div>
 
-          <hr className="h-0.5 bg-gray-200 border-0 w-1/4 sm:w-1/3 md:w-1/2" />
+          <hr className="h-0.5 bg-gray-200 border-0" />
 
-          <div className='w-1/4 space-y-2 sm:w-1/3 md:w-1/2'>
+          <div className=''>
             <h1 className="font-bold">PROJECTS</h1>
             <p className="text-gray-300"> Check out my recent projects directly through a macbook mockup I made! </p>
             <button onClick = {() => scrollToSection(ProjectsRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> See Portfolio </button>
