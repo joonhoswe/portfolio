@@ -24,7 +24,6 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
   ];
 
   const scrollToSection = (elementRef) => {
-    console.log("calledd");
     if (!elementRef.current || !navbarRef.current) return;
 
     const navbarHeight = navbarRef.current.offsetHeight;
