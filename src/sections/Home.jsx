@@ -32,7 +32,7 @@ const Home = forwardRef((props, ref) => {
       <div className="absolute inset-0 flex justify-between items-center">
 
         {/* typewriter effect text */}
-        <div className="z-5 ml-12 md:ml-16 lg:ml-24 space-y-4">
+        <div className="ml-4 sm:ml-8 md:ml-12 lg:ml-20">
             <h2 className="md:text-3xl lg:text-5xl font-bold">Hi, I'm Jonathan,</h2>
             <h2 className="md:text-3xl lg:text-5xl font-bold">
             <ReactTyped

@@ -26,7 +26,7 @@ const About = forwardRef((props, ref) => {
 
     const aboutButtons = [
         {name: "Bio", 
-        blurb: "I've always felt a calling towards finding new problems to build solutions for. Pictured to the right is me winning the 2014 Invention Convention with my invention which uses UV light and Lego Robotics to santize smart devices!", 
+        blurb: "I've always felt a calling towards finding new problems to build solutions for. Pictured is me winning the 2014 Invention Convention with my invention which uses UV light and Lego Robotics to santize smart devices!", 
         image: inventionConvention,
         caption: "Wash Your iPad",
         comments: "104",
@@ -66,18 +66,22 @@ const About = forwardRef((props, ref) => {
     <div ref = {ref} className='bg-gray-900 text-white w-full h-screen flex items-center justify-center'>
 
         {/* Accordion for blurbs and hobbies */}
-        <Accordion className="w-2/5 rounded-xl flex flex-col gap-4" onSetActiveButton={setActiveButton} value={aboutButtons[0].name}>
+        <Accordion className="w-4/5 sm:w-2/5 rounded-xl flex flex-col gap-4" onSetActiveButton={setActiveButton} value={aboutButtons[0].name}>
             {aboutButtons.map((button, index) => (
                 <AccordionItem key={index} value={button.name} trigger={button.name} className='rounded-xl outline outline-2 outline-white'>
-                    <div className="text-white bg-gray-600 rounded-2xl p-4">
+                    <div className="text-white bg-gray-600 rounded-2xl p-4 flex flex-col space-y-4 items-center justify-center">
                         <p>{button.blurb}</p>
+                        <div className='h-1/2 w-1/2 flex sm:hidden'>
+                            <img src={button.image} alt={button.name} className='rounded-xl'/>
+                        </div>
+                        
                     </div>
                 </AccordionItem>
             ))}
         </Accordion>
 
       {/* iPhone Area */}
-      <div className='w-1/2 flex items-center justify-center'>
+      <div className='w-1/2 hidden sm:flex items-center justify-center'>
           {/* iPhone Container */}
           <div className='flex flex-col items-center bg-white h-128 w-60 rounded-3xl outline outline-gray-400 outline-6 shadow-all-lg shadow-cyan-400'>
               {/* Time + Dynamic Island + Date */}
