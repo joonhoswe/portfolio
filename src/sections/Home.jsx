@@ -22,19 +22,19 @@ const Home = forwardRef((props, ref) => {
   }
 
   return (
-    <div ref = {ref} className="text-white flex justify-center items-center overflow-hidden relative w-full min-h-screen" 
+    <div ref = {ref} className="text-white flex justify-center items-center overflow-hidden relative w-full min-h-[calc(80vh-54px)] md:min-h-[calc(100vh-54px)]" 
       style={{ 
       backgroundImage: `url(${background})`,
       backgroundSize: 'cover', 
       backgroundRepeat: 'no-repeat', 
       backgroundPosition: 'center',
     }}>
-      <div className="absolute inset-0 flex justify-between items-center">
+      <div className="absolute inset-0 flex flex-col md:flex-row md:justify-between md:items-center items-start h-full py-16 md:py-0">
 
         {/* typewriter effect text */}
         <div className="ml-4 sm:ml-8 md:ml-12 lg:ml-20">
-            <h2 className="md:text-3xl lg:text-5xl font-bold">Hi, I'm Jonathan,</h2>
-            <h2 className="md:text-3xl lg:text-5xl font-bold">
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold">Hi, I'm Jonathan,</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold">
             <ReactTyped
                 strings = {[
                     "A Student",
@@ -49,16 +49,20 @@ const Home = forwardRef((props, ref) => {
         </div>
         
         {/* right side of me image */}
-        <div className="z-10 pt-12 flex flex-col space-y-2 text-xs sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-48 w-1/4 mr-4 sm:mr-6 md:mr-8 lg:mr-12">
-          <div className=''>
+        <div className="z-10 md:pt-12 flex flex-col space-y-2 text-xs sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-48 w-3/4 md:w-1/4 mr-4 sm:mr-6 md:mr-8 lg:mr-12">
+          <div className='hidden md:block'>
             <h1 className="font-bold">ABOUT ME</h1>
-            <p className="text-gray-300 w-full"> I'm a student at <span className="text-white"> Carnegie Mellon University</span> studying <span className="text-white"> Computer Science </span> and <br/> <span className="text-white"> Political Science, Security, and Technology </span></p>
+            <p className="text-gray-300 w-full"> I'm a student at <span className="text-white"> Carnegie Mellon </span> studying <span className="text-white"> Computer Science + Information Systems</span></p>
             <button onClick = {() => scrollToSection(AboutRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> Learn More </button>
           </div>
 
-          <hr className="h-0.5 bg-gray-200 border-0" />
+          <div className='md:hidden ml-4 sm:ml-8'>
+            <p className="text-white w-full"> CS + IS @ Carnegie Mellon </p>
+          </div>
 
-          <div className=''>
+          <hr className="h-0.5 bg-gray-200 border-0 hidden md:block" />
+
+          <div className='hidden md:block'>
             <h1 className="font-bold">PROJECTS</h1>
             <p className="text-gray-300"> Check out my recent projects directly through a macbook mockup I made! </p>
             <button onClick = {() => scrollToSection(ProjectsRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> See Portfolio </button>
@@ -67,7 +71,7 @@ const Home = forwardRef((props, ref) => {
         
       </div>
 
-      <img src={me} alt="Profile" className="w-3/5 h-full z-0 pt-12" />
+      <img src={me} alt="Profile" className="w-full sm:w-4/5 md:w-3/5 h-full z-0" />
     </div>
   );
 });
