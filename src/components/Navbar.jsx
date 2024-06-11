@@ -80,7 +80,7 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
               exit="closed"
               variants={sidebarVariants}
               transition={{ duration: 0.4 }}
-              className="z-20 pt-12 pb-28 absolute top-full right-0 h-screen w-1/3 bg-gray-800 flex flex-col justify-between"
+              className="z-20 pt-12 pb-28 absolute top-full right-0 h-screen w-2/5 bg-gray-800 flex flex-col justify-between"
             >
               {/* Website Section Links */}
               <div className='flex flex-col space-y-6'>
@@ -93,10 +93,7 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
                     {link.title}
                   </button>
                 ))}
-              </div>
-              
-
-              {/* Resume, Linkedin, Github Buttons */}
+                {/* Resume, Linkedin, Github Buttons */}
               <div className='flex flex-col items-center justify-center space-y-6'>
                 <a href={resume} target="_blank" rel="noopener noreferrer" className='hover:scale-110 transition duration-300 ease-in-out w-24 h-6 rounded-md flex items-center justify-center bg-white text-gray-800 text-sm font-bold'>
                   resume
@@ -111,6 +108,10 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
                   <p className=' hover:text-sky-500 transition duration-300'> Github </p>
                 </a>
               </div>
+              </div>
+              
+
+              
 
             </motion.div>
           )}

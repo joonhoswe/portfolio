@@ -51,7 +51,7 @@ const Contact = forwardRef((props, ref) => {
     return (
         <div ref = {ref} className="bg-gray-900 text-white w-full h-screen flex items-center justify-center">
             {/* Big rectangle to contain both connect with me + contact form */}
-            <div className="bg-gray-800 flex flex-row items-center w-3/4 md:w-1/2 h-3/5 outline outline-2 outline-white shadow-all-lg shadow-cyan-400 rounded-2xl overflow-hidden">
+            <div className="bg-gray-800 flex flex-row items-center w-3/4 md:w-1/2 h-11/20 outline outline-2 outline-white shadow-all-lg shadow-cyan-400 rounded-2xl overflow-hidden">
 
                 {/* left portion containing "connect with me" */}
                 <div className="hidden lg:flex flex-col items-start pl-8 pt-10 w-2/5 h-full shadow-r-lg shadow-black rounded-l-2xl overflow-auto">
@@ -68,7 +68,7 @@ const Contact = forwardRef((props, ref) => {
                         </div>
                         <div className='flex flex-row items-center space-x-2'>
                             <img src = {address} alt = 'address icon' className='h-4 w-4 '/>
-                            <p> Atlanta, GA </p>
+                            <p> Pittsburgh, PA </p>
                         </div>
                         <div className='flex flex-row items-center space-x-2'>
                             <img src = {clock} alt = 'clock icon' className='h-4 w-4 '/>
@@ -80,14 +80,14 @@ const Contact = forwardRef((props, ref) => {
 
                 {/* right portion containing "get in touch" */}
                 <div className="flex flex-col items-center pt-10 w-full lg:w-3/5 h-full overflow-auto">                  
-                    <form ref={form} onSubmit={sendEmail}>
+                    <form ref={form} onSubmit={sendEmail} className='w-full px-4 sm:px-32 md:px-24 lg:px-14'>
                         <p className='font-bold text-xl md:text-3xl mb-8 text-center'> Contact Me </p>
 
-                        <div className='flex flex-col space-y-2'>
+                        <div className='flex flex-col space-y-2 w-full'>
                             {/* name input field */}
-                            <div>
+                            <div className='w-full'>
                                 <p className=""> Name </p>
-                                <label className=''>
+                                <label className='w-full'>
                                     <input name="user_name" type="name" value={userName} onChange={(e) => setUserName(e.target.value)} className="bg-gray-900 w-full rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1" />
                                 </label>
                             </div>
