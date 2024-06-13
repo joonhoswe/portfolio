@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import name from '../assets/name.png';
 import github from '../assets/github.png';
 import linkedin from '../assets/linkedin.jpg';
-import resume from '../assets/Jonathan_Oh_Resume.pdf';
+import resume from '../assets/Jonathan Oh Resume.pdf';
 import download from '../assets/download.png';
 import { Fade as Hamburger } from 'hamburger-react';
 
