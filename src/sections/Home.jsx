@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import {ReactTyped} from 'react-typed';
+import { ReactTyped } from 'react-typed';
 import me from '../assets/me.png';
 import background from '../assets/background.jpg';
 
@@ -8,9 +8,8 @@ const Home = forwardRef((props, ref) => {
   const { AboutRef, ProjectsRef } = props;
 
   const scrollToSection = (elementRef) => {
-
     console.log("calledd");
-    console.log(elementRef.current)
+    console.log(elementRef.current);
 
     const sectionTop = elementRef.current.getBoundingClientRect().top;
     let scrollPosition = window.scrollY + sectionTop;
@@ -22,7 +21,7 @@ const Home = forwardRef((props, ref) => {
   }
 
   return (
-    <div ref = {ref} className="text-white flex justify-center items-center overflow-hidden relative w-full min-h-[calc(100vh-54px)] md:min-h-[calc(100vh-54px)]" 
+    <div ref={ref} className="text-white flex justify-center items-center overflow-hidden relative w-full h-[calc(70vh-54px)] md:h-[calc(80vh-54px)] lg:h-[calc(100vh-54px)] " 
       style={{ 
       backgroundImage: `url(${background})`,
       backgroundSize: 'cover', 
@@ -36,13 +35,13 @@ const Home = forwardRef((props, ref) => {
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold">Hi, I'm Jonathan,</h2>
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold">
             <ReactTyped
-                strings = {[
+                strings={[
                     "A Student",
                     "A Developer",
                     "An Avid Chef",
                 ]}
-                typeSpeed = {50}
-                backSpeed = {50}
+                typeSpeed={50}
+                backSpeed={50}
                 loop
             />
             </h2>
@@ -53,7 +52,7 @@ const Home = forwardRef((props, ref) => {
           <div className='hidden md:block'>
             <h1 className="font-bold">ABOUT ME</h1>
             <p className="text-gray-300 w-full"> I'm a student at <span className="text-white"> Carnegie Mellon </span> studying <span className="text-white"> Computer Science + Information Systems</span></p>
-            <button onClick = {() => scrollToSection(AboutRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> Learn More </button>
+            <button onClick={() => scrollToSection(AboutRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> Learn More </button>
           </div>
 
           <div className='md:hidden ml-4 sm:ml-8'>
@@ -64,14 +63,14 @@ const Home = forwardRef((props, ref) => {
 
           <div className='hidden md:block'>
             <h1 className="font-bold">PROJECTS</h1>
-            <p className="text-gray-300"> Check out my recent projects directly through a macbook mockup I made! </p>
-            <button onClick = {() => scrollToSection(ProjectsRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> See Portfolio </button>
+            <p className="text-gray-300"> Check out my recent projects! </p>
+            <button onClick={() => scrollToSection(ProjectsRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> See Portfolio </button>
           </div>
         </div>
         
       </div>
 
-      <img src={me} alt="Profile" className="w-full sm:w-4/5 md:w-3/5 h-full z-0" />
+      <img src={me} alt="Profile" className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-4/5 md:w-3/5 h-auto" />
     </div>
   );
 });
