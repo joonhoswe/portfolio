@@ -18,7 +18,7 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
   const navLinks = [
     { title: "home", ref: HomeRef },
     { title: "about", ref: AboutRef },
-    // { title: "work", ref: WorkRef },
+    { title: "work", ref: WorkRef },
     { title: "projects", ref: ProjectsRef }, 
     { title: "contact", ref: ContactRef }
   ];

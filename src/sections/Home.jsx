@@ -22,7 +22,7 @@ const Home = forwardRef((props, ref) => {
   }
 
   return (
-    <div ref = {ref} className="text-white flex justify-center items-center overflow-hidden relative w-full min-h-[calc(80vh-54px)] md:min-h-[calc(100vh-54px)]" 
+    <div ref = {ref} className="text-white flex justify-center items-center overflow-hidden relative w-full min-h-[calc(100vh-54px)] md:min-h-[calc(100vh-54px)]" 
       style={{ 
       backgroundImage: `url(${background})`,
       backgroundSize: 'cover', 

@@ -1,7 +1,5 @@
 import React from 'react';
 import { useState, useEffect, useRef, forwardRef } from 'react';
-import SWEdle from '../assets/mac_images/SWEdle.png';
-import ATC from '../assets/mac_images/smiski404.webp';
 
 const Projects = forwardRef((props, ref) => {
 

@@ -20,9 +20,7 @@ const App = () => {
         <Navbar HomeRef = {HomeRef} AboutRef = {AboutRef} WorkRef = {WorkRef} ProjectsRef = {ProjectsRef} ContactRef = {ContactRef}/>
         <Home ref = {HomeRef} AboutRef = {AboutRef} ProjectsRef = {ProjectsRef}/>
         <About ref = {AboutRef}/>
-
-        {/* <Work ref = {WorkRef}/> */}
-
+        <Work ref = {WorkRef}/>
         <Projects ref = {ProjectsRef}/>
         <Contact ref = {ContactRef}/>
   </div>
