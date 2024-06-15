@@ -33,7 +33,7 @@ const Projects = forwardRef((props, ref) => {
         <div className='lg:px-48 lg:py-12 flex flex-wrap justify-center gap-24'>
             {projectCards.map((card, index) => (
                 <div key={index} className='bg-white shadow-2xl p-4 rounded-lg lg:h-auto lg:w-56 flex flex-col'>
-                    <div className="h-full w-full rounded-2xl flex flex-col space-y-1 text-start">
+                    <div className="h-full w-full rounded-lg flex flex-col space-y-1 text-start">
                         <div className='flex items-center justify-center '>
                             <img src={card.image} alt={card.name} className='rounded-xl lg:h-40 lg:w-48'/>
                         </div>

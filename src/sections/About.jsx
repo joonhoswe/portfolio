@@ -34,14 +34,14 @@ const About = forwardRef((props, ref) => {
     ];
 
   return (
-    <div ref={ref} className='bg-white w-full h-screen flex flex-col items-center justify-center'>
+    <div ref={ref} className='bg-white w-full min-h-screen flex flex-col items-center justify-center'>
         <h1 className='text-black text-3xl font-bold'> See some of my interests and hobbies! </h1>
-        <div className='lg:px-48 lg:py-12 flex flex-wrap justify-center gap-24'>
+        <div className='h-full w-full px-8 py-12 md:px-24 md:py-12 lg:px-24 lg:py-12 flex flex-wrap justify-center md:gap-8 lg:gap-20'>
             {aboutCards.map((card, index) => (
-                <div key={index} className='bg-white shadow-2xl p-4 rounded-lg lg:h-auto lg:w-56 flex flex-col'>
-                    <div className="h-full w-full rounded-2xl flex flex-col space-y-1 text-start">
+                <div key={index} className='bg-white shadow-2xl p-4 rounded-lg h-auto md:w-48 lg:w-56 flex flex-col'>
+                    <div className="h-full w-full rounded-lg flex flex-col space-y-1 text-start">
                         <div className='flex items-center justify-center '>
-                            <img src={card.image} alt={card.name} className='rounded-xl lg:h-40 lg:w-48'/>
+                            <img src={card.image} alt={card.name} className='rounded-xl md:h-32 md:w-40 lg:h-40 lg:w-48'/>
                         </div>
                         <div className='flex flex-col justify-start items-center'>
                             <p className='text-black font-bold'>{card.name}</p>
