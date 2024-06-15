@@ -7,22 +7,22 @@ const Projects = forwardRef((props, ref) => {
 
     const projectCards = [
         { name: "ApartMatch", 
-        blurb: "I won the Invention Convention with \"Wash Your iPad\" which uses UV light and Lego Robotics to sanitize devices!", 
+        blurb: "An online platform for college students to swiftly match into off-campus homes with one click.", 
         image: inventionConvention,
         },
 
         { name: "SWEdle", 
-        blurb: "I've always loved the thrill of racing, so I made my own go-kart from my parent's garden wagon!", 
+        blurb: "A spinoff of the viral web game Wordle, with Software Engineering words instead!", 
         image: inventionConvention,
         },
 
         { name: "StockBot", 
-        blurb: "I've been playing table tennis for 10 years since I was 9. At age 14, I was a sponsored athlete and ranked #6 in Ohio!", 
+        blurb: "A Discord bot that keeps you up to date on your profits (or losses)!", 
         image: inventionConvention,
         },
 
         { name: "Portfolio Website", 
-        blurb: "I'm a pole vaulter for CMU with a PB of 13\'8\". I love seeing physics work in real life through this sport!", 
+        blurb: "My portfolio website built with React, Vite, and Tailwind CSS.", 
         image: inventionConvention,
         },
     ];

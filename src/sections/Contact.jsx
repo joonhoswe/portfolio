@@ -95,9 +95,9 @@ const Contact = forwardRef((props, ref) => {
                                 <input 
                                     type="submit" 
                                     value="Send" 
-                                    className={`w-32 text-white py-2 px-4 rounded-lg transition duration-300 ease-in-out outline outline-3 
+                                    className={`w-32 text-black py-2 px-4 rounded-lg transition duration-300 ease-in-out outline outline-3 
                                     ${
-                                        isFormValid ? 'opacity-100 hover:bg-white hover:text-gray-800 hover:cursor-pointer' : 'opacity-50 cursor-not-allowed'
+                                        isFormValid ? 'opacity-100 bg-cyan-400 text-white hover:bg-white hover:text-cyan-400 hover:cursor-pointer' : 'opacity-50 cursor-not-allowed'
                                     }`} 
                                     disabled={!isFormValid}
                                 />
@@ -107,7 +107,7 @@ const Contact = forwardRef((props, ref) => {
 
                 {/* left portion containing "connect with me" */}
                 <div className="hidden lg:flex  flex-col items-start pl-8 pt-10 w-2/5 h-full shadow-r-lg shadow-black rounded-r-2xl overflow-auto">
-                    <div className='flex flex-col space-y-4 text-s mt-12'>
+                    <div className='flex flex-col space-y-4 text-s mt-16'>
                         <div className='flex flex-row items-center space-x-2'>
                             <img src = {phone} alt = 'phone icon' className='h-4 w-4 '/>
                             <p> +1 (614) 949-4702 </p>

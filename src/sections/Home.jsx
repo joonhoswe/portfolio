@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react';
 import { ReactTyped } from 'react-typed';
 import me from '../assets/me.png';
 import background from '../assets/background.jpg';
+import cmu from '../assets/cmu.jpeg';
 
 const Home = forwardRef((props, ref) => {
 
@@ -48,24 +49,9 @@ const Home = forwardRef((props, ref) => {
         </div>
         
         {/* right side of me image */}
-        <div className="z-10 md:pt-12 flex flex-col space-y-2 text-xs sm:text-xs md:text-sm lg:text-base md:space-y-3 lg:space-y-5 md:pb-48 w-3/4 md:w-1/4 mr-4 sm:mr-6 md:mr-8 lg:mr-12">
-          <div className='hidden md:block'>
-            <h1 className="font-bold">ABOUT ME</h1>
-            <p className="text-gray-300 w-full"> I'm a student at <span className="text-white"> Carnegie Mellon </span> studying <span className="text-white"> Computer Science + Information Systems</span></p>
-            <button onClick={() => scrollToSection(AboutRef)} className="text-white text-sm font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> Learn More </button>
-          </div>
-
-          <div className='md:hidden ml-4 sm:ml-8'>
-            <p className="text-white w-full"> CS + IS @ Carnegie Mellon </p>
-          </div>
-
-          <hr className="h-0.5 bg-gray-200 border-0 hidden md:block" />
-
-          <div className='hidden md:block'>
-            <h1 className="font-bold">PROJECTS</h1>
-            <p className="text-gray-300"> Check out my recent projects! </p>
-            <button onClick={() => scrollToSection(ProjectsRef)} className="text-white text-sm font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> See Portfolio </button>
-          </div>
+        <div className="z-10 mt-3 md:pb-10 lg:pb-12 flex flex-row space-x-2 items-center w-3/4 ml-4 sm:ml-8 md:w-1/4 md:mr-4">
+              <img src = {cmu} className='h-10 w-10 md:h-12 md:w-12' alt='CMU logo'/>
+              <p className="text-white w-full text-xs md:text-sm lg:text-base"> B.S. Computer Science '27</p>
         </div>
         
       </div>
