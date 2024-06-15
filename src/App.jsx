@@ -5,6 +5,7 @@ import Navbar from './components/navbar';
 import Work from './sections/Work';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
+import Footer from './components/footer';
 import { useRef } from 'react';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Work ref = {WorkRef}/>
         <Projects ref = {ProjectsRef}/>
         <Contact ref = {ContactRef}/>
+        <Footer/>
   </div>
   );
 };

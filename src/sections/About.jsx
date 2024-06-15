@@ -1,15 +1,14 @@
 import React, { useEffect, useState, forwardRef } from 'react';
-import me from '../assets/me.png';
-import inventionConvention from '../assets/iphone_images/invention_convention.jpg';
-import goKart from '../assets/iphone_images/gokart.png';
-import tableTennis from '../assets/iphone_images/table_tennis.png';
-import viola from '../assets/iphone_images/viola.png';
+import inventionConvention from '../assets/about_images/invention_convention.jpg';
+import goKart from '../assets/about_images/gokart.png';
+import tableTennis from '../assets/about_images/table_tennis.png';
+import viola from '../assets/about_images/viola.png';
 
 const About = forwardRef((props, ref) => {
 
     const aboutCards = [
-        { name: "Bio", 
-        blurb: "I won the 2014 Invention Convention with my invention which uses UV light and Lego Robotics to sanitize smart devices!", 
+        { name: "Inventing", 
+        blurb: "I won the Invention Convention with \"Wash Your iPad\" which uses UV light and Lego Robotics to sanitize devices!", 
         image: inventionConvention,
         },
 
@@ -23,25 +22,25 @@ const About = forwardRef((props, ref) => {
         image: tableTennis,
         },
 
-        { name: "Music", 
-        blurb: "The violin and viola have been my best friends since 1st grade. I love the structured rules yet boundless elegance of music!", 
+        { name: "Pole Vault", 
+        blurb: "I'm a pole vaulter for CMU with a PB of 13\'8\". I love seeing physics work in real life through this sport!", 
         image: viola,
         },
 
-        { name: "Filler", 
+        { name: "Music", 
         blurb: "The violin and viola have been my best friends since 1st grade. I love the structured rules yet boundless elegance of music!", 
         image: viola,
         },
     ];
 
   return (
-    <div ref={ref} className='bg-white w-full h-[calc(100vh-54px)] flex flex-col items-center justify-center'>
+    <div ref={ref} className='bg-white w-full h-screen flex flex-col items-center justify-center'>
         <h1 className='text-black text-3xl font-bold'> See some of my interests and hobbies! </h1>
-        <div className='lg:px-16 lg:py-12 flex flex-wrap justify-center gap-8'>
+        <div className='lg:px-48 lg:py-12 flex flex-wrap justify-center gap-24'>
             {aboutCards.map((card, index) => (
-                <div key={index} className='bg-white shadow-2xl rounded-xl outline outline-2 outline-white lg:h-auto lg:w-72 flex flex-col'>
-                    <div className="h-full w-full rounded-2xl p-4 px-12 flex flex-col space-y-1 text-start">
-                        <div className='flex items-center justify-center mb-2'>
+                <div key={index} className='bg-white shadow-2xl p-4 rounded-lg lg:h-auto lg:w-56 flex flex-col'>
+                    <div className="h-full w-full rounded-2xl flex flex-col space-y-1 text-start">
+                        <div className='flex items-center justify-center '>
                             <img src={card.image} alt={card.name} className='rounded-xl lg:h-40 lg:w-48'/>
                         </div>
                         <div className='flex flex-col justify-start items-center'>

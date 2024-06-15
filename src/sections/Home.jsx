@@ -52,7 +52,7 @@ const Home = forwardRef((props, ref) => {
           <div className='hidden md:block'>
             <h1 className="font-bold">ABOUT ME</h1>
             <p className="text-gray-300 w-full"> I'm a student at <span className="text-white"> Carnegie Mellon </span> studying <span className="text-white"> Computer Science + Information Systems</span></p>
-            <button onClick={() => scrollToSection(AboutRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> Learn More </button>
+            <button onClick={() => scrollToSection(AboutRef)} className="text-white text-sm font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> Learn More </button>
           </div>
 
           <div className='md:hidden ml-4 sm:ml-8'>
@@ -64,7 +64,7 @@ const Home = forwardRef((props, ref) => {
           <div className='hidden md:block'>
             <h1 className="font-bold">PROJECTS</h1>
             <p className="text-gray-300"> Check out my recent projects! </p>
-            <button onClick={() => scrollToSection(ProjectsRef)} className="text-white font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> See Portfolio </button>
+            <button onClick={() => scrollToSection(ProjectsRef)} className="text-white text-sm font-bold underline hover:text-sky-500 transition ease-in-out duration-300"> See Portfolio </button>
           </div>
         </div>
         
