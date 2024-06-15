@@ -19,8 +19,14 @@ export default function Testimonials() {
     ];
 
     return (
-        <div className="bg-gray-200 text-white w-full h-[70vh] flex flex-col items-center justify-center">
+        <div className="bg-gray-200 text-black w-full h-[70vh] flex flex-col items-center justify-center">
             <div className='bg-white rounded-2xl w-2/5 h-1/2'>
+                <p className=''></p>
+                <div>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                </div>
             </div>
         </div>
     );
