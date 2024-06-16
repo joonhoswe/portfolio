@@ -57,18 +57,18 @@ const Work = forwardRef((props, ref) => {
     };
 
     return (
-        <div ref = {ref} className="bg-gray-200 text-black w-full h-screen flex items-center justify-between px-24">
+        <div ref = {ref} className="bg-gray-200 text-black w-full h-screen flex items-center justify-between px-4 md:px-12 lg:px-24">
 
-            <button onClick={handlePrev} className='h-12 w-12 rounded-full bg-white text-black flex items-center justify-center text-2xl font-bold shadow-2xl'> 〈 </button>
+            <button onClick={handlePrev} className='h-6 w-6 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl'> 〈 </button>
 
-            <div className='bg-white rounded-2xl w-2/3 h-2/3 flex flex-col p-8 shadow-2xl justify-between'>
+            <div className='bg-white rounded-2xl w-full h-1/2 md:w-3/4 md:h-1/2 lg:w-2/3 lg:h-2/3 flex flex-col p-8 shadow-2xl justify-between'>
                 <div className='w-full h-2/3 flex flex-row justify-between'>
-                    <img src={experiences[activeExp].image} className='w-4/5 h-full rounded-lg shadow-2xl' alt='' />
+                    <img src={experiences[activeExp].image} className='w-full h-4/5 md:w-4/5 lg:h-full rounded-lg shadow-2xl' alt='work img' />
 
-                    <div className='flex flex-col justify-between items-center w-full h-full px-4'>
+                    <div className='hidden md:flex flex-col justify-between items-center w-full h-4/5 lg:h-full px-4'>
                         {
                             experiences[activeExp].languages.map((lang, index) => (
-                                <div key={index} className='bg-white h-16 w-16 rounded-full p-4 flex items-center justify-center shadow-2xl'>
+                                <div key={index} className='bg-white h-8 w-8 md:h-12 md:w-12 lg:h-16 lg:w-16 rounded-full p-4 flex items-center justify-center shadow-2xl'>
                                     <img src = {lang}/>
                                 </div>
                             ))
@@ -77,9 +77,9 @@ const Work = forwardRef((props, ref) => {
                 </div>
                 
                 <div>
-                    <p className='font-bold'> {experiences[activeExp].company} </p>
-                    <p className='italic'> {experiences[activeExp].position} </p>
-                    <p className=''> {experiences[activeExp].blurb} </p>
+                    <p className='font-bold text-cyan-400 text-sm md:text-sm lg:text-base'> {experiences[activeExp].company} </p>
+                    <p className='italic text-xs md:text-sm lg:text-base'> {experiences[activeExp].position} </p>
+                    <p className='text-xs md:text-sm lg:text-base'> {experiences[activeExp].blurb} </p>
                 </div>
 
                 <div className='flex flex-row space-x-1 items-center justify-center'>
@@ -89,7 +89,7 @@ const Work = forwardRef((props, ref) => {
                 </div>
             </div>
 
-            <button onClick={handleNext} className='h-12 w-12 rounded-full bg-white text-black flex items-center justify-center text-2xl font-bold shadow-2xl'> 〉 </button>
+            <button onClick={handleNext} className='h-6 w-6 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl'> 〉 </button>
 
         </div>
     );

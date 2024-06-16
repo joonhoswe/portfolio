@@ -37,7 +37,7 @@ export default function Testimonials() {
     return (
         <div className="bg-gray-200 text-black w-full h-[70vh] flex flex-row lg:space-x-8 items-center justify-center">
 
-            <button onClick={handlePrev} className='h-12 w-12 rounded-full bg-white text-black flex items-center justify-center text-2xl font-bold shadow-2xl'> 〈 </button>
+            <button onClick={handlePrev} className='h-6 w-6 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl'> 〈 </button>
 
             <div className='bg-white rounded-2xl w-2/5 h-1/2 px-4 py-8 shadow-2xl'>
                 <p className='italic'> " {testimonials[active].review} "</p>
@@ -51,7 +51,7 @@ export default function Testimonials() {
                 </div>
             </div>
 
-            <button onClick={handleNext} className='h-12 w-12 rounded-full bg-white text-black flex items-center justify-center text-2xl font-bold shadow-2xl'> 〉 </button>
+            <button onClick={handleNext} className='h-6 w-6 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl'> 〉 </button>
             
         </div>
     );
