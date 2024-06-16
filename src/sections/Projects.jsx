@@ -1,6 +1,9 @@
 import React from 'react';
 import { useState, useEffect, useRef, forwardRef } from 'react';
-import inventionConvention from '../assets/about_images/invention_convention.jpg';
+import apartmatch from '../assets/project_images/apartmatch.jpeg';
+import swedle from '../assets/project_images/swedle.png';
+import stockBot from '../assets/project_images/stockbot.png';
+import portfolio from '../assets/project_images/portfolio.png';
 
 
 const Projects = forwardRef((props, ref) => {
@@ -8,22 +11,22 @@ const Projects = forwardRef((props, ref) => {
     const projectCards = [
         { name: "ApartMatch", 
         blurb: "An online platform for college students to swiftly match into off-campus homes with one click.", 
-        image: inventionConvention,
+        image: apartmatch,
         },
 
         { name: "SWEdle", 
         blurb: "A spinoff of the viral web game Wordle, with Software Engineering words instead!", 
-        image: inventionConvention,
+        image: swedle,
         },
 
         { name: "StockBot", 
         blurb: "A Discord bot that keeps you up to date on your profits (or losses)!", 
-        image: inventionConvention,
+        image: stockBot,
         },
 
         { name: "Portfolio Website", 
         blurb: "My portfolio website built with React, Vite, and Tailwind CSS.", 
-        image: inventionConvention,
+        image: portfolio,
         },
     ];
 

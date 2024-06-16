@@ -38,7 +38,7 @@ const About = forwardRef((props, ref) => {
         <h1 className='text-black text-3xl font-bold'> See some of my interests and hobbies! </h1>
         <div className='h-full w-full px-8 py-12 md:px-24 md:py-12 lg:px-24 lg:py-12 flex flex-wrap justify-center md:gap-8 lg:gap-20'>
             {aboutCards.map((card, index) => (
-                <div key={index} className='bg-white shadow-2xl p-4 rounded-lg h-auto md:w-48 lg:w-56 flex flex-col'>
+                <div key={index} className='bg-white shadow-2xl p-4 rounded-2xl h-auto md:w-48 lg:w-56 flex flex-col'>
                     <div className="h-full w-full rounded-lg flex flex-col space-y-1 text-start">
                         <div className='flex items-center justify-center '>
                             <img src={card.image} alt={card.name} className='rounded-xl md:h-32 md:w-40 lg:h-40 lg:w-48'/>
