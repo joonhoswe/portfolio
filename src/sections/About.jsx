@@ -2,6 +2,7 @@ import React, { useEffect, useState, forwardRef } from 'react';
 import inventionConvention from '../assets/about_images/invention_convention.jpg';
 import goKart from '../assets/about_images/gokart.png';
 import tableTennis from '../assets/about_images/table_tennis.png';
+import polevault from '../assets/about_images/polevault.jpg';
 import viola from '../assets/about_images/viola.png';
 
 const About = forwardRef((props, ref) => {
@@ -24,7 +25,7 @@ const About = forwardRef((props, ref) => {
 
         { name: "Pole Vault", 
         blurb: "I'm a pole vaulter for CMU with a PB of 13\'8\". I love seeing physics work in real life through this sport!", 
-        image: viola,
+        image: polevault,
         },
 
         { name: "Music", 
@@ -34,14 +35,14 @@ const About = forwardRef((props, ref) => {
     ];
 
   return (
-    <div ref={ref} className='bg-white w-full min-h-screen flex flex-col items-center justify-center'>
-        <h1 className='text-black text-3xl font-bold'> See some of my interests and hobbies! </h1>
-        <div className='h-full w-full px-8 py-12 md:px-24 md:py-12 lg:px-24 lg:py-12 flex flex-wrap justify-center md:gap-8 lg:gap-20'>
+    <div ref={ref} className='bg-white w-full min-h-screen flex flex-col items-center justify-center py-12'>
+        <h1 className='text-black text-center text-lg sm:text-2xl md:text-3xl font-bold'> See some of my interests and hobbies! </h1>
+        <div className='h-full w-full px-8 py-12 md:px-24 md:py-12 lg:px-24 lg:py-12 flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-20'>
             {aboutCards.map((card, index) => (
-                <div key={index} className='bg-white shadow-2xl p-4 rounded-2xl h-auto md:w-48 lg:w-56 flex flex-col'>
+                <div key={index} className='bg-white shadow-2xl p-4 rounded-2xl h-auto w-40 md:w-48 lg:w-56 flex flex-col'>
                     <div className="h-full w-full rounded-lg flex flex-col space-y-1 text-start">
                         <div className='flex items-center justify-center '>
-                            <img src={card.image} alt={card.name} className='rounded-xl md:h-32 md:w-40 lg:h-40 lg:w-48'/>
+                            <img src={card.image} alt={card.name} className='rounded-xl h-24 w-32 sm:h-28 sm:w-36 md:h-32 md:w-40 lg:h-40 lg:w-48'/>
                         </div>
                         <div className='flex flex-col justify-start items-center'>
                             <p className='text-black font-bold'>{card.name}</p>
