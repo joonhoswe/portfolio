@@ -35,18 +35,18 @@ export default function Testimonials() {
     ];
 
     return (
-        <div className="bg-gray-200 text-black w-full h-[70vh] flex flex-row lg:space-x-8 items-center justify-center">
+        <div className="bg-gray-200 text-black w-full h-[70vh] flex flex-row space-x-1 md:space-x-4 lg:space-x-8 items-center justify-center">
 
             <button onClick={handlePrev} className='h-6 w-6 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl'> 〈 </button>
 
-            <div className='bg-white rounded-2xl w-2/5 h-1/2 px-4 py-8 shadow-2xl'>
-                <p className='italic'> " {testimonials[active].review} "</p>
+            <div className='bg-white rounded-2xl w-4/5 md:w-2/5 h-1/2 sm:h-2/5 md:h-1/2 px-4 py-4 lg:py-8 shadow-2xl'>
+                <p className='italic text-xs md:text-sm lg:text-base'> " {testimonials[active].review} "</p>
 
                 <div className='flex justify-end mt-2'>
                     <div className='flex flex-col'>
-                        <p className='font-bold text-cyan-400'> - {testimonials[active].name} </p>
-                        <p className='text-sm'> {testimonials[active].company} </p>
-                        <p className='text-sm'> {testimonials[active].position} </p>
+                        <p className='font-bold text-cyan-400 text-xs md:text-sm'> - {testimonials[active].name} </p>
+                        <p className='text-xs md:text-sm'> {testimonials[active].company} </p>
+                        <p className='text-xs md:text-sm'> {testimonials[active].position} </p>
                     </div>
                 </div>
             </div>
