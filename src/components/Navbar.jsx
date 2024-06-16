@@ -18,7 +18,7 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
   const navLinks = [
     { title: "home", ref: HomeRef },
     { title: "about", ref: AboutRef },
-    // { title: "work", ref: WorkRef },
+    { title: "work", ref: WorkRef },
     { title: "projects", ref: ProjectsRef }, 
     { title: "contact", ref: ContactRef }
   ];
@@ -42,7 +42,7 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
   };
 
   return (
-    <div ref={navbarRef} className="flex items-center justify-between w-full h-14 sticky top-0 z-50 text-white bg-gray-800 bg-opacity-60 backdrop-filter backdrop-blur-lg">
+    <div ref={navbarRef} className="flex items-center justify-between w-full h-14 sticky top-0 z-50 text-white bg-gray-700 bg-opacity-60 backdrop-filter backdrop-blur-lg">
       <div className='items-center justify-between w-full h-14 hidden md:flex'>
         <img className='ml-4 h-1/3 w-1/8' src={name} alt='Jonathan'/>
         <div className="flex items-center justify-center space-x-6 ml-24">

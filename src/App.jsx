@@ -4,7 +4,9 @@ import About from './sections/About';
 import Navbar from './components/navbar';
 import Work from './sections/Work';
 import Projects from './sections/Projects';
+import Testimonials from './sections/Testimonials';
 import Contact from './sections/Contact';
+import Footer from './components/footer';
 import { useRef } from 'react';
 
 const App = () => {
@@ -20,11 +22,11 @@ const App = () => {
         <Navbar HomeRef = {HomeRef} AboutRef = {AboutRef} WorkRef = {WorkRef} ProjectsRef = {ProjectsRef} ContactRef = {ContactRef}/>
         <Home ref = {HomeRef} AboutRef = {AboutRef} ProjectsRef = {ProjectsRef}/>
         <About ref = {AboutRef}/>
-
-        {/* <Work ref = {WorkRef}/> */}
-
+        <Work ref = {WorkRef}/>
         <Projects ref = {ProjectsRef}/>
+        <Testimonials/>
         <Contact ref = {ContactRef}/>
+        <Footer/>
   </div>
   );
 };

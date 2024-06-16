@@ -49,15 +49,65 @@ const Contact = forwardRef((props, ref) => {
     const isFormValid = userName && userEmail && userMessage;
 
     return (
-        <div ref = {ref} className="bg-gray-900 text-white w-full h-screen flex items-center justify-center">
+        <div ref = {ref} className="bg-white text-black w-full h-screen flex items-center justify-center">
             {/* Big rectangle to contain both connect with me + contact form */}
-            <div className="bg-gray-800 flex flex-row items-center w-3/4 md:w-1/2 h-11/20 outline outline-2 outline-white shadow-all-lg shadow-cyan-400 rounded-2xl overflow-hidden">
+            <div className="bg-white flex flex-row items-center w-3/4 md:w-1/2 h-11/20 outline outline-2 outline-gray-200 shadow-2xl rounded-2xl overflow-hidden">
+
+
+                {/* right portion containing "get in touch" */}
+                <div className="flex flex-col items-center pt-10 w-full lg:w-3/5 h-full overflow-auto">                  
+                    <form ref={form} onSubmit={sendEmail} className='w-full px-4 sm:px-32 md:px-24 lg:px-14'>
+                        <p className='font-bold text-xl md:text-3xl mb-8 text-center'> Contact Me </p>
+
+                        <div className='flex flex-col space-y-2 w-full'>
+                            {/* name input field */}
+                            <div className='w-full'>
+                                <p className=""> Name </p>
+                                <label className='w-full'>
+                                    <input name="user_name" type="name" value={userName} onChange={(e) => setUserName(e.target.value)} className="bg-gray-200 w-full rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1" />
+                                </label>
+                            </div>
+                            
+                            {/* email input field */}
+                            <div>
+                                <p className="mb-1"> Email Address </p>
+                                <label className=''>
+                                    <input name="user_email" type="email" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} className="bg-gray-200 w-full rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1" />
+                                </label>
+                            </div>
+
+                            {/* message input field */}
+                            <div>
+                                <p className="mb-1"> Message </p>
+                                <label className=''>
+                                    <textarea
+                                        name="message"
+                                        value={userMessage}
+                                        onChange={(e) => setUserMessage(e.target.value)}
+                                        className="bg-gray-200 h-20 lg: w-full rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1 resize-none"
+                                    />
+                                </label>
+                            </div>  
+                        </div>
+
+                        {/* submit button */}
+                        <div className="flex justify-center mt-8">
+                                <input 
+                                    type="submit" 
+                                    value="Send" 
+                                    className={`w-32 text-black py-2 px-4 rounded-lg transition duration-300 ease-in-out outline outline-3 
+                                    ${
+                                        isFormValid ? 'opacity-100 bg-cyan-400 text-white hover:bg-white hover:text-cyan-400 hover:cursor-pointer' : 'opacity-50 cursor-not-allowed'
+                                    }`} 
+                                    disabled={!isFormValid}
+                                />
+                            </div>
+                    </form>
+                </div>
 
                 {/* left portion containing "connect with me" */}
-                <div className="hidden lg:flex flex-col items-start pl-8 pt-10 w-2/5 h-full shadow-r-lg shadow-black rounded-l-2xl overflow-auto">
-                    {/* <p className='font-bold text-4xl'> connect with <span className='text-cyan-400'> me</span></p> */}
-                    <p className='font-bold text-3xl'> Let's Connect! </p>
-                    <div className='flex flex-col space-y-4 text-s mt-12'>
+                <div className="hidden lg:flex  flex-col items-start pl-8 pt-10 w-2/5 h-full shadow-r-lg shadow-black rounded-r-2xl overflow-auto">
+                    <div className='flex flex-col space-y-4 text-s mt-16'>
                         <div className='flex flex-row items-center space-x-2'>
                             <img src = {phone} alt = 'phone icon' className='h-4 w-4 '/>
                             <p> +1 (614) 949-4702 </p>
@@ -78,56 +128,8 @@ const Contact = forwardRef((props, ref) => {
                     </div>
                 </div>
 
-                {/* right portion containing "get in touch" */}
-                <div className="flex flex-col items-center pt-10 w-full lg:w-3/5 h-full overflow-auto">                  
-                    <form ref={form} onSubmit={sendEmail} className='w-full px-4 sm:px-32 md:px-24 lg:px-14'>
-                        <p className='font-bold text-xl md:text-3xl mb-8 text-center'> Contact Me </p>
+                
 
-                        <div className='flex flex-col space-y-2 w-full'>
-                            {/* name input field */}
-                            <div className='w-full'>
-                                <p className=""> Name </p>
-                                <label className='w-full'>
-                                    <input name="user_name" type="name" value={userName} onChange={(e) => setUserName(e.target.value)} className="bg-gray-900 w-full rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1" />
-                                </label>
-                            </div>
-                            
-                            {/* email input field */}
-                            <div>
-                                <p className="mb-1"> Email Address </p>
-                                <label className=''>
-                                    <input name="user_email" type="email" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} className="bg-gray-900 w-full rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1" />
-                                </label>
-                            </div>
-
-                            {/* message input field */}
-                            <div>
-                                <p className="mb-1"> Message </p>
-                                <label className=''>
-                                    <textarea
-                                        name="message"
-                                        value={userMessage}
-                                        onChange={(e) => setUserMessage(e.target.value)}
-                                        className="bg-gray-900 h-20 lg: w-full rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none p-1 resize-none"
-                                    />
-                                </label>
-                            </div>  
-                        </div>
-                        {/* submit button */}
-                        <div className="flex justify-center mt-8">
-                                <input 
-                                    type="submit" 
-                                    value="Send" 
-                                    className={`w-32 text-white py-2 px-4 rounded-lg transition duration-300 ease-in-out outline outline-3 
-                                    ${
-                                        isFormValid ? 'opacity-100 hover:bg-white hover:text-gray-800 hover:cursor-pointer' : 'opacity-50 cursor-not-allowed'
-                                    }`} 
-                                    disabled={!isFormValid}
-                                />
-                            </div>
-                    </form>
-
-                </div>
             </div>
             
         </div>
