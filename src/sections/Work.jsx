@@ -59,7 +59,10 @@ const Work = forwardRef((props, ref) => {
     return (
         <div ref = {ref} className="bg-gray-200 text-black w-full h-screen flex flex-col space-y-4 items-center justify-center px-4 md:px-12 lg:px-24">
 
+            <h1 className='text-black text-center text-lg sm:text-2xl md:text-3xl font-bold mb-8'> Professional Experience </h1>
+
             <div className='bg-white rounded-2xl w-full h-1/2 md:w-3/4 md:h-1/2 lg:w-2/3 lg:h-2/3 flex flex-col p-8 shadow-2xl justify-between'>
+                
                 <div className='w-full h-2/3 flex flex-row justify-between'>
                     <img src={experiences[activeExp].image} className='w-full h-4/5 md:w-4/5 lg:h-full rounded-lg shadow-2xl' alt='work img' />
 
