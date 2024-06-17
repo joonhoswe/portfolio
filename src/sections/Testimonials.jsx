@@ -35,9 +35,7 @@ export default function Testimonials() {
     ];
 
     return (
-        <div className="bg-gray-200 text-black w-full h-[70vh] flex flex-row space-x-1 md:space-x-4 lg:space-x-8 items-center justify-center">
-
-            <button onClick={handlePrev} className='h-6 w-6 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl'> 〈 </button>
+        <div className="bg-gray-200 text-black w-full h-[70vh] flex flex-col space-y-4 items-center justify-center">
 
             <div className='bg-white rounded-2xl w-4/5 md:w-2/5 h-1/2 sm:h-2/5 md:h-1/2 px-4 py-4 lg:py-8 shadow-2xl'>
                 <p className='italic text-xs md:text-sm lg:text-base'> " {testimonials[active].review} "</p>
@@ -51,8 +49,11 @@ export default function Testimonials() {
                 </div>
             </div>
 
-            <button onClick={handleNext} className='h-6 w-6 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl'> 〉 </button>
-            
+            <div className='flex flex-row space-x-1 items-center justify-center'>
+                <button onClick={handlePrev} className='h-9 w-9 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl hover:bg-cyan-400 transition ease-in-out duration-300'> 〈 </button>
+                <button onClick={handleNext} className='h-9 w-9 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl hover:bg-cyan-400 transition ease-in-out duration-300'> 〉 </button>
+            </div>
+
         </div>
     );
 }

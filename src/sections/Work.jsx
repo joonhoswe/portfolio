@@ -57,9 +57,7 @@ const Work = forwardRef((props, ref) => {
     };
 
     return (
-        <div ref = {ref} className="bg-gray-200 text-black w-full h-screen flex items-center justify-between px-4 md:px-12 lg:px-24">
-
-            <button onClick={handlePrev} className='h-6 w-6 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl'> 〈 </button>
+        <div ref = {ref} className="bg-gray-200 text-black w-full h-screen flex flex-col space-y-4 items-center justify-center px-4 md:px-12 lg:px-24">
 
             <div className='bg-white rounded-2xl w-full h-1/2 md:w-3/4 md:h-1/2 lg:w-2/3 lg:h-2/3 flex flex-col p-8 shadow-2xl justify-between'>
                 <div className='w-full h-2/3 flex flex-row justify-between'>
@@ -82,14 +80,17 @@ const Work = forwardRef((props, ref) => {
                     <p className='text-xs md:text-sm lg:text-base'> {experiences[activeExp].blurb} </p>
                 </div>
 
-                <div className='flex flex-row space-x-1 items-center justify-center'>
+                <div className='flex flex-row space-x-2 items-center justify-center'>
                     { experiences.map((exp, index) => (
                         <div key={index} className={`rounded-full h-2 w-2 ${activeExp === index ? 'bg-cyan-400' : 'bg-gray-400'}`}/>
                     ))}
                 </div>
             </div>
 
-            <button onClick={handleNext} className='h-6 w-6 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl'> 〉 </button>
+            <div className='flex flex-row space-x-1 items-center justify-center'>
+                <button onClick={handlePrev} className='h-9 w-9 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl hover:bg-cyan-400 transition ease-in-out duration-300'> 〈 </button>
+                <button onClick={handleNext} className='h-9 w-9 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl hover:bg-cyan-400 transition ease-in-out duration-300'> 〉 </button>
+            </div>
 
         </div>
     );
