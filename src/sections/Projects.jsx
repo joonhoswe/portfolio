@@ -27,7 +27,7 @@ const Projects = forwardRef((props, ref) => {
         link: "https://github.com/joonhoswe/StockBot",
         },
 
-        { name: "Portfolio Website", 
+        { name: "Portfolio", 
         blurb: "My portfolio website built with React, Vite, and Tailwind CSS.", 
         image: portfolio,
         link: "https://github.com/joonhoswe/portfolio",
