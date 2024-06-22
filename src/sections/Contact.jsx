@@ -51,11 +51,10 @@ const Contact = forwardRef((props, ref) => {
     return (
         <div ref = {ref} className="bg-white text-black w-full h-screen flex items-center justify-center">
             {/* Big rectangle to contain both connect with me + contact form */}
-            <div className="bg-white flex flex-row items-center w-3/4 md:w-1/2 h-11/20 outline outline-2 outline-gray-200 shadow-2xl rounded-2xl overflow-hidden">
-
+            <div className="bg-white flex flex-row items-center w-3/4 md:w-1/2 h-11/20 ring-2 ring-gray-200 shadow-2xl rounded-2xl overflow-hidden">
 
                 {/* right portion containing "get in touch" */}
-                <div className="flex flex-col items-center pt-10 w-full lg:w-3/5 h-full overflow-auto">                  
+                <div className="flex flex-col items-center pt-10 w-full lg:w-3/5 h-full overflow-auto rounded-2xl">                  
                     <form ref={form} onSubmit={sendEmail} className='w-full px-4 sm:px-32 md:px-24 lg:px-14'>
                         <p className='font-bold text-xl md:text-3xl mb-8 text-center'> Contact Me </p>
 
