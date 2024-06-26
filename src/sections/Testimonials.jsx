@@ -35,12 +35,12 @@ export default function Testimonials() {
     ];
 
     return (
-        <div className="bg-gray-200 text-black w-full h-[70vh] flex flex-col space-y-4 items-center justify-center">
+        <div className="bg-gray-200 text-black w-full h-[60vh] flex flex-col space-y-4 items-center justify-center">
 
-            <div className='bg-white rounded-2xl w-4/5 md:w-2/5 h-1/2 sm:h-2/5 md:h-1/2 px-4 py-4 lg:py-8 shadow-2xl'>
+            <div className='bg-white rounded-2xl w-4/5 md:w-2/5 h-auto px-4 py-4 lg:py-8 shadow-2xl'>
                 <p className='italic text-xs md:text-sm lg:text-base'> " {testimonials[active].review} "</p>
 
-                <div className='flex justify-end mt-2'>
+                <div className='flex justify-end mt-4'>
                     <div className='flex flex-col'>
                         <p className='font-bold text-cyan-400 text-xs md:text-sm'> - {testimonials[active].name} </p>
                         <p className='text-xs md:text-sm'> {testimonials[active].company} </p>
