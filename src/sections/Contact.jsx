@@ -49,13 +49,13 @@ const Contact = forwardRef((props, ref) => {
     const isFormValid = userName && userEmail && userMessage;
 
     return (
-        <div ref = {ref} className="bg-white text-black w-full h-screen flex items-center justify-center">
+        <div ref = {ref} className="bg-white text-black w-full h-screen flex items-center justify-center px-4">
             {/* Big rectangle to contain both connect with me + contact form */}
-            <div className="bg-white flex flex-row items-center w-3/4 md:w-1/2 h-11/20 ring-2 ring-gray-200 shadow-2xl rounded-2xl overflow-hidden">
+            <div className="bg-white flex items-center justify-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-auto ring-2 ring-gray-200 shadow-2xl rounded-2xl overflow-hidden">
 
-                {/* right portion containing "get in touch" */}
-                <div className="flex flex-col items-center pt-10 w-full lg:w-3/5 h-full overflow-auto rounded-2xl">                  
-                    <form ref={form} onSubmit={sendEmail} className='w-full px-4 sm:px-32 md:px-24 lg:px-14'>
+                {/* contact fields */}
+                <div className="flex flex-col items-center w-full h-full overflow-auto rounded-2xl">                  
+                    <form ref={form} onSubmit={sendEmail} className='w-full py-10 px-4 lg:px-6'>
                         <p className='font-bold text-xl md:text-3xl mb-8 text-center'> Contact Me </p>
 
                         <div className='flex flex-col space-y-2 w-full'>
@@ -105,7 +105,7 @@ const Contact = forwardRef((props, ref) => {
                 </div>
 
                 {/* left portion containing "connect with me" */}
-                <div className="hidden lg:flex  flex-col items-start pl-8 pt-10 w-2/5 h-full shadow-r-lg shadow-black rounded-r-2xl overflow-auto">
+                {/* <div className="hidden lg:flex  flex-col items-start pl-8 pt-10 w-2/5 h-full shadow-r-lg shadow-black rounded-r-2xl overflow-auto">
                     <div className='flex flex-col space-y-4 text-s mt-16'>
                         <div className='flex flex-row items-center space-x-2'>
                             <img src = {phone} alt = 'phone icon' className='h-4 w-4 '/>
@@ -125,7 +125,7 @@ const Contact = forwardRef((props, ref) => {
                             <p> {date.toLocaleTimeString('en-US', { timeZone: 'America/New_York'})}</p>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 
 

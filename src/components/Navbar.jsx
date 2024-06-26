@@ -42,18 +42,18 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
   };
 
   return (
-    <div ref={navbarRef} className="flex items-center justify-between w-full h-14 sticky top-0 z-50 text-white bg-gray-700 bg-opacity-60 backdrop-filter backdrop-blur-lg">
+    <div ref={navbarRef} className="flex items-center justify-between w-full h-14 sticky top-0 z-50 text-white bg-gray-700 bg-opacity-60 backdrop-filter backdrop-blur-lg animate-fade animate-duration-2000 animate-delay-150">
       <div className='items-center justify-between w-full h-14 hidden md:flex'>
-        <img className='ml-4 h-1/3 w-1/8' src={name} alt='Jonathan'/>
+        <img className='ml-4 h-1/3 w-1/8 animate-fade-right animate-duration-1000 animate-delay-500' src={name} alt='Jonathan'/>
         <div className="flex items-center justify-center space-x-6 ml-24">
           {navLinks.map((link) => (
-            <button key={link.title} onClick={() => scrollToSection(link.ref)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden">
+            <button key={link.title} onClick={() => scrollToSection(link.ref)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden animate-fade-down animate-duration-1000 animate-delay-500">
               {link.title}
               <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
             </button>
           ))}
         </div>
-        <div className='mr-4 flex items-center justify-center space-x-3'>
+        <div className='mr-4 flex items-center justify-center space-x-3 animate-fade-left animate-duration-1000 animate-delay-500'>
           <a href={resume} target="_blank" rel="noopener noreferrer" className='hover:scale-110 transition duration-300 ease-in-out w-24 h-6 rounded-md flex items-center justify-center bg-white text-gray-800 text-sm font-bold'>
             resume
             <img src={download} alt='download icon' className='w-4 h-4 ml-2'/>

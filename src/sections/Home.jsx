@@ -33,8 +33,8 @@ const Home = forwardRef((props, ref) => {
 
         {/* typewriter effect text */}
         <div className="ml-4 sm:ml-8 md:ml-12 lg:ml-20">
-            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold">Hi, I'm Jonathan,</h2>
-            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold">
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold animate-fade-right animate-duration-2000">Hi, I'm Jonathan,</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold animate-fade-right animate-duration-2000">
             <ReactTyped
                 strings={[
                     "A Student",
@@ -47,7 +47,7 @@ const Home = forwardRef((props, ref) => {
             />
             </h2>
 
-            <div className="z-10 mt-3 md:mt-5 flex flex-row space-x-2 items-center w-full">
+            <div className="z-10 mt-3 md:mt-5 flex flex-row space-x-2 items-center w-full animate-fade-right animate-duration-2000 animate-delay-700">
                   <img src = {cmu} className='h-10 w-10 md:h-12 md:w-12' alt='CMU logo'/>
                   <p className="text-white w-full text-xs md:text-sm lg:text-base"> B.S. Computer Science + PSST </p>
             </div>
