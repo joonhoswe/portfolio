@@ -37,7 +37,7 @@ const Projects = forwardRef((props, ref) => {
     return (
         <div ref={ref} className='bg-white w-full h-auto flex flex-col items-center justify-center py-12'>
             <h1 className='text-black text-center text-lg sm:text-2xl md:text-3xl font-bold'> My Portfolio </h1>
-            <div className='h-full w-full px-8 py-12 md:px-32 md:py-12 lg:px-64 lg:py-12 flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-20'>
+            <div className='h-full w-3/4 lg:w-1/2 px-8 py-12 md:px-20 md:py-12 lg:px-2 lg:py-12 flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12'>
                 {projectCards.map((card, index) => (
                     <a key={index} href={card.link} target="_blank" rel="noopener noreferrer">
                         <div className='bg-white shadow-2xl p-4 rounded-2xl h-full w-40 md:w-48 lg:w-56 flex flex-col hover:scale-110 hover:bg-cyan-400 hover:cursor-pointer transition ease-in-out duration-300'>
