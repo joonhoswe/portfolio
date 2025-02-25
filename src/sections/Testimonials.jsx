@@ -36,6 +36,7 @@ export default function Testimonials() {
 
     return (
         <div className="bg-gray-200 text-black w-full h-[60vh] flex flex-col space-y-4 items-center justify-center">
+            <h1 className='text-black text-center text-lg sm:text-2xl md:text-3xl font-bold'> Some kind words... </h1>
 
             <div className='bg-white rounded-2xl w-4/5 md:w-2/5 h-auto px-4 py-4 lg:py-8 shadow-2xl'>
                 <p className='italic text-xs md:text-sm lg:text-base'> " {testimonials[active].review} "</p>

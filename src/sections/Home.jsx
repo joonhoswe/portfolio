@@ -49,7 +49,7 @@ const Home = forwardRef((props, ref) => {
 
             <div className="z-10 mt-3 md:mt-5 flex flex-row space-x-2 items-center w-full animate-fade-right animate-duration-2000 animate-delay-700">
                   <img src = {cmu} className='h-10 w-10 md:h-12 md:w-12' alt='CMU logo'/>
-                  <p className="text-white w-full text-xs md:text-sm lg:text-base"> B.S. Computer Science </p>
+                  <p className="text-white w-full text-xs md:text-sm lg:text-base"> B.S. Information Systems and Computer Science </p>
             </div>
         </div>
         
