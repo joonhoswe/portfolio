@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect, useRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import apartmatch from '../assets/project_images/apartmatch.jpeg';
 import swedle from '../assets/project_images/swedle.png';
 import stockBot from '../assets/project_images/stockbot.png';
@@ -58,5 +57,7 @@ const Projects = forwardRef((props, ref) => {
 
     );
 });
+
+Projects.displayName = 'Projects';
 
 export default Projects;
