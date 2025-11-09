@@ -54,10 +54,10 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
           ))}
         </div>
         <div className='mr-4 flex items-center justify-center space-x-3 animate-fade-left animate-duration-1000 animate-delay-500'>
-          <a href={resume} target="_blank" rel="noopener noreferrer" className='hover:scale-110 transition duration-300 ease-in-out w-24 h-6 rounded-md flex items-center justify-center bg-white text-gray-800 text-sm font-bold'>
+          {/* <a href={resume} target="_blank" rel="noopener noreferrer" className='hover:scale-110 transition duration-300 ease-in-out w-24 h-6 rounded-md flex items-center justify-center bg-white text-gray-800 text-sm font-bold'>
             resume
             <img src={download} alt='download icon' className='w-4 h-4 ml-2'/>
-          </a>
+          </a> */}
           <a href="https://linkedin.com/in/joonho-oh" target="_blank" rel="noopener noreferrer">
             <img src={linkedin} alt="linkedin" className="hover:scale-110 transition duration-300 ease-in-out w-6 h-6"/>
           </a>

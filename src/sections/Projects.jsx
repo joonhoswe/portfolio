@@ -1,31 +1,40 @@
 import { forwardRef } from 'react';
+import poleswapper from '../assets/project_images/poleswapper.png';
 import apartmatch from '../assets/project_images/apartmatch.jpeg';
 import swedle from '../assets/project_images/swedle.png';
 import stockBot from '../assets/project_images/stockbot.png';
 import portfolio from '../assets/project_images/portfolio.png';
+import C from '../assets/project_images/C.png';
 
 
 const Projects = forwardRef((props, ref) => {
 
     const projectCards = [
+        { name: "malloc()", 
+        blurb: "A implementation of core memory allocation functions in C!", 
+        image: C,
+        link: "https://github.com/joonhoswe/",
+        },
+        { name: "PoleSwapper", 
+        blurb: "An online marketplace for pole vaulters to buy and sell pole vaulting equipment!", 
+        image: poleswapper,
+        link: "https://github.com/joonhoswe/poleswap",
+        },
         { name: "ApartMatch", 
         blurb: "An online platform for college students to swiftly match into off-campus homes with one click.", 
         image: apartmatch,
         link: "https://github.com/joonhoswe/ApartMatch",
         },
-
         { name: "SWEdle", 
         blurb: "A spinoff of the viral web game Wordle, with Software Engineering words instead!", 
         image: swedle,
         link: "https://github.com/joonhoswe/SWEdle",
         },
-
         { name: "StockBot", 
         blurb: "A Discord bot that keeps you up to date on your profits (or losses)!", 
         image: stockBot,
         link: "https://github.com/joonhoswe/StockBot",
         },
-
         { name: "Portfolio", 
         blurb: "My portfolio website built with React, Vite, and Tailwind CSS.", 
         image: portfolio,
@@ -34,9 +43,9 @@ const Projects = forwardRef((props, ref) => {
     ];
 
     return (
-        <div ref={ref} className='bg-white w-full h-auto flex flex-col items-center justify-center py-12'>
+        <div ref={ref} className='bg-white w-full min-h-screen flex flex-col items-center justify-center py-12'>
             <h1 className='text-black text-center text-lg sm:text-2xl md:text-3xl font-bold'> My Portfolio </h1>
-            <div className='h-full w-3/4 lg:w-1/2 px-8 py-12 md:px-20 md:py-12 lg:px-2 lg:py-12 flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12'>
+            <div className='h-full w-full px-8 py-12 md:px-24 md:py-12 lg:px-60 lg:py-12 flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-20'>
                 {projectCards.map((card, index) => (
                     <a key={index} href={card.link} target="_blank" rel="noopener noreferrer">
                         <div className='bg-white shadow-2xl p-4 rounded-2xl h-full w-40 md:w-48 lg:w-56 flex flex-col hover:scale-110 hover:bg-cyan-400 hover:cursor-pointer transition ease-in-out duration-300'>

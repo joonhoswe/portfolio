@@ -13,7 +13,7 @@ export default function Footer() {
                     <img src = {vite} alt ='vite logo'className='h-6 w-6'/>
                     <img src = {tailwind} alt ='tailwind logo'className='h-4 w-6'/>
                 </div>
-                <p> © 2024 Jonathan Oh </p>
+                <p> © 2025 Jonathan Oh </p>
             </div>
         </footer>
     )

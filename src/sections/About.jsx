@@ -1,4 +1,5 @@
 import React, { useEffect, useState, forwardRef } from 'react';
+import climbing from '../assets/about_images/climbing.jpg';
 import inventionConvention from '../assets/about_images/invention_convention.jpg';
 import goKart from '../assets/about_images/gokart.png';
 import tableTennis from '../assets/about_images/table_tennis.png';
@@ -8,6 +9,10 @@ import viola from '../assets/about_images/viola.png';
 const About = forwardRef((props, ref) => {
 
     const aboutCards = [
+        { name: "Bouldering", 
+        blurb: "I've recently got into bouldering as a way to solve problems with my body! My best grade is V6!", 
+        image: climbing,
+        },
         { name: "Inventing", 
         blurb: "I won the Invention Convention with \"Wash Your iPad\" which uses UV light and Lego Robotics to sanitize devices!", 
         image: inventionConvention,

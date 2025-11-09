@@ -20,6 +20,12 @@ export default function Testimonials() {
 
     const testimonials = [
         {
+        review: "I worked with Joonho early on during his tenure at Wells Fargo. During that time, I saw his proactiveness and 'go-getter' attitude in his efforts to go above and beyond on his assignments. He showed strong communication skills during our interactions and would make a good software engineer wherever he might go.",
+        name: "Aakash Tammana",
+        position: "Lead Software Engineer",
+        company: "Wells Fargo",
+        },
+        {
         review: "I wholeheartedly recommend Jonathan to any potential employer. During his time in my R&D MedTech Product Evaluation Lab he proved himself to be extremely intelligent, resourceful and hardworking. He also has the emotional intelligence and personality to work well alongside team members. Jonathan will be a valuable asset to any MedTech company in the future.",
         name: "Chris Johns",
         position: "R&D Director",

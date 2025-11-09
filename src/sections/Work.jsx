@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useRef, forwardRef } from 'react';
+import meta from '../assets/work_images/meta.gif';
+import wf from '../assets/work_images/wf.jpg';
 import atc from '../assets/work_images/atc.png';
 import jj from '../assets/work_images/jj.jpg';
 import osu from '../assets/work_images/osu.png';
@@ -13,6 +15,8 @@ import numpy from '../assets/work_images/logos/numpy.png';
 import java from '../assets/work_images/logos/java.webp';
 import dsa from '../assets/work_images/logos/dsa.png';
 import bigO from '../assets/work_images/logos/bigo.png';
+import django from '../assets/work_images/logos/django.png';
+import nautobot from '../assets/work_images/logos/nautobot.png';
 
 const Work = forwardRef((props, ref) => {
 
@@ -20,15 +24,29 @@ const Work = forwardRef((props, ref) => {
 
     const experiences = [
         {
+            company: "Meta",
+            position: "Incoming Software Engineer Intern (Summer 2026)",
+            blurb: "TBD!",
+            image: meta,
+            languages: [],
+        },
+        {
+            company: "Wells Fargo",
+            position: "Software Engineer Intern (Summer 2025)",
+            blurb: "I worked on device authentication, building core APIs for 42,000+ devices! Here's me with CEO Charlie Scharf :)",
+            image: wf,
+            languages: [python, django, nautobot],
+        },
+        {
             company: "Angel Trading Co.",
-            position: "Software Engineer",
+            position: "Software Engineer Intern (Summer 2024)",
             blurb: "I helped develop the first marketplace with 2k+ monthly active users for Smiskis and Sonny Angels. This startup is currently in the Emory Hatchery Startup Accelerator Program.",
             image: atc,
             languages: [reactLogo, tailwind, clerk, socket],
         },
         {
             company: "Johnson & Johnson",
-            position: "Software Engineer Intern",
+            position: "Software Engineer Intern (Summer 2023)",
             blurb: "The summer after high school, I interned in J&J's Ethicon Endo-Surgery team. Here, I wrote Python scripts for the Ottava Surgical Robot and improved existing data validation algorithms! I met some of my closest friends here and learned so much from my mentors.",
             image: jj,
             languages: [python, pandas, numpy],
