@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import name from '../assets/name.png';
 import github from '../assets/github.png';
 import linkedin from '../assets/linkedin.jpg';
-import resume from '../assets/Jonathan Oh Resume.pdf';
-import download from '../assets/download.png';
+// import resume from '../assets/Jonathan Oh Resume.pdf';
+// import download from '../assets/download.png';
 import { Fade as Hamburger } from 'hamburger-react';
 
 const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
@@ -95,10 +96,10 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
                 ))}
                 {/* Resume, Linkedin, Github Buttons */}
               <div className='flex flex-col items-center justify-center space-y-6'>
-                <a href={resume} target="_blank" rel="noopener noreferrer" className='hover:scale-110 transition duration-300 ease-in-out w-24 h-6 rounded-md flex items-center justify-center bg-white text-gray-800 text-sm font-bold'>
+                {/* <a href={resume} target="_blank" rel="noopener noreferrer" className='hover:scale-110 transition duration-300 ease-in-out w-24 h-6 rounded-md flex items-center justify-center bg-white text-gray-800 text-sm font-bold'>
                   resume
                   <img src={download} alt='download icon' className='w-4 h-4 ml-2'/>
-                </a>
+                </a> */}
                 <a href="https://linkedin.com/in/joonho-oh" target="_blank" rel="noopener noreferrer" className='flex flex-row space-x-2'>
                   <img src={linkedin} alt="linkedin" className="hover:scale-110 transition duration-300 ease-in-out w-6 h-6"/>
                   <p className=' hover:text-sky-500 transition duration-300'> Linkedin</p>
@@ -119,6 +120,14 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
       </div>
     </div>
   );
+};
+
+Navbar.propTypes = {
+  HomeRef: PropTypes.object.isRequired,
+  AboutRef: PropTypes.object.isRequired,
+  WorkRef: PropTypes.object.isRequired,
+  ProjectsRef: PropTypes.object.isRequired,
+  ContactRef: PropTypes.object.isRequired,
 };
 
 export default Navbar;
