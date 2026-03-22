@@ -1,15 +1,16 @@
-import React from 'react';
+import { useState, useRef } from 'react';
 import Home from './sections/Home';
 import About from './sections/About';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar';
 import Work from './sections/Work';
 import Projects from './sections/Projects';
 import Testimonials from './sections/Testimonials';
 import Contact from './sections/Contact';
 import Footer from './components/footer';
-import { useRef } from 'react';
+import Blog from './sections/Blog';
 
 const App = () => {
+  const [view, setView] = useState('home');
 
   const HomeRef = useRef(null);
   const AboutRef = useRef(null);
@@ -18,14 +19,22 @@ const App = () => {
   const ContactRef = useRef(null);
 
   return (
-   <div className='bg-gray-900'>
-        <Navbar HomeRef = {HomeRef} AboutRef = {AboutRef} WorkRef = {WorkRef} ProjectsRef = {ProjectsRef} ContactRef = {ContactRef}/>
-        <Home ref = {HomeRef} AboutRef = {AboutRef} ProjectsRef = {ProjectsRef}/>
-        <About ref = {AboutRef}/>
-        <Work ref = {WorkRef}/>
-        <Projects ref = {ProjectsRef}/>
-        <Testimonials/>
-        <Contact ref = {ContactRef}/>
+   <div className='bg-[#0a0a0a] min-h-screen text-white font-sans'>
+        <Navbar HomeRef={HomeRef} AboutRef={AboutRef} WorkRef={WorkRef} ProjectsRef={ProjectsRef} ContactRef={ContactRef} view={view} setView={setView} />
+        
+        {view === 'home' ? (
+          <>
+            <Home ref={HomeRef} setView={setView} />
+            <About ref={AboutRef} />
+            <Work ref={WorkRef} />
+            <Projects ref={ProjectsRef} />
+            <Testimonials />
+            <Contact ref={ContactRef} />
+          </>
+        ) : (
+          <Blog setView={setView} />
+        )}
+        
         <Footer/>
   </div>
   );

@@ -43,27 +43,31 @@ const Projects = forwardRef((props, ref) => {
     ];
 
     return (
-        <div ref={ref} className='bg-white w-full min-h-screen flex flex-col items-center justify-center py-12'>
-            <h1 className='text-black text-center text-lg sm:text-2xl md:text-3xl font-bold'> My Portfolio </h1>
-            <div className='h-full w-full px-8 py-12 md:px-24 md:py-12 lg:px-60 lg:py-12 flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-20'>
-                {projectCards.map((card, index) => (
-                    <a key={index} href={card.link} target="_blank" rel="noopener noreferrer">
-                        <div className='bg-white shadow-2xl p-4 rounded-2xl h-full w-40 md:w-48 lg:w-56 flex flex-col hover:scale-110 hover:bg-cyan-400 hover:cursor-pointer transition ease-in-out duration-300'>
-                            <div className="h-full w-full rounded-lg flex flex-col space-y-1 text-start">
-                                <div className='flex items-center justify-center '>
-                                    <img src={card.image} alt={card.name} className='rounded-xl h-24 w-32 sm:h-28 sm:w-36 md:h-32 md:w-40 lg:h-40 lg:w-48'/>
+        <div ref={ref} className='bg-[#0a0a0a] w-full min-h-screen flex flex-col items-center justify-center py-20 border-t border-white/10'>
+            <div className="max-w-5xl w-full px-4 flex flex-col items-center">
+                <h1 className='text-white text-3xl md:text-5xl font-bold tracking-tight mb-4'> Selected Works </h1>
+                <p className='text-gray-400 text-center mb-16 max-w-2xl'>A collection of projects I&apos;ve built, ranging from web applications to low-level systems.</p>
+                
+                <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
+                    {projectCards.map((card, index) => (
+                        <a key={index} href={card.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                            <div className='bg-white/5 border border-white/10 p-6 rounded-2xl h-full flex flex-col hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 group'>
+                                <div className='w-full h-48 mb-6 overflow-hidden rounded-xl bg-black/50 flex items-center justify-center'>
+                                    <img src={card.image} alt={card.name} className='w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0'/>
                                 </div>
-                                <div className='flex flex-col justify-start items-center'>
-                                    <p className='text-black font-bold'>{card.name}</p>
+                                <div className='flex flex-col flex-grow'>
+                                    <h3 className='text-white font-semibold text-xl mb-2 flex items-center justify-between'>
+                                        {card.name}
+                                        <svg className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                                    </h3>
+                                    <p className='text-gray-400 text-sm leading-relaxed'>{card.blurb}</p>                    
                                 </div>
-                                <p className='text-gray-600 text-xs'>{card.blurb}</p>                    
                             </div>
-                        </div>
-                    </a>
-                ))}
+                        </a>
+                    ))}
+                </div>
             </div>
         </div>
-
     );
 });
 

@@ -1,14 +1,9 @@
 import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
-import name from '../assets/name.png';
-import github from '../assets/github.png';
-import linkedin from '../assets/linkedin.jpg';
-// import resume from '../assets/Jonathan Oh Resume.pdf';
-// import download from '../assets/download.png';
 import { Fade as Hamburger } from 'hamburger-react';
 
-const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
+const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef, view, setView }) => {
   const navbarRef = useRef(null);
   const [isOpen, setOpen] = useState(false);
 
@@ -25,6 +20,19 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
   ];
 
   const scrollToSection = (elementRef) => {
+    if (view !== 'home') {
+      setView('home');
+      // Wait for DOM to update before scrolling
+      setTimeout(() => {
+        if (!elementRef.current || !navbarRef.current) return;
+        const navbarHeight = navbarRef.current.offsetHeight;
+        const sectionTop = elementRef.current.getBoundingClientRect().top;
+        let scrollPosition = window.scrollY + sectionTop - (elementRef === HomeRef ? navbarHeight : 0);
+        window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+      }, 100);
+      return;
+    }
+
     if (!elementRef.current || !navbarRef.current) return;
 
     const navbarHeight = navbarRef.current.offsetHeight;
@@ -43,36 +51,40 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
   };
 
   return (
-    <div ref={navbarRef} className="flex items-center justify-between w-full h-14 sticky top-0 z-50 text-white bg-gray-700 bg-opacity-60 backdrop-filter backdrop-blur-lg animate-fade animate-duration-2000 animate-delay-150">
-      <div className='items-center justify-between w-full h-14 hidden md:flex'>
-        <img className='ml-4 h-1/3 w-1/8 animate-fade-right animate-duration-1000 animate-delay-500' src={name} alt='Jonathan'/>
-        <div className="flex items-center justify-center space-x-6 ml-24">
+    <div ref={navbarRef} className="flex items-center justify-between w-full h-16 sticky top-0 z-50 text-white bg-[#0a0a0a]/80 backdrop-filter backdrop-blur-xl border-b border-white/5 animate-fade animate-duration-2000 animate-delay-150">
+      <div className='items-center justify-between w-full h-full hidden md:flex px-8 lg:px-16'>
+        <button onClick={() => setView('home')} className='font-bold text-xl tracking-tighter animate-fade-right animate-duration-1000 animate-delay-500 hover:text-cyan-400 transition-colors'>
+            JO.
+        </button>
+        <div className="flex items-center justify-center space-x-8">
           {navLinks.map((link) => (
-            <button key={link.title} onClick={() => scrollToSection(link.ref)} className="group text-white hover:text-sky-500 transition duration-300 relative overflow-hidden animate-fade-down animate-duration-1000 animate-delay-500">
+            <button key={link.title} onClick={() => scrollToSection(link.ref)} className="group text-sm font-medium text-gray-400 hover:text-white transition duration-300 relative overflow-hidden animate-fade-down animate-duration-1000 animate-delay-500">
               {link.title}
-              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-sky-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
+              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left"></span>
             </button>
           ))}
+          <button onClick={() => setView('blog')} className={`group text-sm font-medium transition duration-300 relative overflow-hidden animate-fade-down animate-duration-1000 animate-delay-500 ${view === 'blog' ? 'text-white' : 'text-gray-400 hover:text-white'}`}>
+            blog
+            <span className={`absolute left-0 bottom-0 w-full h-0.5 bg-cyan-500 transform transition-transform duration-300 origin-left ${view === 'blog' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+          </button>
         </div>
-        <div className='mr-4 flex items-center justify-center space-x-3 animate-fade-left animate-duration-1000 animate-delay-500'>
-          {/* <a href={resume} target="_blank" rel="noopener noreferrer" className='hover:scale-110 transition duration-300 ease-in-out w-24 h-6 rounded-md flex items-center justify-center bg-white text-gray-800 text-sm font-bold'>
-            resume
-            <img src={download} alt='download icon' className='w-4 h-4 ml-2'/>
-          </a> */}
-          <a href="https://linkedin.com/in/joonho-oh" target="_blank" rel="noopener noreferrer">
-            <img src={linkedin} alt="linkedin" className="hover:scale-110 transition duration-300 ease-in-out w-6 h-6"/>
+        <div className='flex items-center justify-center space-x-5 animate-fade-left animate-duration-1000 animate-delay-500'>
+          <a href="https://linkedin.com/in/joonho-oh" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           </a>
-          <a href="https://github.com/joonhoswe" target="_blank" rel="noopener noreferrer">
-            <img src={github} alt="github" className="hover:scale-110 transition duration-300 ease-in-out w-6 h-6"/>
+          <a href="https://github.com/joonhoswe" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           </a>
         </div>
       </div>
 
-      <div className='z-50 flex items-center justify-between w-full h-14 md:hidden'>
-        <img className='ml-4 h-1/3 w-1/8' src={name} alt='Jonathan'/>
+      <div className='z-50 flex items-center justify-between w-full h-full md:hidden px-4'>
+        <button onClick={() => setView('home')} className='font-bold text-xl tracking-tighter'>
+            JO.
+        </button>
 
         {/* Mobile NavBar Icon */}
-        <Hamburger rounded size={24} duration={0.4} distance='lg' hideOutline={false} onToggle={toggleMenu} />
+        <Hamburger rounded size={24} duration={0.4} distance='lg' hideOutline={false} onToggle={toggleMenu} color="#9ca3af" />
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -81,39 +93,41 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
               exit="closed"
               variants={sidebarVariants}
               transition={{ duration: 0.4 }}
-              className="z-20 pt-12 pb-28 absolute top-full right-0 h-screen w-2/5 bg-gray-800 flex flex-col justify-between"
+              className="z-20 pt-20 pb-12 absolute top-full right-0 h-screen w-64 bg-[#0a0a0a] border-l border-white/10 flex flex-col justify-between"
             >
               {/* Website Section Links */}
-              <div className='flex flex-col space-y-6'>
+              <div className='flex flex-col space-y-8 px-8'>
                 {navLinks.map((link) => (
                   <button
                     key={link.title}
-                    onClick={() => scrollToSection(link.ref)}
-                    className="group text-lg text-white hover:text-sky-500 transition duration-300"
+                    onClick={() => {
+                        scrollToSection(link.ref);
+                        setOpen(false);
+                    }}
+                    className="group text-lg text-gray-400 hover:text-white transition duration-300 text-left"
                   >
                     {link.title}
                   </button>
                 ))}
-                {/* Resume, Linkedin, Github Buttons */}
-              <div className='flex flex-col items-center justify-center space-y-6'>
-                {/* <a href={resume} target="_blank" rel="noopener noreferrer" className='hover:scale-110 transition duration-300 ease-in-out w-24 h-6 rounded-md flex items-center justify-center bg-white text-gray-800 text-sm font-bold'>
-                  resume
-                  <img src={download} alt='download icon' className='w-4 h-4 ml-2'/>
-                </a> */}
-                <a href="https://linkedin.com/in/joonho-oh" target="_blank" rel="noopener noreferrer" className='flex flex-row space-x-2'>
-                  <img src={linkedin} alt="linkedin" className="hover:scale-110 transition duration-300 ease-in-out w-6 h-6"/>
-                  <p className=' hover:text-sky-500 transition duration-300'> Linkedin</p>
-                </a>
-                <a href="https://github.com/joonhoswe" target="_blank" rel="noopener noreferrer" className='flex flex-row space-x-2'>
-                  <img src={github} alt="github" className="hover:scale-110 transition duration-300 ease-in-out w-6 h-6"/>
-                  <p className=' hover:text-sky-500 transition duration-300'> Github </p>
-                </a>
-              </div>
+                <button
+                  onClick={() => {
+                      setView('blog');
+                      setOpen(false);
+                  }}
+                  className={`group text-lg transition duration-300 text-left ${view === 'blog' ? 'text-white' : 'text-gray-400 hover:text-white'}`}
+                >
+                  blog
+                </button>
               </div>
               
-
-              
-
+              <div className='flex flex-row items-center justify-center space-x-8 px-8 pb-20'>
+                <a href="https://linkedin.com/in/joonho-oh" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://github.com/joonhoswe" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -123,11 +137,13 @@ const Navbar = ({ HomeRef, AboutRef, WorkRef, ProjectsRef, ContactRef }) => {
 };
 
 Navbar.propTypes = {
-  HomeRef: PropTypes.object.isRequired,
-  AboutRef: PropTypes.object.isRequired,
-  WorkRef: PropTypes.object.isRequired,
-  ProjectsRef: PropTypes.object.isRequired,
-  ContactRef: PropTypes.object.isRequired,
+  HomeRef: PropTypes.object,
+  AboutRef: PropTypes.object,
+  WorkRef: PropTypes.object,
+  ProjectsRef: PropTypes.object,
+  ContactRef: PropTypes.object,
+  view: PropTypes.string.isRequired,
+  setView: PropTypes.func.isRequired,
 };
 
 export default Navbar;

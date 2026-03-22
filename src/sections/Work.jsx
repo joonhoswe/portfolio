@@ -1,120 +1,110 @@
-import React from 'react';
-import { useState, useEffect, useRef, forwardRef } from 'react';
-import meta from '../assets/work_images/meta.gif';
-import wf from '../assets/work_images/wf.jpg';
-import atc from '../assets/work_images/atc.png';
-import jj from '../assets/work_images/jj.jpg';
-import osu from '../assets/work_images/osu.png';
-import reactLogo from '../assets/work_images/logos/React.png';
-import tailwind from '../assets/work_images/logos/tailwind.png';
-import clerk from '../assets/work_images/logos/clerk.webp';
-import socket from '../assets/work_images/logos/socket.io.png';
-import python from '../assets/work_images/logos/python.png';
-import pandas from '../assets/work_images/logos/pandas.png';
-import numpy from '../assets/work_images/logos/numpy.png';
-import java from '../assets/work_images/logos/java.webp';
-import dsa from '../assets/work_images/logos/dsa.png';
-import bigO from '../assets/work_images/logos/bigo.png';
-import django from '../assets/work_images/logos/django.png';
-import nautobot from '../assets/work_images/logos/nautobot.png';
+import { forwardRef } from 'react';
+import aws from '../assets/work_images/AWS.jpg';
+import meta from '../assets/work_images/meta.png';
+import wf from '../assets/work_images/Wells-Fargo-Logo.png';
+import atc from '../assets/work_images/smiski.webp';
+import jj from '../assets/work_images/j&j.png';
+import osu from '../assets/work_images/osu.jpg';
+import cmu from '../assets/cmu.jpeg';
 
 const Work = forwardRef((props, ref) => {
 
-    const [activeExp, setActiveExp] = useState(0);
-
     const experiences = [
         {
+            company: "Amazon Web Services (AWS)",
+            position: "Software Development Engineer Intern",
+            date: "Fall 2026",
+            location: "Mountain View, CA",
+            blurb: "Incoming on the AWS team.",
+            image: aws,
+        },
+        {
             company: "Meta",
-            position: "Incoming Software Engineer Intern (Summer 2026)",
-            blurb: "TBD!",
+            position: "Software Engineer Intern",
+            date: "Summer 2026",
+            location: "Menlo Park, CA",
+            blurb: "Incoming on the Meta team.",
             image: meta,
-            languages: [],
+        },
+        {
+            company: "Carnegie Mellon University",
+            position: "Undergraduate Teaching Assistant",
+            date: "August 2025 - Present",
+            location: "Pittsburgh, PA",
+            blurb: <>Currently teaching <a href="https://www.cs.cmu.edu/~213/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">15-213</a> (Introduction to Computer Systems in C). Previously taught <a href="https://cmu-313.github.io/_old/F25/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">17-313</a> (Foundations of Software Engineering).</>,
+            image: cmu,
         },
         {
             company: "Wells Fargo",
-            position: "Software Engineer Intern (Summer 2025)",
-            blurb: "I worked on device authentication, building core APIs for 42,000+ devices! Here's me with CEO Charlie Scharf :)",
+            position: "Software Engineer Intern",
+            date: "Summer 2025",
+            location: "New York, NY",
+            blurb: "Worked on device authentication, building core APIs for 42,000+ devices. Also rode the elevator with CEO Charlie Scharf :)",
             image: wf,
-            languages: [python, django, nautobot],
         },
         {
             company: "Angel Trading Co.",
-            position: "Software Engineer Intern (Summer 2024)",
-            blurb: "I helped develop the first marketplace with 2k+ monthly active users for Smiskis and Sonny Angels. This startup is currently in the Emory Hatchery Startup Accelerator Program.",
+            position: "Software Engineer Intern",
+            date: "Summer 2024",
+            location: "Atlanta, GA",
+            blurb: "Developed the first marketplace with 2k+ MAU for Smiskis and Sonny Angels. Startup in the Emory Hatchery Startup Accelerator Program.",
             image: atc,
-            languages: [reactLogo, tailwind, clerk, socket],
         },
         {
             company: "Johnson & Johnson",
-            position: "Software Engineer Intern (Summer 2023)",
-            blurb: "The summer after high school, I interned in J&J's Ethicon Endo-Surgery team. Here, I wrote Python scripts for the Ottava Surgical Robot and improved existing data validation algorithms! I met some of my closest friends here and learned so much from my mentors.",
+            position: "Software Engineer Intern",
+            date: "Summer 2023",
+            location: "Cincinnati, OH",
+            blurb: "Piloted the first ever internship for incoming college freshmen. Wrote Python scripts for the Ottava Surgical Robot and data validation algorithms.",
             image: jj,
-            languages: [python, pandas, numpy],
         },
         {
             company: "The Ohio State University",
             position: "Undergraduate Teaching Assistant",
-            blurb: "During my junior year of high school I took Data Structures and Algorithms & Java Object-Oriented Programming. I found a true passion in explaining concepts to my classmates and helping them succeed. To further this passion, I TA'd both of these courses my senior year.",
+            date: "2022 - 2023",
+            location: "Columbus, OH",
+            blurb: "Taught Data Structures and Algorithms & Java Object-Oriented Programming during my senior year of high school!",
             image: osu,
-            languages: [java, dsa, bigO],
         },
     ];
 
-    const handlePrev = () => {
-        if (activeExp === 0) {
-            setActiveExp(experiences.length - 1);
-        }
-        else setActiveExp(activeExp - 1);
-    };
-
-    const handleNext = () => {
-        if (activeExp === experiences.length - 1) {
-            setActiveExp(0);
-        }
-        else setActiveExp(activeExp + 1);
-    };
-
     return (
-        <div ref = {ref} className="bg-gray-200 text-black w-full h-screen flex flex-col space-y-4 items-center justify-center px-4 md:px-12 lg:px-24">
+        <div ref={ref} className="bg-[#0a0a0a] w-full min-h-screen flex flex-col items-center py-24 border-t border-white/10">
+            <div className="max-w-5xl w-full px-4 flex flex-col items-center">
+                <h1 className='text-white text-3xl md:text-5xl font-bold tracking-tight mb-4'> Experience </h1>
+                <p className='text-gray-400 text-center mb-16 max-w-2xl'>My professional journey and the amazing teams I&apos;ve had the opportunity to work with.</p>
 
-            <h1 className='text-black text-center text-lg sm:text-2xl md:text-3xl font-bold mb-8'> Professional Experience </h1>
-
-            <div className='bg-white rounded-2xl w-full h-1/2 md:w-3/4 md:h-1/2 lg:w-2/3 lg:h-2/3 flex flex-col p-8 shadow-2xl justify-between'>
-                
-                <div className='w-full h-2/3 flex flex-row justify-between'>
-                    <img src={experiences[activeExp].image} className='w-full h-4/5 md:w-4/5 lg:h-full rounded-lg shadow-2xl' alt='work img' />
-
-                    <div className='hidden md:flex flex-col justify-between items-center w-full h-4/5 lg:h-full px-4'>
-                        {
-                            experiences[activeExp].languages.map((lang, index) => (
-                                <div key={index} className='bg-white h-8 w-8 md:h-12 md:w-12 lg:h-16 lg:w-16 rounded-full p-4 flex items-center justify-center shadow-2xl'>
-                                    <img src = {lang}/>
+                <div className='w-full flex flex-col space-y-12'>
+                    {experiences.map((exp, index) => (
+                        <div key={index} className='flex flex-col md:flex-row md:items-start gap-6 group'>
+                            {/* Left: Logo */}
+                            <div className="flex-shrink-0">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl overflow-hidden bg-white/5 border border-white/10 p-1 flex items-center justify-center">
+                                    <img src={exp.image} alt={`${exp.company} logo`} className="max-w-full max-h-full object-contain rounded-lg" />
                                 </div>
-                            ))
-                        }
-                    </div>
-                </div>
-                
-                <div>
-                    <p className='font-bold text-cyan-400 text-sm md:text-sm lg:text-base'> {experiences[activeExp].company} </p>
-                    <p className='italic text-xs md:text-sm lg:text-base'> {experiences[activeExp].position} </p>
-                    <p className='text-xs md:text-sm lg:text-base'> {experiences[activeExp].blurb} </p>
-                </div>
+                            </div>
 
-                <div className='flex flex-row space-x-2 items-center justify-center'>
-                    { experiences.map((exp, index) => (
-                        <div key={index} className={`rounded-full h-2 w-2 ${activeExp === index ? 'bg-cyan-400' : 'bg-gray-400'}`}/>
+                            {/* Middle: Company, Role, Date */}
+                            <div className="flex flex-col md:w-1/3 flex-shrink-0 pt-1">
+                                <h3 className="text-lg font-medium text-white mb-1">{exp.company}</h3>
+                                <p className="text-cyan-400 text-sm font-medium mb-1">{exp.position}</p>
+                                <p className="text-gray-500 text-sm">{exp.date} &bull; {exp.location}</p>
+                            </div>
+
+                            {/* Right: Description */}
+                            <div className="flex-grow pt-1">
+                                <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                                    {exp.blurb}
+                                </p>
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>
-
-            <div className='flex flex-row space-x-1 items-center justify-center'>
-                <button onClick={handlePrev} className='h-9 w-9 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl hover:bg-cyan-400 transition ease-in-out duration-300'> 〈 </button>
-                <button onClick={handleNext} className='h-9 w-9 md:h-12 md:w-12 rounded-full bg-white text-black flex items-center justify-center text-base md:text-2xl font-bold shadow-2xl hover:bg-cyan-400 transition ease-in-out duration-300'> 〉 </button>
-            </div>
-
         </div>
     );
 });
+
+Work.displayName = 'Work';
 
 export default Work;
