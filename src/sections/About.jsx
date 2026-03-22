@@ -1,4 +1,4 @@
-import React, { useEffect, useState, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import climbing from '../assets/about_images/climbing.jpg';
 import inventionConvention from '../assets/about_images/invention_convention.jpg';
 import goKart from '../assets/about_images/gokart.png';
@@ -29,7 +29,7 @@ const About = forwardRef((props, ref) => {
         },
 
         { name: "Pole Vault", 
-        blurb: "I'm a pole vaulter for CMU with a PB of 13\'8\". I love seeing physics work in real life through this sport!", 
+        blurb: "I used to pole vault in high school and briefly in college, and I had a PB of 13'8\".", 
         image: polevault,
         },
 
@@ -40,25 +40,27 @@ const About = forwardRef((props, ref) => {
     ];
 
   return (
-    <div ref={ref} className='bg-white w-full min-h-screen flex flex-col items-center justify-center py-12'>
-        <h1 className='text-black text-center text-lg sm:text-2xl md:text-3xl font-bold'> See some of my interests and hobbies! </h1>
-        <div className='h-full w-full px-8 py-12 md:px-24 md:py-12 lg:px-60 lg:py-12 flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-20'>
-            {aboutCards.map((card, index) => (
-                <div key={index} className='bg-white shadow-2xl p-4 rounded-2xl h-auto w-40 md:w-48 lg:w-56 flex flex-col'>
-                    <div className="h-full w-full rounded-lg flex flex-col space-y-1 text-start">
-                        <div className='flex items-center justify-center '>
-                            <img src={card.image} alt={card.name} className='rounded-xl h-24 w-32 sm:h-28 sm:w-36 md:h-32 md:w-40 lg:h-40 lg:w-48'/>
+    <div ref={ref} className='bg-[#0a0a0a] w-full min-h-screen flex flex-col items-center justify-center py-20 border-t border-white/10'>
+        <div className="max-w-4xl w-full px-4 flex flex-col items-center">
+            <h1 className='text-white text-3xl md:text-5xl font-bold tracking-tight mb-4'> Interests & Hobbies </h1>
+            <p className='text-gray-400 text-center mb-16 max-w-2xl'>When I&apos;m not coding, you can find me exploring nature, eating food, or creating things.</p>
+            
+            <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
+                {aboutCards.map((card, index) => (
+                    <div key={index} className='bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col hover:bg-white/10 transition-colors duration-300 group'>
+                        <div className='w-full h-40 mb-6 overflow-hidden rounded-xl bg-black/50'>
+                            <img src={card.image} alt={card.name} className='w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0'/>
                         </div>
-                        <div className='flex flex-col justify-start items-center'>
-                            <p className='text-black font-bold'>{card.name}</p>
-                        </div>
-                        <p className='text-gray-600 text-xs'>{card.blurb}</p>                    
+                        <h3 className='text-white font-semibold text-xl mb-2'>{card.name}</h3>
+                        <p className='text-gray-400 text-sm leading-relaxed'>{card.blurb}</p>                    
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     </div>
   );
 });
+
+About.displayName = 'About';
 
 export default About;
