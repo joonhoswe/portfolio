@@ -25,7 +25,7 @@ export const blogs = [
         caption: 'Selfie with CEO Charlie Scharf!'
       },
       
-      ``
+      `will finish once i'm done studying today :)`
     ]
   },
   {
