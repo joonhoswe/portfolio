@@ -32,13 +32,51 @@ const Blog = ({ setView, view }) => {
             <div className="h-px w-full bg-white/10 mt-8"></div>
           </header>
 
+          {currentBlog.image && (
+            <div className="mb-12 w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <img 
+                src={currentBlog.image} 
+                alt={currentBlog.title} 
+                className="w-full h-auto object-cover max-h-[600px]"
+              />
+            </div>
+          )}
+
           <div className="max-w-none w-full">
-            {/* If content is just a string, we can render it in paragraphs. For more complex content, you might want to use a markdown parser later */}
-            {currentBlog.content.split('\n\n').map((paragraph, index) => (
-              <p key={index} className="mb-8 text-lg md:text-xl font-light text-gray-300 leading-loose">
-                {paragraph}
-              </p>
-            ))}
+            {Array.isArray(currentBlog.content) 
+              ? currentBlog.content.map((block, index) => {
+                  if (typeof block === 'string') {
+                    return block.split(/\n\s*\n/).map((paragraph, pIndex) => (
+                      <p key={`text-${index}-${pIndex}`} className="mb-8 text-lg md:text-xl font-light text-gray-300 leading-loose">
+                        {paragraph.trim()}
+                      </p>
+                    ));
+                  } else if (block.type === 'image') {
+                    return (
+                      <figure key={`img-${index}`} className="my-12 w-full">
+                        <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-white/5">
+                          <img 
+                            src={block.src} 
+                            alt={block.alt || 'Blog image'} 
+                            className="w-full h-auto object-cover max-h-[700px] mx-auto" 
+                          />
+                        </div>
+                        {block.caption && (
+                          <figcaption className="mt-4 text-center text-sm text-gray-400 italic">
+                            {block.caption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    );
+                  }
+                  return null;
+                })
+              : currentBlog.content.split(/\n\s*\n/).map((paragraph, index) => (
+                  <p key={index} className="mb-8 text-lg md:text-xl font-light text-gray-300 leading-loose">
+                    {paragraph.trim()}
+                  </p>
+                ))
+            }
           </div>
         </article>
       </div>
