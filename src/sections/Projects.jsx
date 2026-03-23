@@ -5,11 +5,28 @@ import swedle from '../assets/project_images/swedle.png';
 import stockBot from '../assets/project_images/stockbot.png';
 import portfolio from '../assets/project_images/portfolio.png';
 import C from '../assets/project_images/C.png';
-
+import bplusTree from '../assets/project_images/bplus_tree.png';
+import steersafe from '../assets/work_images/steersafe.webp';
+import shell from '../assets/project_images/shell.webp';
 
 const Projects = forwardRef((props, ref) => {
 
     const projectCards = [
+        { name: "BusTub DBMS", 
+        blurb: "B+ Tree Index, ARC Buffer Pool Manager, and Query Optimizer built for a RDBMS in C++.", 
+        image: bplusTree,
+        link: "https://github.com/joonhoswe/",
+        },
+        { name: "SteerSafe", 
+        blurb: "Gamified mobile app that incentivizes distraction-free driving", 
+        image: steersafe,
+        link: "https://github.com/joonhoswe/SteerSafe",
+        },
+        { name: "tsh (Tiny Shell)", 
+        blurb: "A shell written in C that supports foreground/background jobs and handles signals.", 
+        image: shell,
+        link: "https://github.com/joonhoswe/",
+        },
         { name: "malloc()", 
         blurb: "A implementation of core memory allocation functions in C!", 
         image: C,
@@ -53,7 +70,7 @@ const Projects = forwardRef((props, ref) => {
                         <a key={index} href={card.link} target="_blank" rel="noopener noreferrer" className="block h-full">
                             <div className='bg-white/5 border border-white/10 p-6 rounded-2xl h-full flex flex-col hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 group'>
                                 <div className='w-full h-48 mb-6 overflow-hidden rounded-xl bg-black/50 flex items-center justify-center'>
-                                    <img src={card.image} alt={card.name} className='w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0'/>
+                                    <img src={card.image} alt={card.name} className='w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300'/>
                                 </div>
                                 <div className='flex flex-col flex-grow'>
                                     <h3 className='text-white font-semibold text-xl mb-2 flex items-center justify-between'>

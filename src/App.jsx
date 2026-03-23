@@ -32,7 +32,7 @@ const App = () => {
             <Contact ref={ContactRef} />
           </>
         ) : (
-          <Blog setView={setView} />
+          <Blog setView={setView} view={view} />
         )}
         
         <Footer/>

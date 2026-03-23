@@ -7,7 +7,7 @@ const Home = forwardRef((props, ref) => {
   const { setView } = props;
 
   return (
-    <div ref={ref} className="text-white flex flex-col items-center relative w-full min-h-[calc(100vh-64px)] bg-[#0a0a0a] pt-20 pb-20">
+    <div ref={ref} className="text-white flex flex-col items-center relative w-full bg-[#0a0a0a] pt-20 pb-12">
       
       {/* Hero Section */}
       <div className="w-full max-w-4xl px-4 flex flex-col items-start z-10 mb-24">
@@ -43,10 +43,10 @@ const Home = forwardRef((props, ref) => {
         </div>
 
         <div className="flex flex-col space-y-6">
-          {blogs.slice(0, 3).map((blog) => (
+          {blogs.slice(0, 2).map((blog) => (
             <div 
               key={blog.id} 
-              onClick={() => setView('blog')}
+              onClick={() => setView(`blog-${blog.id}`)}
               className="group cursor-pointer"
             >
               <p className="text-cyan-500 text-sm font-medium mb-2">{blog.date}</p>

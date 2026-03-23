@@ -34,7 +34,7 @@ const About = forwardRef((props, ref) => {
         },
 
         { name: "Music", 
-        blurb: "The violin and viola have been my best friends since 1st grade. I love the structured rules yet boundless elegance of music!", 
+        blurb: "I've played the violin and viola since 1st grade!", 
         image: viola,
         },
     ];
@@ -49,7 +49,7 @@ const About = forwardRef((props, ref) => {
                 {aboutCards.map((card, index) => (
                     <div key={index} className='bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col hover:bg-white/10 transition-colors duration-300 group'>
                         <div className='w-full h-40 mb-6 overflow-hidden rounded-xl bg-black/50'>
-                            <img src={card.image} alt={card.name} className='w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0'/>
+                            <img src={card.image} alt={card.name} className='w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300'/>
                         </div>
                         <h3 className='text-white font-semibold text-xl mb-2'>{card.name}</h3>
                         <p className='text-gray-400 text-sm leading-relaxed'>{card.blurb}</p>                    
