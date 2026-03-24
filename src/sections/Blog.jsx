@@ -29,6 +29,9 @@ const Blog = ({ setView, view }) => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
               {currentBlog.title}
             </h1>
+            <p className="text-xl text-gray-400 italic mb-8">
+              {currentBlog.summary}
+            </p>
             <div className="h-px w-full bg-white/10 mt-8"></div>
           </header>
 
