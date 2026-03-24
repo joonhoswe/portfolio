@@ -13,8 +13,9 @@ const About = forwardRef((props, ref) => {
         blurb: "I've recently got into bouldering as a way to solve problems with my body! My best grade is V6!", 
         image: climbing,
         },
-        { name: "Inventing", 
-        blurb: "I won the Invention Convention with \"Wash Your iPad\" which uses UV light and Lego Robotics to sanitize devices!", 
+        { name: "Inventing",
+        blurb: "I won the Invention Convention with \"Wash Your iPad\" which uses UV light and Lego Robotics to sanitize devices!",
+        articleUrl: "https://www.dispatch.com/story/news/local/dublin-villager/2014/06/03/third-grader-s-invention-is/23225992007/",
         image: inventionConvention,
         },
 
@@ -52,7 +53,22 @@ const About = forwardRef((props, ref) => {
                             <img src={card.image} alt={card.name} className='w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300'/>
                         </div>
                         <h3 className='text-white font-semibold text-xl mb-2'>{card.name}</h3>
-                        <p className='text-gray-400 text-sm leading-relaxed'>{card.blurb}</p>                    
+                        <p className='text-gray-400 text-sm leading-relaxed'>
+                            {card.blurb}
+                            {card.articleUrl && (
+                                <>
+                                    {' '}
+                                    <a
+                                        href={card.articleUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-sky-400 hover:text-sky-300 underline underline-offset-2"
+                                    >
+                                        Article
+                                    </a>
+                                </>
+                            )}
+                        </p>
                     </div>
                 ))}
             </div>
