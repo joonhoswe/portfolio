@@ -15,7 +15,7 @@ const Work = forwardRef((props, ref) => {
             position: "Software Development Engineer Intern",
             date: "Fall 2026",
             location: "Mountain View, CA",
-            blurb: "Incoming on the AWS team.",
+            blurb: "Incoming on the AWS Builder Center team.",
             image: aws,
         },
         {
@@ -23,7 +23,7 @@ const Work = forwardRef((props, ref) => {
             position: "Software Engineer Intern",
             date: "Summer 2026",
             location: "Menlo Park, CA",
-            blurb: "Incoming on the Meta team.",
+            blurb: "Incoming on the WhatsApp Core Messaging Experience team.",
             image: meta,
         },
         {
